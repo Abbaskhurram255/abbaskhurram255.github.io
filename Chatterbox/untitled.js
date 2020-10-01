@@ -1,7 +1,7 @@
 
 jQuery(function ($) {
     'use strict'
-    var supportsAudio = !!document.createElement('audio').canPlayType;
+    var supportsAudio = document.createElement('audio').canPlayType;
     if (supportsAudio) {
         // initialize plyr
         var player = new Plyr('#audio1', {
@@ -93,7 +93,7 @@ jQuery(function ($) {
                 "file": "Alec Benjamin - The Water Fountain"
             }, {
                 "track": 15,
-                "name": "Ariana Grande, Miley Cyrus, Lana Rey - Don’t Call Me Angel",
+                "name": "Ariana Grande, Miley Cyrus, Lana Rey - Donâ€™t Call Me Angel",
                 "duration": "03:53",
                 "file": "Ariana Grande (ft. Miley Cyrus, Lana Del Rey) - Dont Call me Angel"
             }, {
@@ -328,9 +328,9 @@ jQuery(function ($) {
                 "file": "Ed Sheeran - South of the Border (feat. Camila Cabello & Cardi B) _Official Lyric Video_ ( 160kbps )"
             }, {
                 "track": 62,
-                "name": "El Perdón (Forgiveness) Nicky Jam Enrique Iglesias (English Version)",
+                "name": "El PerdÃ³n (Forgiveness) Nicky Jam Enrique Iglesias (English Version)",
                 "duration": "3:42",
-                "file": "El Perdón (Forgiveness) Nicky Jam & Enrique Iglesias (English Version)"
+                "file": "El PerdÃ³n (Forgiveness) Nicky Jam & Enrique Iglesias (English Version)"
             }, {
                 "track": 63,
                 "name": "Ed Sheeran - Thinking Out Loud",
