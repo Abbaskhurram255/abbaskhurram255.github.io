@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>TextToSpeech Engine</title>
+  <style>
+    body {
+      width: 80%;
+      /*background-color: rgba(156,160,70,0.9);*/
+      background: aquamarine;
+      margin: 0 auto;
+      margin-top: 1rem;
+    }
+
+    #text {
+      width: 100%;
+      margin-top:12px;
+      height: 50vh;
+    }
+
+    h1 {
+      margin: 25px;
+      text-align: center;
+      font-size: 38px;
+    }
+
+    
+  </style>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <h1>TTS Engine</h1><h2>Get your text converted to speech, right away!</h2>
+<textarea placeholder="Try typing something and then clicking the Play button" id="text"></textarea>
+  <label for="speed">Speed:</label>
+  <input type="number" name="speed" id="speed" min=".5" max="3" step=".5" value="1">
+  <button id="play-button">Play</button>
+  <button id="pause-button">Pause</button>
+  <button id="stop-button">Stop</button>
+  <div style="text-align:right;color:red;margin:10px;font-weight:600;">&copy; Chatterbox<br>Made with &hearts; by Alex</div>
+</body>
+</html>

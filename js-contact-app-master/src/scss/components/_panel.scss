@@ -1,0 +1,39 @@
+
+.contacts-wrapper {
+  box-shadow: 3px 3px 5px 6px #ccc;
+.panel {
+  &-heading {
+    background: $turquoise;
+    color: #eee;
+    border: 0!important;
+  }
+
+  &-block {
+    flex: 1 1 100%;
+  }
+
+  &-tabs,
+  &-block {
+    border: 0;
+    &:first-child {
+      border-top: 0!important;
+      border-bottom: 1px solid #dbdbdb!important;
+    }
+  }
+
+  .list-item {
+    display: flex;
+    min-width: 100%;
+    border-bottom: 1px solid #dbdbdb;
+    justify-content: space-between;
+    @include for-size(phone-down) {
+      flex-direction: column;
+      align-items: baseline;
+    }
+  }
+
+  .button-container {
+    display: flex;
+  }
+ }
+}
