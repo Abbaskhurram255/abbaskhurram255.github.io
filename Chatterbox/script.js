@@ -90,9 +90,9 @@ var bday = prompt(
    q16 = /(weather)|(temperature)|((hot|rainy|cloudy|sunny) day)/gi,
    q17 = /^$/,
    q18 = /(calculator)|(calc)|(calculate)/gi,
-   q19 = /(tts)|(speech engine)|(text to speech)|(ebook to audiobook)/gi,
+   q19 = /(tts)|(speech engine)|(text to speech)|(ebook to audiobook)|(reader)/gi,
    q20 = /notes/gi,
-   q21 = /(todo)|(reminder)/gi,
+   q21 = /(todo)|(reminder)|(remind me)/gi,
    q22 = /(music)|(song?s?)/gi,
    q23 = /random (stuff|fun)/gi;
 
