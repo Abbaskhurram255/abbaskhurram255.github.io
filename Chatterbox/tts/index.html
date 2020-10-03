@@ -4,14 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>TextToSpeech Engine</title>
+  <link rel="shortcut icon" href="./favicon.png" type="image/png">
+  <title>Text Reader</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Lora:ital@1&display=swap');
+
     body {
       width: 80%;
       /*background-color: rgba(156,160,70,0.9);*/
       background: aquamarine;
       margin: 0 auto;
       margin-top: 1rem;
+      font-family: 'Lora', serif;
     }
 
     #text {
@@ -24,15 +28,20 @@
       margin: 25px;
       text-align: center;
       font-size: 38px;
+      color: #555;
     }
 
-    
+    @media screen and (max-width: 500px) {
+  body {
+    padding: 8px;
+  }
+}
   </style>
   <script src="script.js" defer></script>
 </head>
 <body>
-  <h1>TTS Engine</h1><h2>Get your text converted to speech, right away!</h2>
-<textarea placeholder="Try typing something and then clicking the Play button" id="text"></textarea>
+  <h1>TTS Engine</h1><h2>Get your text converted to speech, right away!</h2><h3>I can read you books, news, or text of any sort</h3>
+<textarea placeholder="An exciting way to use an ebook as an audiobook, isn't it?😉 Try typing something and then clicking the Play button." id="text"></textarea>
   <label for="speed">Speed:</label>
   <input type="number" name="speed" id="speed" min=".5" max="3" step=".5" value="1">
   <button id="play-button">Play</button>

@@ -37,7 +37,7 @@ window.onload = () => {
  	$('#message').animate({height:'toggle', opacity: 'toggle'}, 5);
 /* (referred to the animation) or you could use this instead: $('#message').slideToggle(); */
  //optional* });
-} //end block of window.onload method
+}; //end block of window.onload method
 
 $(document).ready(function() {
  //JQuery functions go here
@@ -93,9 +93,8 @@ var bday = prompt(
    q19 = /(tts)|(speech engine)|(text to speech)|(ebook to audiobook)/gi,
    q20 = /notes/gi,
    q21 = /(todo)|(reminder)/gi,
-   q22 = /(music)|(songs)/gi,
-   q23 = /(contact?s?)|(address book)/gi,
-   q24 = /random (stuff|fun)/gi;
+   q22 = /(music)|(song?s?)/gi,
+   q23 = /random (stuff|fun)/gi;
 
   function ask() {
    const q = document.querySelector(
@@ -320,11 +319,8 @@ console.log(msg);
       } else if (q22.test(q)) {
         let musicWin = window.open('./music/', '_blank');
         if (musicWin) { window.focus(); log("Opened Music player"); } else { alert('Please turn on popups on this site.'); }
-      } else if (q23.test(q)) {
-        let contactsWin = window.open('./js-contact-app-master/dist', '_blank');
-        if (contactsWin) { window.focus(); log("Opened Contacts"); } else { alert('Please turn on popups on this site.'); }
-        } else if (q24.test(q)) {
-        	let randStuff = ['./calc/', './music/', './tts/', './js-contact-app-master/dist', './notes-app-project-master/', './tic-tac-toe-master/', './weather', './todo-app-project-master/'];
+        } else if (q23.test(q)) {
+        	let randStuff = ['./calc/', './music/', './tts/', './notes-app-project-master/', './tic-tac-toe-master/', './weather', './todo-app-project-master/'];
         let randStuffWin = window.open(randStuff[Math.floor(Math.random() * randStuff.length)], '_blank');
         if (randStuffWin) { window.focus(); log("Opened a random app"); } else { alert('Please turn on popups on this site.'); }
       } else {
@@ -505,16 +501,16 @@ if (mesg.innerText != '') {
         snack.className = 'show';
         setTimeout(function(){ snack.className = snack.className.replace("show", ""); }, 5000);
   }
-})
+});
 }
 
 const utterance = new SpeechSynthesisUtterance();
 utterance.addEventListener('end', () => {
   textInput.disabled = false;
-})
+});
 utterance.addEventListener('boundary', e => {
   currentCharacter = e.charIndex;
-})
+});
 
 function playText(text) {
   if (speechSynthesis.paused && speechSynthesis.speaking) {
@@ -525,7 +521,7 @@ function playText(text) {
   var voices = window.speechSynthesis.getVoices();
   window.speechSynthesis.onvoiceschanged = function() {
     voices = window.speechSynthesis.getVoices();
-}
+};
 utterance.voice = voices.filter(function(voice) { return voice.name == 'Microsoft Zira Desktop - English (United States)'; })[0];
   /*Or set this if you want Microsoft's default female voice: utterance.voice = voices[10]*/
   /* Or if you just wanna use default male voice (MS David_En-US), just don't set any voice.*/
