@@ -11,10 +11,10 @@ Features
 _Built-in apps_
 - Calculator
 - Jukebox (aka Music Player)
+- Notes
 - Text Reader (commonly used for book reading)
 - Tic Tac Toe
-- Todo
-- Notes
+- Todo/Reminder
 - Weather
 
 
