@@ -140,7 +140,7 @@ var bday = prompt(
      age + "</li></ul></em><br><br>";
         $output.html(msg);
         console.log(msg); $.get("https://api.ipdata.co/?api-key=test", function (response) {
-     $("#message").append(`<b>Data recieved via your IP Address</b><br>Your country: ${response.country_name}|${response.country_code}(<img src="${response.flag}" height="15vh" width="22vw">)<br>Your native language: ${response.languages[1].name}<br>Your timezone: UTC ${response.time_zone.offset} (${response.time_zone.abbr})<br>Note: We value your privacy! None of your data will be shared.`);
+     $("#message").append(`<b>Data recieved via your IP Address</b><br>Your country: ${response.country_name}<img src="${response.flag}" height="15vh" width="22vw"><sup><small>[${response.country_code}]</small></sup><br>Your native language: ${response.languages[1].name}<br>Your timezone: UTC ${response.time_zone.offset} (${response.time_zone.abbr})<br>Note: We value your privacy! None of your data will be shared.`);
 }, "jsonp");
     $('#message').delay(10000).animate({height:'toggle', opacity: 'toggle'}, 800);
    } else if (q4.test(q)) {
