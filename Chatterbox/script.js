@@ -53,6 +53,7 @@ userName = toTitleCase(
 var age;
 var bday = prompt(
   "What's your day? Note: We ask for your birthday only for statistical purposes.\nAccepted format *: YYYY(separator)m(separator)d");
+  bday = capFirstletter(bday);
   if ((userName != null && userName.length != 0) && (/^[a-z\s]+$/gi.test(userName) && userName != '')) {
    alert(`Welcome ${userName}. I'm your virtual assistant.`);
    console.log(`Welcome ${userName}`);
@@ -171,14 +172,15 @@ var bday = prompt(
     $('#message').delay(10000).animate({height:'toggle', opacity: 'toggle'}, 800);
    } else if (q8.test(q)) {
     $('#message').animate({height:'toggle', opacity: 'toggle'}, 800);
-    if ((bday != null && bday !==
-      'undefined') && (bday.length !=
+    if ((bday != null && /^[0-9a-zA-Z\s]+$/gi.test(bday)) && (bday.length !=
       0 && bday != '')) {
+        bday = capFirstletter(bday);
      msg = `Your day is ${bday}`;
      log(msg);
     } else {
      bday = prompt(
       "Your bday isn't saved yet. Would you mind (re-)listing it?\nAccepted format: YYYY(separator)m(separator)d\nNote: We ask for your birthday only for statistical purposes.");
+      bday = capFirstletter(bday);
       msg =
       `Date set. Your new bday is ${bday}`;
       log(msg);
@@ -188,8 +190,7 @@ var bday = prompt(
            $('#message').delay(10000).animate({height:'toggle', opacity: 'toggle'}, 800);
     } else if (q9.test(q)) {
      $('#message').animate({height:'toggle', opacity: 'toggle'}, 800);
-     if ((bday != null && bday !==
-       'undefined') && (bday
+     if ((bday != null && /^[0-9a-zA-Z\s]+$/gi.test(bday)) && (bday
        .length != 0 && bday != ''
       )) {
       age = calc_age(new Date(
@@ -251,9 +252,9 @@ var bday = prompt(
       if (cfm) {
        bday = prompt(
         "Resubmit your bday. The format should be: YYYY(separator)m(separator)d\nNote: We ask for your birthday only for statistical proposes.");
+        bday = capFirstletter(bday);
         if ((bday != null &&
-          bday !==
-          'undefined') && (bday
+          /^[0-9a-zA-Z\s]+$/gi.test(bday)) && (bday
           .length != 0 && bday != ''
          )) {
          msg =
@@ -262,6 +263,7 @@ var bday = prompt(
         } else {
          bday = prompt(
           "Couldn't change your bday. Try resubmitting it.\nNote: We ask for your birthday only for statistical purposes.");
+          bday = capFirstletter(bday);
           msg =
           `&#128077; Success. Your new bday is ${bday}&#9786;`;
 console.log(msg);
@@ -333,14 +335,13 @@ console.log(msg);
        }
       }
 
-      /* A function that capitalizes first letter of a string, but not each
+      /* A function that capitalizes first letter of a string, but not each */
       function capFirstletter(
       string) {
        return string[0]
        .toUpperCase() + string.slice(
          1);
       }
-      */
 
      /* A function that capitalizes each first letter of a string */
       function toTitleCase(phrase) {
