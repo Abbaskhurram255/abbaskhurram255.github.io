@@ -6,7 +6,7 @@ Wanna try it? Visit https://abbaskhurram255.github.io/Chatterbox/
 # Chatterbox... it assists you!
 
 
-Features 
+*Features* 
 ========
 ------
 - Has Dark theme
