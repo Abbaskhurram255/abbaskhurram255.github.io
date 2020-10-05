@@ -172,7 +172,7 @@ var bday = prompt(
     $('#message').delay(10000).animate({height:'toggle', opacity: 'toggle'}, 800);
    } else if (q8.test(q)) {
     $('#message').animate({height:'toggle', opacity: 'toggle'}, 800);
-    if ((bday != null && /^[0-9a-zA-Z\s]+$/gi.test(bday)) && (bday.length !=
+    if ((bday != null && /^[0-9a-zA-Z(-\.\_\s\/)]+$/gi.test(bday)) && (bday.length !=
       0 && bday != '')) {
         bday = capFirstletter(bday);
      msg = `Your day is ${bday}`;
@@ -190,7 +190,7 @@ var bday = prompt(
            $('#message').delay(10000).animate({height:'toggle', opacity: 'toggle'}, 800);
     } else if (q9.test(q)) {
      $('#message').animate({height:'toggle', opacity: 'toggle'}, 800);
-     if ((bday != null && /^[0-9a-zA-Z\s]+$/gi.test(bday)) && (bday
+     if ((bday != null && /^[0-9a-zA-Z(-\.\_\s\/)]+$/gi.test(bday)) && (bday
        .length != 0 && bday != ''
       )) {
       age = calc_age(new Date(
@@ -254,7 +254,7 @@ var bday = prompt(
         "Resubmit your bday. The format should be: YYYY(separator)m(separator)d\nNote: We ask for your birthday only for statistical proposes.");
         bday = capFirstletter(bday);
         if ((bday != null &&
-          /^[0-9a-zA-Z\s]+$/gi.test(bday)) && (bday
+          /^[0-9a-zA-Z(-\.\_\s\/)]+$/gi.test(bday)) && (bday
           .length != 0 && bday != ''
          )) {
          msg =
