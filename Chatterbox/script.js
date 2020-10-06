@@ -84,18 +84,23 @@ var bday = prompt(
    /(change my (dob|bday|day|birthday))/gi,
    q12 = /am I nice[?]?/gi,
    q13 =
-   /what (date|time|day) ?is? ?it?|(date)|(time)/gi,
+   /what (date|time|day) is? it?|(date)|(time)/gi,
    q14 =
    /(hi)|(hello)|(hey)|(hola)|(howdy)/gi,
-   q15 = /(tic tac toe)|(game)/gi,
+   q15 = /tic tac toe/gi,
    q16 = /(weather)|(temperature)|((hot|rainy|cloudy|sunny) day)/gi,
    q17 = /^$/,
    q18 = /(calculator)|(calc)|(calculate)/gi,
    q19 = /(tts)|(speech engine)|(text to speech)|(ebook to audiobook)|(reader)/gi,
    q20 = /notes/gi,
    q21 = /(todo)|(reminder)|(remind me)/gi,
-   q22 = /(music)|(song?s?)/gi,
-   q23 = /random (stuff|fun)/gi;
+   q22 = /(music)|(songs?)/gi,
+   q23 = /(random (stuff|tools|apps))|(apps|tools)/gi,
+   q24 = /(random (fun|games))|(bored)|(games)/gi,
+   q25 = /breakout/gi,
+   q26 = /(flappy ?bird)|(flappy)/gi,
+   q27 = /hangman/gi,
+   q28 = /pacmani?a?/gi;
 
   function ask() {
    const q = document.querySelector(
@@ -250,7 +255,6 @@ var bday = prompt(
       if (cfm) {
        bday = prompt(
         "Resubmit your bday. The format should be: YYYY(separator)m(separator)d\nNote: We ask for your birthday only for statistical proposes.");
-        bday = toTitleCase(bday);
         if ((bday != null &&
           /^[0-9a-zA-Z(-\.\_\s\/)]+$/gi.test(bday)) && (bday
           .length != 0 && bday != ''
@@ -261,7 +265,6 @@ var bday = prompt(
         } else {
          bday = prompt(
           "Couldn't change your bday. Try resubmitting it.\nNote: We ask for your birthday only for statistical purposes.");
-          bday = toTitleCase(bday);
           msg =
           `&#128077; Success. Your new bday is ${bday}&#9786;`;
 console.log(msg);
@@ -292,8 +295,8 @@ console.log(msg);
         console.log(msg);
         $('#message').delay(10000).animate({height:'toggle', opacity: 'toggle'}, 800);
        } else if (q15.test(q)) {
-        let gameWin = window.open('./tic-tac-toe-master/', '_blank', "width=500,height=500,resizable=yes,toolbar=no,menubar=no");
-        if (gameWin) { window.focus(); } else { alert('Please turn on popups on this site.'); }
+        let ticTacToeWin = window.open('./tic-tac-toe-master/', '_blank', "width=500,height=500,resizable=yes,toolbar=no,menubar=no");
+        if (ticTacToeWin) { window.focus(); } else { alert('Please turn on popups on this site.'); }
       } else if (q16.test(q)) {
         let weatherWin = window.open('./weather/', '_blank');
         if (weatherWin) { window.focus(); log("Opened Weather"); } else { alert('Please turn on popups on this site.'); }
@@ -320,9 +323,25 @@ console.log(msg);
         let musicWin = window.open('./music/', '_blank');
         if (musicWin) { window.focus(); log("Opened Music player"); } else { alert('Please turn on popups on this site.'); }
         } else if (q23.test(q)) {
-        	let randStuff = ['./calc/', './music/', './tts/', './notes-app-project-master/', './tic-tac-toe-master/', './weather', './todo-app-project-master/'];
+        	let randStuff = ['./calc/', './music/', './tts/', './notes-app-project-master/', './weather', './todo-app-project-master/'];
         let randStuffWin = window.open(randStuff[Math.floor(Math.random() * randStuff.length)], '_blank');
         if (randStuffWin) { window.focus(); log("Opened a random app"); } else { alert('Please turn on popups on this site.'); }
+        } else if (q24.test(q)) {
+        	let games = ['./tic-tac-toe-master/', './2D-Breakout-Game-JavaScript-master/', './FlappyBird-JavaScript-master/', './JavaScript-Pacman-master/', './hangman-master/'];
+        let gamesWin = window.open(games[Math.floor(Math.random() * games.length)], '_blank');
+        if (gamesWin) { window.focus(); log("Launched a random game"); } else { alert('Please turn on popups on this site.'); }
+      } else if (q25.test(q)) {
+        let breakOutWin = window.open('./2D-Breakout-Game-JavaScript-master/', '_blank', "width=460,height=550,resizable=no,toolbar=no,menubar=no");
+        if (breakOutWin) { window.focus(); } else { alert('Please turn on popups on this site.'); }
+      } else if (q26.test(q)) {
+        let flappyBirdWin = window.open('./FlappyBird-JavaScript-master/', '_blank', "width=380,height=630,resizable=no,toolbar=no,menubar=no");
+        if (flappyBirdWin) { window.focus(); } else { alert('Please turn on popups on this site.'); }
+      } else if (q27.test(q)) {
+        let hangManWin = window.open('./hangman-master/', '_blank');
+        if (hangManWin) { window.focus(); } else { alert('Please turn on popups on this site.'); }
+      } else if (q28.test(q)) {
+        let pacManWin = window.open('./Javascript-Pacman-master/', '_blank', "width=527,height=527,resizable=no,toolbar=no,menubar=no");
+        if (pacManWin) { window.focus(); } else { alert('Please turn on popups on this site.'); }
       } else {
         $('#message').animate({height:'toggle', opacity: 'toggle'}, 800);
         msg =
