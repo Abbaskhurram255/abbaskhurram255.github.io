@@ -1,8 +1,8 @@
 # Chatterbox... it assists you!
+-------
 
 
 ## Features
--------
 - Has Dark theme
 - Has speech synthesis
 - Is interactive
