@@ -1,5 +1,5 @@
 # Welcome to abbaskhurram255.github.io, live github site for Chatterbox.
-Wanna try it? Visit https://abbaskhurram255.github.io/Chatterbox/
+Wanna try it? [Click here]
 
 
 ------
@@ -28,4 +28,6 @@ Version
 =======
 -------
 1.0
+
+[Click here]: <https://abbaskhurram255.github.io/Chatterbox/>
 
