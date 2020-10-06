@@ -21,7 +21,12 @@ Wanna try it? [Click here]
 - Weather
 
 ### _Built-in games_
-
+* 2D Breakout
+* FlappyBird
+* Hangman
+* Pacman
+* Tic Tac Toe
+<br><br>
 Note: Some games might not work on mobile devices
 
 ## Version 
