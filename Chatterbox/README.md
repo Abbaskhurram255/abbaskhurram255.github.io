@@ -13,11 +13,12 @@ _Built-in apps_
 - Jukebox (aka Music Player)
 - Notes
 - Text Reader (commonly used for book reading)
-- Tic Tac Toe
 - Todo/Reminder
 - Weather
 
+_Built-in games_
 
+Note: Some games might not work on mobile devices
 
 Version 
 =======
