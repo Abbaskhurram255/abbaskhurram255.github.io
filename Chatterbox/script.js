@@ -526,8 +526,9 @@ if (mesg.innerText != '') {
  //Show a snackbar each time Speech Synthesis reads the text
  snack.innerText = "Speech synthesis is ongoing. You can't enter text in the input field until it finishes reading.";
         snack.className = 'show';
+        /*optional expression*/
         setTimeout(function(){
-          snack.className = snack.className.replace("show", ""); }, 5000);
+          snack.className = snack.className.replace("show", ""); }, 4000);
          }
 });
 } else {
@@ -537,6 +538,9 @@ if (mesg.innerText != '') {
 const utterance = new SpeechSynthesisUtterance();
 utterance.addEventListener('end', () => {
   textInput.disabled = false;
+  if (snack.innerText == "Speech synthesis is ongoing. You can't enter text in the input field until it finishes reading.") {
+          snack.className = snack.className.replace("show", "");
+  }
 });
 utterance.addEventListener('boundary', e => {
   currentCharacter = e.charIndex;
