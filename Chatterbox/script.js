@@ -327,7 +327,7 @@ console.log(msg);
         let randStuffWin = window.open(randStuff[Math.floor(Math.random() * randStuff.length)], '_blank');
         if (randStuffWin) { window.focus(); log("Opened a random app"); } else { alert('Please turn on popups on this site.'); }
         } else if (q24.test(q)) {
-        	let games = ['./tic-tac-toe-master/', './2D-Breakout-Game-JavaScript-master/', './FlappyBird-JavaScript-master/', './JavaScript-Pacman-master/', './hangman-master/'];
+        	let games = ['./tic-tac-toe-master/', './2D-Breakout-Game-JavaScript-master/', './FlappyBird-JavaScript-master/', './Javascript-Pacman-master/', './hangman-master/'];
         let gamesWin = window.open(games[Math.floor(Math.random() * games.length)], '_blank');
         if (gamesWin) { window.focus(); log("Launched a random game"); } else { alert('Please turn on popups on this site.'); }
       } else if (q25.test(q)) {
