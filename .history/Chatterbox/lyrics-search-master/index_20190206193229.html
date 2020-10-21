@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Lyrics Search App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
+
+</head>
+<body>
+
+    <div class="search-container">
+
+        <div class="info">
+            <h1>Find your favorite song&nbsp;lyrics</h1>
+            <span class="icon">&#9906;</span>
+            <p>Enter artist and song title.</p>
+            <p>Hit Find or Enter and enjoy!</p>
+        </div><!-- end Info -->
+
+        <form action="" class="search-form">
+            <h2>Search song lyrics</h2>
+            <ul class="search-list">
+                <li>
+                    <label for="artist"></label>
+                    <input type="text" autocomplete="off" name="artist" placeholder="Artist" id="artist" class="input-field">
+                </li>
+                <li>
+                    <label for="song"></label>
+                    <input type="text" autocomplete="off" name="song" placeholder="Title" id="song" class="input-field">
+                </li>
+            </ul>
+            <button type="submit" class="btn-search">Find lyrics</button>
+        </form>
+
+    </div><!-- END Search Container-->
+
+    <div class="content-container">
+        <div class="for-flex">
+            <div class="lyrics-content">
+                <h2 class="lyrics-title"></h2>
+                <div class="lyrics-text"></div>
+                <div class="error"></div>
+            </div>
+
+            <div class="wiki-content">
+                <h2 class="wiki-title"></h2>
+                <img class="wiki-img">
+                <div class="wiki-text"></div>
+            </div>
+        </div>
+    </div><!-- END Content Container-->
+    
+    <script src="main.js"></script>
+</body>
+</html>

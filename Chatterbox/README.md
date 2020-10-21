@@ -9,7 +9,9 @@
 
 ### _Built-in apps_
 - Calculator
+- Currency Converter
 - Jukebox (aka Music Player)
+- Lyrics app (can be also used as an encyclopedia)
 - Notes
 - Text Reader (commonly used for book reading)
 - Todo/Reminder
@@ -20,6 +22,7 @@
 * FlappyBird
 * Hangman
 * Pacman
+* Rock Paper Scissor
 * Tic Tac Toe
 <br><br>
 Note: Some games might not work on mobile devices

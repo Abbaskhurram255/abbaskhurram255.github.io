@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Lyrics Search App/Encyclopedia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
+<link rel="shortcut icon" href="music.png" type="image/png">
+</head>
+<body>
+
+    <div class="search-container">
+
+        <div class="info">
+            <h1>Lyricopedia</h1>
+            <span class="icon">&#9906;</span>
+            <p style="font-size: 20px;color:rgba(211,211,211, 0.8);">Enter artist and song title. Otherwise enter query for something else (ex: Python, pie, flu)</p>
+            <p style="font-size: 26px;">Hit Find or Enter and enjoy (or maybe, gain some knowledge)!</p>
+        </div><!-- end Info -->
+
+        <form action="" class="search-form">
+            <h2>Search song lyrics</h2>
+            <ul class="search-list">
+                <li>
+                    <label for="artist"></label>
+                    <input type="text" autocomplete="off" name="artist" placeholder="Artist name or query for something else (ex: Mike Posner, language, pie)" id="artist" class="input-field">
+                </li>
+                <li>
+                    <label for="song"></label>
+                    <input type="text" autocomplete="off" name="song" placeholder="Song title (obviously, no need if your query isn't for an artist" id="song" class="input-field">
+                </li>
+            </ul>
+            <button type="submit" class="btn-search">Find lyrics</button>
+        </form>
+
+    </div><!-- END Search Container-->
+
+    <div class="content-container">
+        <div class="for-flex">
+            <div class="lyrics-content">
+                <h2 class="lyrics-title"></h2>
+                <div class="lyrics-text"></div>
+                <div class="error"></div>
+            </div>
+
+            <div class="wiki-content">
+                <h2 class="wiki-title"></h2>
+                <img class="wiki-img">
+                <div class="wiki-text"></div>
+            </div>
+        </div>
+    </div><!-- END Content Container-->
+    
+    <script src="main.js"></script>
+</body>
+</html>
