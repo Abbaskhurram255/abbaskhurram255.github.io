@@ -159,7 +159,7 @@ var bday = prompt(
    q6 = /(what'?s?( is)? your name)|(what (can I|do you want me to) call you)/i,
    q7 = /(is|was) (this|\d{4})( a)? leap year/i,
    q8 =
-   /((what'?s?|when'?s?)( is)?|show) my (birthday|b-day|bday|day)/i,
+   /((what'?s?|when)( is)?|show) my (birthday|b-day|bday|day)/i,
    q9 =
    /(how old am I)|((show|what'?s?( is)?) my age)/i,
    q10 =
