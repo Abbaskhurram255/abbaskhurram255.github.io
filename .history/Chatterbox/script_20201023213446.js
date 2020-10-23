@@ -68,7 +68,7 @@ $.fn.slideFadeToggle = function(speed, easing, callback) {
     let todaysDate = new Date();
     
     return inputDate.setHours(0,0,0,0) == todaysDate.setHours(0,0,0,0);
-      }
+      };
 
       // function that lets user know whether its a leap year 
 function isLeapYear(year) { return new Date(parseInt(year), 1, 29).getMonth() == 1; }

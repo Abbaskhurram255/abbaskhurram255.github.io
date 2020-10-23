@@ -835,8 +835,8 @@ function showFeatures() {
 //end block of modal fn
 
 function showLicense() {
-  let showLicWin = window.open('./License/', '_blank');
-        if (showLicWin) { window.focus(); log("Revealed the license"); } else { alert('Please turn on popups on this site!'); }
+  let licWin = window.open('./License/', '_blank');
+        if (licWin) { window.focus(); log("Revealed the licensed"); } else { alert('Please turn on popups on this site.'); }
         stopText();
 }
 

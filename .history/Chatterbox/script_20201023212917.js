@@ -805,6 +805,7 @@ utterance.voice = voices.filter(function(voice) { return voice.name == 'Microsof
   utterance.volume = 1;
   utterance.rate = 1;
   textInput.disabled = true;
+  jq
   speechSynthesis.speak(utterance);
   /* or you could simply import say.js. The link to it: https://rawgit.com/JudahRR/Say.js/master/libs/say.js */
 }
@@ -835,8 +836,8 @@ function showFeatures() {
 //end block of modal fn
 
 function showLicense() {
-  let showLicWin = window.open('./License/', '_blank');
-        if (showLicWin) { window.focus(); log("Revealed the license"); } else { alert('Please turn on popups on this site!'); }
+  let licWin = window.open('./License/', '_blank');
+        if (licWin) { window.focus(); log("Revealed the licensed"); } else { alert('Please turn on popups on this site.'); }
         stopText();
 }
 
