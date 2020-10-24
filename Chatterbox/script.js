@@ -498,8 +498,8 @@ console.log(msg);
         msg = "";
         $output.html(msg);
       } else if (q29.test(q)) {
-        let RockPSWin = window.open('./Rock-Paper-Scissor-master/', '_blank', "width=830,height=710,resizable=no,toolbar=no,menubar=no");
-        if (RockPSWin) { window.focus(); log("Opened Rock Paper Scissor"); } else { alert('Please turn on popups on this site.'); }
+        let rockPSWin = window.open('./Rock-Paper-Scissor-master/', '_blank', "width=830,height=710,resizable=no,toolbar=no,menubar=no");
+        if (rockPSWin) { window.focus(); log("Opened Rock Paper Scissor"); } else { alert('Please turn on popups on this site.'); }
         stopText();
         msg = "";
         $output.html(msg);
@@ -823,7 +823,7 @@ function stopText() {
 }
 //end block
  
-
+//start block of the modal function
   const modal = document.getElementById("myModal");
   let closeBtn = document.getElementsByClassName("close")[0];
   closeBtn.onclick = function() {
@@ -839,7 +839,7 @@ function showFeatures() {
   modal.style.display = "block";
   stopText();
 }
-//end block of modal fn
+//end block of the modal fn
 
 function showLicense() {
   let showLicWin = window.open('./License/', '_blank');
