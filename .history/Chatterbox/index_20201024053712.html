@@ -16,6 +16,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
   <link class="lightTh" rel="stylesheet" href="light.css"> <!-- Stylesheet for Light Theme -->
   <link class="darkTh" rel="stylesheet" href="style.css"> <!-- Stylesheet for Dark Theme -->
+  <script>
+    function resizeIframe(obj) {
+      obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
+    }
+  </script>
 </head>
 <body>
   <button id="thSwitcher" onclick="switchTheme()">Switch theme</button>

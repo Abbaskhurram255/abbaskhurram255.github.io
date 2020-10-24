@@ -16,6 +16,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
   <link class="lightTh" rel="stylesheet" href="light.css"> <!-- Stylesheet for Light Theme -->
   <link class="darkTh" rel="stylesheet" href="style.css"> <!-- Stylesheet for Dark Theme -->
+  <script>
+    function resizeIframe(obj) {
+      obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
+    }
+  </script>
 </head>
 <body>
   <button id="thSwitcher" onclick="switchTheme()">Switch theme</button>
@@ -41,7 +46,7 @@
   <!-- Modal content -->
   <div class="modal-content">
     <span class="close">&times;</span>
-    <p><iframe src="./Features/" style="border:none;" height="600" width="90%"></iframe></p>
+    <p><iframe src="./Features/" style="border:none;" height="600" width="90%" onload="resizeIframe(this);"></iframe></p>
 </div>
 </div>
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"
