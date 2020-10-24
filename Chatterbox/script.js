@@ -139,7 +139,7 @@ var age;
 var bday = prompt(
   "What's your bday? Note: We ask for your birthday only for statistical purposes.\nAccepted format *: YYYY(separator)m(separator)d");
   bday = toTitleCase(bday);
-  if ((userName != null && userName.length != 0) && (/^[a-z\s]+$/gi.test(userName) && userName != '')) {
+  if ((userName != null && userName.length != 0) && (/^[a-z\s]+$/i.test(userName) && userName != '')) {
    alert(`Welcome ${userName}. I'm your virtual assistant.`);
    console.log(`Welcome ${userName}`);
   } else {
@@ -159,13 +159,13 @@ var bday = prompt(
    q6 = /(what'?s?( is)? your name)|(what (can I|do you want me to) call you)/i,
    q7 = /(is|was) (this|\d{4})( a)? leap year/i,
    q8 =
-   /((what'?s?|when'?s?)( is)?|show) my (birthday|b-day|bday|day)/i,
+   /((what'?s?|when'?s?)( is)?|show) my (dob|day|(birth|b(-)?)day)/i,
    q9 =
    /(how old am I)|((show|what'?s?( is)?) my age)/i,
    q10 =
    /(call me by another|change my) name/i,
    q11 =
-   /change my (dob|bday|day|birthday)/i,
+   /(((change|resubmit) my|incorrect) (dob|day|(birth|b(-)?)day))|((dob|day|(birth|b(-)?)day) is incorrect)/i,
    q12 = /am I nice/i,
    q13 =
    /(what (date|time|day) is it)|((current|local)( date and)? time)|(date today)|(time now)|(date and time)/i,
@@ -175,10 +175,10 @@ var bday = prompt(
    q16 = /(weather)|(temperature)|((hot|rainy|cloudy|sunny) day)/i,
    q17 = /^$/,
    q18 = /calc(ulate|ulator)?/i,
-   q19 = /(tts)|(speech engine)|(text to speech)|(ebook to audiobook)|(reader)/i,
+   q19 = /((tts|text to speech) converter)|(ebook to audio(book)?)|(reader)/i,
    q20 = /notes/i,
    q21 = /(todo)|(reminder)|(remind me)/i,
-   q22 = /(music)|(songs?)/i,
+   q22 = /(music)|(songs?)|(jukebox)/i,
    q23 = /(random (stuff|tools|apps))|(tools)/i,
    q24 = /(random (fun|games?))|(bored)|(games)|(play a game)/i,
    q25 = /breakout/i,
@@ -208,7 +208,7 @@ var bday = prompt(
    if (q1.test(q)) {
    	$('#message').slideFadeToggle(800);
     msg = "Nothing much";
-    if ((userName != null && userName.length != 0) && (/^[a-z\s]+$/gi.test(userName) && userName != '')) {
+    if ((userName != null && userName.length != 0) && (/^[a-z\s]+$/i.test(userName) && userName != '')) {
      msg += ` ${userName}, sup with you?`;
     } else {
      msg += ", sup with you?";
@@ -235,7 +235,7 @@ var bday = prompt(
       userName +
       '</li>' +
       "<li>Your birthday: ";
-      if ((bday != null && /^[0-9a-zA-Z(-\.\_\s\/)]+$/gi.test(bday)) && (bday != '' && /^\d{4}[\/.,-\s](\d{1,2}|\b(\w*(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)\w*)\b)[\/.,-\s]\d{1,2}$/gi.test(bday))) {
+      if ((bday != null && /^[0-9a-zA-Z(-\.\_\s\/)]+$/i.test(bday)) && (bday != '' && /^\d{4}[\/.,-\s](\d{1,2}|\b(\w*(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)\w*)\b)[\/.,-\s]\d{1,2}$/i.test(bday))) {
         msg += bday;
          if (isBday(bday)) { msg += " (today&#127874;)"; }
               } else {
@@ -279,15 +279,15 @@ var bday = prompt(
    } else if (q7.test(q)) {
     $('#message').slideFadeToggle(800);
     msg = document.querySelector("#searchInput").value;
-    msg = msg.replace(/this/gi, '2020');
-    msg = msg.replace(/was/gi, 'is');
+    msg = msg.replace(/this/i, '2020');
+    msg = msg.replace(/was/i, 'is');
     msg = msg.substr(3, 4);
     msg = parseInt(msg);
     if (isLeapYear(msg)) {
     msg = `Of course, ${msg} is a leap year`;
     let x = msg.slice(11, 15);
     let curY = new Date().getFullYear();
-    if (curY != x){ msg = msg.replace(/is/gi, 'was'); }
+    if (curY != x){ msg = msg.replace(/is/i, 'was'); }
     } else {
     msg = "In accordance with my intelligence, no, it's not.";
     }
@@ -296,7 +296,7 @@ var bday = prompt(
     $('#message').delay(10000).slideFadeToggle(800);
    } else if (q8.test(q)) {
     $('#message').slideFadeToggle(800);
-    if ((bday != null && /^[0-9a-zA-Z(-\.\_\s\/)]+$/gi.test(bday)) && (bday != '' && /^\d{4}[\/.,-\s](\d{1,2}|\b(\w*(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)\w*)\b)[\/.,-\s]\d{1,2}$/gi.test(bday))) {
+    if ((bday != null && /^[0-9a-zA-Z(-\.\_\s\/)]+$/i.test(bday)) && (bday != '' && /^\d{4}[\/.,-\s](\d{1,2}|\b(\w*(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)\w*)\b)[\/.,-\s]\d{1,2}$/i.test(bday))) {
         bday = toTitleCase(bday);
      msg = `Your birthday is ${bday}`;
      log(msg);
@@ -308,7 +308,7 @@ var bday = prompt(
       "Your bday isn't saved yet. Would you mind (re-)listing it?\nAccepted format: YYYY(separator)m(separator)d\nNote: We ask for your birthday only for statistical purposes.");
       bday = toTitleCase(bday);
       msg =
-      `Date set. Your new bday is ${bday}`;
+      `Date set. Your newly changed bday is ${bday}`;
       log(msg);
     }
            $output.html(msg);
@@ -316,7 +316,7 @@ var bday = prompt(
            $('#message').delay(10000).slideFadeToggle(800);
     } else if (q9.test(q)) {
      $('#message').slideFadeToggle(800);
-     if ((bday != null && /^[0-9a-zA-Z(-\.\_\s\/)]+$/gi.test(bday)) && (bday != '' && /^\d{4}[\/.,-\s](\d{1,2}|\b(\w*(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)\w*)\b)[\/.,-\s]\d{1,2}$/gi.test(bday))) {
+     if ((bday != null && /^[0-9a-zA-Z(-\.\_\s\/)]+$/i.test(bday)) && (bday != '' && /^\d{4}[\/.,-\s](\d{1,2}|\b(\w*(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)\w*)\b)[\/.,-\s]\d{1,2}$/i.test(bday))) {
       age = calc_age(new Date(
        bday));
       msg = `You are ${age}`;
@@ -350,7 +350,7 @@ var bday = prompt(
         userName);
         userName = toTitleCase(userName);
        console.log(`New username: ${userName}`);
-       if ((userName != null && userName.length != 0) && (/^[a-z\s]+$/gi.test(userName) && userName != '')) {
+       if ((userName != null && userName.length != 0) && (/^[a-z\s]+$/i.test(userName) && userName != '')) {
         msg =
         `&#128076; Success. I'll call you ${userName} from now on &#128521;`;
         console.log(msg);
@@ -374,15 +374,15 @@ var bday = prompt(
       if (cfm) {
        bday = prompt(
         "Resubmit your bday. The format should be: YYYY(separator)m(separator)d\nNote: We ask for your birthday only for statistical proposes.");
-        if ((bday != null && /^[0-9a-zA-Z(-\.\_\s\/)]+$/gi.test(bday)) && (bday != '' && /^\d{4}[\/.,-\s](\d{1,2}|\b(\w*(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)\w*)\b)[\/.,-\s]\d{1,2}$/gi.test(bday))) {
+        if ((bday != null && /^[0-9a-zA-Z(-\.\_\s\/)]+$/i.test(bday)) && (bday != '' && /^\d{4}[\/.,-\s](\d{1,2}|\b(\w*(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)\w*)\b)[\/.,-\s]\d{1,2}$/i.test(bday))) {
          msg =
-          `&#128076; Success. Your new bday is ${bday}&#9786;`;
+          `&#128076; Success. Your newly changed bday is ${bday}&#9786;`;
          console.log(msg);
         } else {
          bday = prompt(
           "Couldn't change your bday. Try resubmitting it.\nNote: We ask for your birthday only for statistical purposes.");
           msg =
-          `&#128076; Success. Your new bday is ${bday}&#9786;`;
+          `&#128076; Success. Your newly changed bday is ${bday}&#9786;`;
 console.log(msg);
          }
          $output.html(msg);
@@ -623,9 +623,9 @@ console.log(msg);
 
       //age calculator
       function calc_age(ag) {
-       var diff_ms = Date.now() - ag
+       let diff_ms = Date.now() - ag
         .getTime();
-       var age_dt = new Date(
+       let age_dt = new Date(
        diff_ms);
 
        return Math.abs(age_dt
