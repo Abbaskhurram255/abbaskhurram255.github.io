@@ -352,7 +352,7 @@ var bday = prompt(
        console.log(`New username: ${userName}`);
        if ((userName != null && userName.length != 0) && (/^[a-z\s]+$/gi.test(userName) && userName != '')) {
         msg =
-        `&#128076; Success. I'll call you ${userName} from now on &#128521;`;
+        `&#128077; Success. I'll call you ${userName} from now on &#128521;`;
         console.log(msg);
        } else {
         userName = prompt(
@@ -360,7 +360,7 @@ var bday = prompt(
         );
         userName = toTitleCase(userName);
         msg =
-         `&#128076; Success. I'll call you ${userName} from now on &#128521;`;
+         `&#128077; Success. I'll call you ${userName} from now on &#128521;`;
         console.log(msg);
        }
         $output.html(msg);
@@ -376,13 +376,13 @@ var bday = prompt(
         "Resubmit your bday. The format should be: YYYY(separator)m(separator)d\nNote: We ask for your birthday only for statistical proposes.");
         if ((bday != null && /^[0-9a-zA-Z(-\.\_\s\/)]+$/gi.test(bday)) && (bday != '' && /^\d{4}[\/.,-\s](\d{1,2}|\b(\w*(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)\w*)\b)[\/.,-\s]\d{1,2}$/gi.test(bday))) {
          msg =
-          `&#128076; Success. Your new bday is ${bday}&#9786;`;
+          `&#128077; Success. Your new bday is ${bday}&#9786;`;
          console.log(msg);
         } else {
          bday = prompt(
           "Couldn't change your bday. Try resubmitting it.\nNote: We ask for your birthday only for statistical purposes.");
           msg =
-          `&#128076; Success. Your new bday is ${bday}&#9786;`;
+          `&#128077; Success. Your new bday is ${bday}&#9786;`;
 console.log(msg);
          }
          $output.html(msg);

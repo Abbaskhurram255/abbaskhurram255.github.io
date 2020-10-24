@@ -1,4 +1,4 @@
-# Chatterbox... it assists you!
+﻿# Chatterbox... it assists you!
 
 # Welcome to abbaskhurram255.github.io, a site for Chatterbox
 
@@ -25,19 +25,23 @@ Wanna try it? [Click here](https://abbaskhurram255.github.io/Chatterbox/)
     *   Todo/Reminder
 *   #### _Built-in games_
 
-    *   2D Breakout
-    *   FlappyBird
-    *   Hangman
-    *   Pacman
-    *   Rock Paper Scissors
-    *   Tic Tac Toe
+    *   2D Breakout (simple yet it has no more than 3 levels)
+    *   FlappyBird (simple yet experimental)
+    *   Hangman (quite simple)
+    *   Monopoly (simple yet experimental)
+    *   Pacman (too simple yet it has no more than one level :()
+    *   Rock Paper Scissors (simple yet quite old fashioned :()
+    *   Tic Tac Toe (simple; doesn't support multiplayer challenges :()
+You might be wondering why they are so simple. Well, see, the main purpose of this app is to assist you; not to play with you, right?
 
-Note: Some games might not work on mobile devices because they are not yet optimized for them.
+Note: Some games might not work (properly) on mobile devices because they are not yet optimized for them.
 
+<br>
 ## Version
 
 * * *
 
 1.0  
 
-<center>Changelogs will be listed here soon</center>
+<br>
+<center>Changelogs will soon be listed here</center>
