@@ -589,7 +589,7 @@ console.log(msg);
     $('#message').delay(10000).slideFadeToggle(800);
   } else if (q40.test(q)) {
     let monopolyWin = window.open('./Monopoly-master/', '_blank');
-    if (monopolyWin) { window.focus(); log("Opened Monopoly"); } else { alert('Please turn on popups on this site.'); }
+    if (monopolyWin) { window.focus(); log("Opened curConv"); } else { alert('Please turn on popups on this site.'); }
     stopText();
     msg = "";
     $output.html(msg);

@@ -498,20 +498,20 @@ console.log(msg);
         msg = "";
         $output.html(msg);
       } else if (q29.test(q)) {
-        let RockPSWin = window.open('./Rock-Paper-Scissor-master/', '_blank', "width=830,height=710,resizable=no,toolbar=no,menubar=no");
-        if (RockPSWin) { window.focus(); log("Opened Rock Paper Scissor"); } else { alert('Please turn on popups on this site.'); }
+        let stonePSWin = window.open('./Rock-Paper-Scissor-master/', '_blank', "width=830,height=710,resizable=no,toolbar=no,menubar=no");
+        if (stonePSWin) { window.focus(); log("Opened StonePaperScissor"); } else { alert('Please turn on popups on this site.'); }
         stopText();
         msg = "";
         $output.html(msg);
       } else if (q30.test(q)) {
         let lyricsAppWin = window.open('./lyrics-search-master/', '_blank');
-        if (lyricsAppWin) { window.focus(); log("Opened Lyricopedia"); } else { alert('Please turn on popups on this site.'); }
+        if (lyricsAppWin) { window.focus(); log("Opened TTS"); } else { alert('Please turn on popups on this site.'); }
         stopText();
         msg = "";
         $output.html(msg);
       } else if (q31.test(q)) {
         let curConvAppWin = window.open('./Currency-Converter-JS-master/', '_blank', "width=600,height=800,resizable=no,toolbar=no,menubar=no");
-        if (curConvAppWin) { window.focus(); log("Opened curConv"); } else { alert('Please turn on popups on this site.'); }
+        if (curConvAppWin) { window.focus(); } else { alert('Please turn on popups on this site.'); }
         stopText();
         msg = "";
         $output.html(msg);
@@ -589,7 +589,7 @@ console.log(msg);
     $('#message').delay(10000).slideFadeToggle(800);
   } else if (q40.test(q)) {
     let monopolyWin = window.open('./Monopoly-master/', '_blank');
-    if (monopolyWin) { window.focus(); log("Opened Monopoly"); } else { alert('Please turn on popups on this site.'); }
+    if (monopolyWin) { window.focus(); } else { alert('Please turn on popups on this site.'); }
     stopText();
     msg = "";
     $output.html(msg);
