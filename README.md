@@ -31,11 +31,11 @@ Wanna try it? [Click here](https://abbaskhurram255.github.io/Chatterbox/)
     *   Monopoly (simple yet experimental)
     *   Pacman (too simple yet it has no more than one level :()
     *   Rock Paper Scissors (simple yet quite old fashioned :()
-    *   Tic Tac Toe (simple; doesn't support multiplayer challenges :()
+    *   Tic Tac Toe (simple; doesn't support multiplayer challenges :( )
+<br>
 You might be wondering why they are so simple. Well, see, the main purpose of this app is to assist you; not to play with you, right?
 
 Note: Some games might not work (properly) on mobile devices because they are not yet optimized for them.
-
 <br>
 ## Version
 
@@ -43,5 +43,4 @@ Note: Some games might not work (properly) on mobile devices because they are no
 
 1.0  
 
-<br>
 <center>Changelogs will soon be listed here</center>
