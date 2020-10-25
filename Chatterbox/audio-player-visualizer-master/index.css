@@ -1,0 +1,55 @@
+body,
+div {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#content {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+canvas {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+audio {
+  position: fixed;
+  width: 50%;
+  left: 50%;
+  bottom: 10px;
+  transform: translate(-50%);
+}
+
+#dropzone {
+  position: absolute;
+  border: 1px dashed blue;
+  background-image: linear-gradient(rgb(200, 224, 255), rgb(255, 255, 210));
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#dropzone span {
+  display: inline-block;
+  position: absolute;
+  background-color: beige;
+  font-family: "Courier New", monospace;
+  font-size: 1.3em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 3px 3px grey;
+}
+
+#buttonwrapper {
+  position: absolute;
+  display: none;
+  top: 10px;
+  right: 10px;
+}

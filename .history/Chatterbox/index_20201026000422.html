@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Alex">
+  <meta name="description" content="A simple JS-based bot">
+  <meta name="keywords" content="HTML,CSS,JavaScript,JS,bot,simple-bot,simple-assistant,chatterbox">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Chatterbox</title>
+  <link rel="shortcut icon" href="professor.png" type="image/png">
+  <link rel="stylesheet" href="https://unpkg.com/tippy.js@6.2.6/animations/scale.css" type="text/css"><!-- Scale animation for Tippy -->
+  <link rel="stylesheet" href="https://unpkg.com/tippy.js@6.2.6/themes/translucent.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Grandstander&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+  <link class="lightTh" rel="stylesheet" href="light.css"> <!-- Stylesheet for Light Theme -->
+  <link class="darkTh" rel="stylesheet" href="style.css"> <!-- Stylesheet for Dark Theme -->
+</head>
+<body>
+  <button id="thSwitcher" onclick="switchTheme()">Switch theme</button>
+  <div class="navbar-container">
+  <input type="checkbox" name="menu" id="menu" class="menu-toggler">
+   <label for="menu" class="menu-toggler-label">☰</label>
+  <ul class="stagger-menu">
+    <li style="--i: 0" onclick="showFeatures();">Features</li>
+    <li style="--i: 1" onclick="showLicense();">License</li>
+    <li style="--i: 2" onclick="">About</li>
+  </ul>
+</div>
+<span class="hover-shadow-box-animation" id="time"></span>
+  <h2><em>Chatterbox</em></h2>
+  <div class="container">
+    <input id="searchInput" type="text" placeholder="Try saying &quot;hi&quot;" name="queryBar" autofocus> <!-- the search bar -->
+    <button id="askBtn" onclick="ask()">Ask</button>
+  </div>
+  <div id="message"></div>
+  <div id="snackbar"></div> <!-- Snackbar -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p><iframe src="./Features/" style="border:none;" height="600" width="90%"></iframe></p>
+</div>
+</div>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+  crossorigin="anonymous"></script>
+  <!-- Load Popper.js --> <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+  <!-- Load Tippy.js --> <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+  <script src="script.js"></script>
+  <noscript>Sorry, your browser does not support JavaScript!</noscript>
+  </body>
+  </html>

@@ -16,7 +16,7 @@ Wanna try it? [Click here](https://abbaskhurram255.github.io/Chatterbox/)
 *   #### _Built-in apps_
 
     *   Calculator
-    *   Canvas/Drawing App (beta)
+    *   Simple Canvas/Drawing App (beta)
     *   Jukebox
     *   Notes
     *   Text Reader (commonly used for book reading)
@@ -31,7 +31,7 @@ Wanna try it? [Click here](https://abbaskhurram255.github.io/Chatterbox/)
     *   Monopoly (simple yet experimental)
     *   Pacman (too simple yet it has no more than one level :()
     *   Rock Paper Scissors (simple yet quite old fashioned :()
-    *   Tic Tac Toe (simple; doesn't support multiplayer challenges :( )
+    *   Tic Tac Toe (simple; is non-AI based :( )
 <br>
 You might be wondering why they are so simple. Well, see, the main purpose of this app is to assist you; not to play with you, right?
 
