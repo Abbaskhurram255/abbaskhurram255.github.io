@@ -594,7 +594,7 @@ console.log(msg);
     stopText();
     msg = "";
     $output.html(msg);
-     else if (q41.test(q)) {
+   } else if (q41.test(q)) {
     let canvasWin = window.open('./canvas-drawing-app-master/', '_blank');
     if (canvasWin) { window.focus(); log("Opened Canvas"); } else { alert('Please turn on popups on this site.'); }
     stopText();
