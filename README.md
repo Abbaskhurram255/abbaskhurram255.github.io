@@ -15,6 +15,7 @@ Wanna try it? [Click here](https://abbaskhurram255.github.io/Chatterbox/)
 
 *   #### _Built-in apps_
 
+    *   Canvas/Drawing App
     *   Calculator
     *   Jukebox
     *   Notes
