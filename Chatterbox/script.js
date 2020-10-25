@@ -196,7 +196,8 @@ var bday = prompt(
    q37 = /(km|kilometers) to (mi|miles)/i,
    q38 = /what (date|day) was it yesterday/i,
    q39 = /what (date|day) will it be tomorrow/i,
-   q40 = /monopoly/i;
+   q40 = /monopoly/i,
+   q41 = /(canvas)|(drawing app)|(want to draw)/i;
 
   function ask() {
    const q = document.querySelector(
@@ -467,7 +468,7 @@ console.log(msg);
         msg = "";
         $output.html(msg);
         } else if (q24.test(q)) {
-        	let games = ['./tic-tac-toe-master/', './2D-Breakout-Game-JavaScript-master/', './FlappyBird-JavaScript-master/', './Javascript-Pacman-master/', './hangman-master/', './Rock-Paper-Scissor-master', './Monopoly-master'];
+        	let games = ['./tic-tac-toe-master/', './2D-Breakout-Game-JavaScript-master/', './FlappyBird-JavaScript-master/', './Javascript-Pacman-master/', './hangman-master/', './Rock-Paper-Scissor-master', './Monopoly-master', './canvas-drawing-app-master'];
         let gamesWin = window.open(games[Math.floor(Math.random() * games.length)], '_blank');
         if (gamesWin) { window.focus(); log("Launched a random game"); } else { alert('Please turn on popups on this site.'); }
         stopText();
@@ -590,6 +591,12 @@ console.log(msg);
   } else if (q40.test(q)) {
     let monopolyWin = window.open('./Monopoly-master/', '_blank');
     if (monopolyWin) { window.focus(); log("Opened Monopoly"); } else { alert('Please turn on popups on this site.'); }
+    stopText();
+    msg = "";
+    $output.html(msg);
+     else if (q41.test(q)) {
+    let canvasWin = window.open('./canvas-drawing-app-master/', '_blank');
+    if (canvasWin) { window.focus(); log("Opened Canvas"); } else { alert('Please turn on popups on this site.'); }
     stopText();
     msg = "";
     $output.html(msg);
