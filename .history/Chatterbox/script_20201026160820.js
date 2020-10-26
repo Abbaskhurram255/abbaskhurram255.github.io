@@ -205,8 +205,7 @@ const q1 = /what'?s?( is)? (up|popping)/i,
   q39 = /what (date|day) will it be tomorrow/i,
   q40 = /monopoly/i,
   q41 = /(canvas)|(drawing app)|(want to draw)/i,
-  q42 = /(audio (visuali(z|s)er|player))/i,
-  q43 = /(youtube)|(tubeyou)/i;
+  q42 = /(audio (visuali(z|s)er|player))/i;
 
 function ask() {
   const q = document.querySelector("#searchInput").value;
@@ -765,10 +764,10 @@ function ask() {
     if (TubeYouWin) {
     window.focus();
     log("Launched TubeYou");
-    } else {
+  } else {
     alert("Please turn on popups on this site!");
-    }
-    stopText();
+  }
+  stopText();
     msg = "";
     $output.html(msg);
   } else {

@@ -23,6 +23,7 @@ Wanna try it? [Click here](https://abbaskhurram255.github.io/Chatterbox/)
     *   Live Weather
     *   Lyricopedia
     *   Todo/Reminder
+    *   Youtube-like Streaming App
 *   #### _Built-in games_
 
     *   2D Breakout (simple yet it has no more than 3 levels)

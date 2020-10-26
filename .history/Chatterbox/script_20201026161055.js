@@ -206,7 +206,7 @@ const q1 = /what'?s?( is)? (up|popping)/i,
   q40 = /monopoly/i,
   q41 = /(canvas)|(drawing app)|(want to draw)/i,
   q42 = /(audio (visuali(z|s)er|player))/i,
-  q43 = /(youtube)|(tubeyou)/i;
+  q43 = /youtube/i;
 
 function ask() {
   const q = document.querySelector("#searchInput").value;
