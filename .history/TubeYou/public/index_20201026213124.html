@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="TubeYou" content="TubeYou - a streaming site" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
+  <title>TubeYou</title>
+  <link rel="shortcut icon" href="./favicon.png" type="image/png" />
+</head>
+
+<body>
+
+  <div id="root"></div>
+  <script>
+    let d = new Date();
+     d.setTime(d.getTime() + (30*24*60*60*1000)); //keep cookie 30 days
+     let expires = "expires=" + d.toGMTString();         
+     document.cookie = "visitName" + "=Hailin;" + expires + ";path=/;SameSite=None;Secure";
+     </script>
+</body>
+
+</html>
