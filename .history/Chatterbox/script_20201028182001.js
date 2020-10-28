@@ -181,7 +181,7 @@ const q1 = /what'?s?( is)? (up|popping)/i,
   q15 = /tic tac toe/i,
   q16 = /(weather)|(temperature)|((hot|rainy|cloudy|sunny) day)/i,
   q17 = /^$/,
-  q18 = /((open|run|launch|execute) calc(ulator)?)|(calculate(?:bmi))/i,
+  q18 = /calc(ulate|ulator)?/i,
   q19 = /(tts)|(speech enine)|(text to speech)|(ebook to audiobook)|(reader)/i,
   q20 = /notes/i,
   q21 = /(todo)|(reminder)|(remind me)/i,
@@ -206,8 +206,7 @@ const q1 = /what'?s?( is)? (up|popping)/i,
   q40 = /monopoly/i,
   q41 = /(canvas)|(drawing app)|(want to draw)/i,
   q42 = /(audio (visuali(z|s)er|player))/i,
-  q43 = /(youtube)|(tubeyou)/i,
-  q44 = /(bmi)|(body mass index)/i;
+  q43 = /(youtube)|(tubeyou)/i;
 
 function ask() {
   const q = document.querySelector("#searchInput").value;
@@ -773,10 +772,10 @@ function ask() {
     msg = "";
     $output.html(msg);
   } else if (q44.test(q)) {
-    let BMICalcWin = window.open("../bmi-calculator/", "_blank");
-    if (BMICalcWin) {
+    let Win = window.open("../TubeYou/", "_blank");
+    if (Win) {
     window.focus();
-    log("Launched BMI Calculator");
+    log("Launched TubeYou");
     } else {
     alert("Please turn on popups on this site!");
     }
