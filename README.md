@@ -11,10 +11,11 @@ Wanna try it? [Click here](https://abbaskhurram255.github.io/Chatterbox/)
 *   Has speech synthesis
 *   Is interactive
 *   Can perform calculations like converting between kilometers and miles
-*   Reminds the user on his birthday
+*   Reminds user on his birthday
 
 *   #### _Built-in apps_
 
+    *   BMI Calculator
     *   Calculator
     *   Simple Canvas/Drawing App (beta)
     *   Jukebox
