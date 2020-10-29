@@ -222,7 +222,7 @@ const q1 = /what'?s?( is)? (up|popping)/i,
   q45 = /maze/i,
   q46 = /(calendar)|(appointments?)|((day|week) planner)|(event?)/i,
   q47 = /recipes?/i,
-  q48 = /space invaders/i;
+  q48 = /space invaders/;
 
 function ask() {
   const q = document.querySelector("#searchInput").value;
@@ -502,7 +502,7 @@ function ask() {
     let weatherWin = window.open("./weather/", "_blank");
     if (weatherWin) {
       window.focus();
-      log("Launched Weather");
+      log("Opened Weather");
     } else {
       alert("Please turn on popups on this site!");
     }
@@ -519,7 +519,7 @@ function ask() {
     let calcWin = window.open("./calc/", "_blank");
     if (calcWin) {
       window.focus();
-      log("Launched Calculator");
+      log("Opened Calculator");
     } else {
       alert("Please turn on popups on this site!");
     }
@@ -530,7 +530,7 @@ function ask() {
     let ttsWin = window.open("./tts/", "_blank");
     if (ttsWin) {
       window.focus();
-      log("Launched TTS");
+      log("Opened TTS");
     } else {
       alert("Please turn on popups on this site!");
     }
@@ -541,7 +541,7 @@ function ask() {
     let notesWin = window.open("./notes-app-project-master/", "_blank");
     if (notesWin) {
       window.focus();
-      log("Launched Notes");
+      log("Opened Notes");
     } else {
       alert("Please turn on popups on this site!");
     }
@@ -552,7 +552,7 @@ function ask() {
     let todoWin = window.open("./todo-app-project-master/", "_blank");
     if (todoWin) {
       window.focus();
-      log("Launched TODO");
+      log("Opened TODO");
     } else {
       alert("Please turn on popups on this site!");
     }
@@ -563,7 +563,7 @@ function ask() {
     let musicWin = window.open("./music/", "_blank");
     if (musicWin) {
       window.focus();
-      log("Launched Music");
+      log("Opened Music");
     } else {
       alert("Please turn on popups on this site!");
     }
@@ -589,7 +589,7 @@ function ask() {
     );
     if (randStuffWin) {
       window.focus();
-      log("Launched a random app");
+      log("Opened a random app");
     } else {
       alert("Please turn on popups on this site!");
     }
@@ -612,7 +612,7 @@ function ask() {
       "./Monopoly-master",
       "https://alexs-maze-game.netlify.app/",
       "./canvas-drawing-app-master",
-      "./space-invaders/",
+      "./space-invaders",
     ];
     let gamesWin = window.open(
       games[Math.floor(Math.random() * games.length)],
@@ -635,7 +635,7 @@ function ask() {
     );
     if (breakOutWin) {
       window.focus();
-      log("Launched Breakout");
+      log("Opened Breakout");
     } else {
       alert("Please turn on popups on this site!");
     }
@@ -650,7 +650,7 @@ function ask() {
     );
     if (flappyBirdWin) {
       window.focus();
-      log("Launched FlappyBird");
+      log("Opened FlappyBird");
     } else {
       alert("Please turn on popups on this site!");
     }
@@ -661,7 +661,7 @@ function ask() {
     let hangManWin = window.open("./hangman-master/", "_blank");
     if (hangManWin) {
       window.focus();
-      log("Launched Hangman");
+      log("Opened Hangman");
     } else {
       alert("Please turn on popups on this site!");
     }
@@ -676,7 +676,7 @@ function ask() {
     );
     if (pacManWin) {
       window.focus();
-      log("Launched Pacman");
+      log("Opened Pacman");
     } else {
       alert("Please turn on popups on this site!");
     }
@@ -691,7 +691,7 @@ function ask() {
     );
     if (RockPSWin) {
       window.focus();
-      log("Launched Rock Paper Scissor");
+      log("Opened Rock Paper Scissor");
     } else {
       alert("Please turn on popups on this site!");
     }
@@ -702,7 +702,7 @@ function ask() {
     let lyricsAppWin = window.open("./lyrics-search-master/", "_blank");
     if (lyricsAppWin) {
       window.focus();
-      log("Launched Lyricopedia");
+      log("Opened Lyricopedia");
     } else {
       alert("Please turn on popups on this site!");
     }
@@ -717,7 +717,7 @@ function ask() {
     );
     if (curConvAppWin) {
       window.focus();
-      log("Launched curConv");
+      log("Opened curConv");
     } else {
       alert("Please turn on popups on this site!");
     }
@@ -805,7 +805,7 @@ function ask() {
     let monopolyWin = window.open("./Monopoly-master/", "_blank");
     if (monopolyWin) {
       window.focus();
-      log("Launched Monopoly");
+      log("Opened Monopoly");
     } else {
       alert("Please turn on popups on this site!");
     }
@@ -816,7 +816,7 @@ function ask() {
     let canvasWin = window.open("./canvas-drawing-app-master/", "_blank");
     if (canvasWin) {
       window.focus();
-      log("Launched Canvas");
+      log("Opened Canvas");
     } else {
       alert("Please turn on popups on this site!");
     }
@@ -830,7 +830,7 @@ function ask() {
     );
     if (audioPlayerWin) {
       window.focus();
-      log("Launched AudioPlayer");
+      log("Opened AudioPlayer");
     } else {
       alert("Please turn on popups on this site!");
     }
@@ -923,10 +923,10 @@ function ask() {
     msg = "";
     $output.html(msg);
   } else if (q48.test(q)) {
-    let hangManWin = window.open("./space-invaders/", "_blank");
+    let hangManWin = window.open("./hangman-master/", "_blank");
     if (hangManWin) {
       window.focus();
-      log("Launched Space Invaders");
+      log("Opened ");
     } else {
       alert("Please turn on popups on this site!");
     }

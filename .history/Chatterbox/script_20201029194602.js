@@ -148,7 +148,11 @@ const tomorrow = () => {
 };
 
 const detectDeviceType = () => {
-  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? "Mobile": "Desktop";
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+    navigator.userAgent
+  )
+    ? "Mobile"
+    : "Desktop";
 };
 
 
@@ -161,12 +165,7 @@ var bday = prompt(
   "What's your bday? Note: We ask for your birthday only for statistical purposes.\nAccepted format *: YYYY(separator)m(separator)d"
 );
 bday = toTitleCase(bday);
-if ((
-  userName != null &&
-  userName.length != 0) &&
-  (/^[a-z\s]+$/i.test(userName) &&
-  userName != "")
-) {
+if ((userName != null && userName.length != 0) && (/^[a-z\s]+$/i.test(userName) && userName != "")) {
   alert(`Welcome ${userName}. I'm your virtual assistant.`);
   console.log(`Welcome ${userName}`);
 } else {
@@ -219,10 +218,7 @@ const q1 = /what'?s?( is)? (up|popping)/i,
   q42 = /(audio (visuali(z|s)er|player))/i,
   q43 = /(youtube)|(tubeyou)/i,
   q44 = /(bmi)|(body mass index)/i,
-  q45 = /maze/i,
-  q46 = /(calendar)|(appointments?)|((day|week) planner)|(event?)/i,
-  q47 = /recipes?/i,
-  q48 = /space invaders/i;
+  q45 = /maze/i;
 
 function ask() {
   const q = document.querySelector("#searchInput").value;
@@ -230,12 +226,7 @@ function ask() {
   if (q1.test(q)) {
     $("#message").slideFadeToggle(800);
     msg = "Nothing much";
-    if (
-      userName != null &&
-      userName.length != 0 &&
-      /^[a-z\s]+$/i.test(userName) &&
-      userName != ""
-    ) {
+    if ((userName != null && userName.length != 0) && (/^[a-z\s]+$/i.test(userName) && userName != "")) {
       msg += ` ${userName}, sup with you?`;
     } else {
       msg += ", sup with you?";
@@ -256,25 +247,13 @@ function ask() {
     msg = "<em style='font-weight:600;'>";
     msg += "Here's what I know about you:<ul>";
     msg += "<li>Your name: ";
-    if (
-      userName != null &&
-      userName.length != 0 &&
-      /^[a-z\s]+$/i.test(userName) &&
-      userName != ""
-    ) {
+    if ((userName != null && userName.length != 0) && (/^[a-z\s]+$/i.test(userName) && userName != "")) {
       msg += userName;
     } else {
       msg += "Not saved yet :(";
     }
     msg += "</li><li>Your birthday: ";
-    if (
-      bday != null &&
-      /^[0-9a-zA-Z(-\.\_\s\/)]+$/i.test(bday) &&
-      bday != "" &&
-      /^\d{4}[\/.,-\s](\d{1,2}|\b(\w*(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)\w*)\b)[\/.,-\s]\d{1,2}$/i.test(
-        bday
-      )
-    ) {
+    if ((bday != null && /^[0-9a-zA-Z(-\.\_\s\/)]+$/i.test(bday)) && (bday != "" && /^\d{4}[\/.,-\s](\d{1,2}|\b(\w*(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)\w*)\b)[\/.,-\s]\d{1,2}$/i.test(bday))) {
       msg += bday;
       if (isBday(bday)) {
         msg += " (today&#127874;)";
@@ -312,14 +291,9 @@ function ask() {
   } else if (q5.test(q)) {
     $("#message").slideFadeToggle(800);
     msg = "Your name is ";
-    if (
-      userName != null &&
-      userName.length != 0 &&
-      /^[a-z\s]+$/i.test(userName) &&
-      userName != ""
-    ) {
-      msg += userName;
-      msg += `. Want it changed? <a onclick="$('#searchInput').val('Change my name');" onmouseover="$(this).css('cursor', 'pointer')" style="color:rgba(0,0,255,0.9);text-decoration:underline;">Click here</a>`;
+    if ((userName != null && userName.length != 0) && (/^[a-z\s]+$/i.test(userName) && userName != "")) {
+    msg += userName;
+    msg += `. Want it changed? <a onclick="$('#searchInput').val('Change my name');" onmouseover="$(this).css('cursor', 'pointer')" style="color:rgba(0,0,255,0.9);text-decoration:underline;">Click here</a>`;
     } else {
       msg += "not saved yet";
       msg += `. <a onclick="$('#searchInput').val('Save my name');" onmouseover="$(this).css('cursor', 'pointer')" style="color:rgba(0,0,255,0.9);text-decoration:underline;">Click here to (re)submit it, your name</a>`;
@@ -355,14 +329,7 @@ function ask() {
     $("#message").delay(10000).slideFadeToggle(800);
   } else if (q8.test(q)) {
     $("#message").slideFadeToggle(800);
-    if (
-      bday != null &&
-      /^[0-9a-zA-Z(-\.\_\s\/)]+$/i.test(bday) &&
-      bday != "" &&
-      /^\d{4}[\/.,-\s](\d{1,2}|\b(\w*(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)\w*)\b)[\/.,-\s]\d{1,2}$/i.test(
-        bday
-      )
-    ) {
+    if ((bday != null && /^[0-9a-zA-Z(-\.\_\s\/)]+$/i.test(bday)) && (bday != "" && /^\d{4}[\/.,-\s](\d{1,2}|\b(\w*(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)\w*)\b)[\/.,-\s]\d{1,2}$/i.test(bday))) {
       bday = toTitleCase(bday);
       msg = `Your birthday is ${bday}`;
       log(msg);
@@ -383,14 +350,7 @@ function ask() {
     $("#message").delay(10000).slideFadeToggle(800);
   } else if (q9.test(q)) {
     $("#message").slideFadeToggle(800);
-    if (
-      bday != null &&
-      /^[0-9a-zA-Z(-\.\_\s\/)]+$/i.test(bday) &&
-      bday != "" &&
-      /^\d{4}[\/.,-\s](\d{1,2}|\b(\w*(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)\w*)\b)[\/.,-\s]\d{1,2}$/i.test(
-        bday
-      )
-    ) {
+    if ((bday != null && /^[0-9a-zA-Z(-\.\_\s\/)]+$/i.test(bday)) && (bday != "" && /^\d{4}[\/.,-\s](\d{1,2}|\b(\w*(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)\w*)\b)[\/.,-\s]\d{1,2}$/i.test(bday))) {
       age = calc_age(new Date(bday));
       msg = `You are ${age}`;
       if (age <= 18) {
@@ -418,12 +378,7 @@ function ask() {
       userName = prompt("What do you want me to call you?", userName);
       userName = toTitleCase(userName);
       console.log(`New username: ${userName}`);
-      if (
-        userName != null &&
-        userName.length != 0 &&
-        /^[a-z\s]+$/i.test(userName) &&
-        userName != ""
-      ) {
+      if ((userName != null && userName.length != 0) && (/^[a-z\s]+$/i.test(userName) && userName != "")) {
         msg = `&#128076; Success. I'll call you ${userName} from now on &#128521;`;
         console.log(msg);
       } else {
@@ -443,14 +398,7 @@ function ask() {
       bday = prompt(
         "Resubmit your bday. The format should be: YYYY(separator)m(separator)d\nNote: We ask for your birthday only for statistical proposes."
       );
-      if (
-        bday != null &&
-        /^[0-9a-zA-Z(-\.\_\s\/)]+$/i.test(bday) &&
-        bday != "" &&
-        /^\d{4}[\/.,-\s](\d{1,2}|\b(\w*(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)\w*)\b)[\/.,-\s]\d{1,2}$/i.test(
-          bday
-        )
-      ) {
+      if ((bday != null && /^[0-9a-zA-Z(-\.\_\s\/)]+$/i.test(bday)) && (bday != "" && /^\d{4}[\/.,-\s](\d{1,2}|\b(\w*(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)\w*)\b)[\/.,-\s]\d{1,2}$/i.test(bday))) {
         msg = `&#128076; Success. Your newly set bday is ${bday}&#9786;`;
         console.log(msg);
       } else {
@@ -493,7 +441,7 @@ function ask() {
     if (ticTacToeWin) {
       window.focus();
     } else {
-      alert("Please turn on popups on this site!");
+      alert("Please turn on popups on this site.");
     }
     stopText();
     msg = "";
@@ -502,9 +450,9 @@ function ask() {
     let weatherWin = window.open("./weather/", "_blank");
     if (weatherWin) {
       window.focus();
-      log("Launched Weather");
+      log("Opened Weather");
     } else {
-      alert("Please turn on popups on this site!");
+      alert("Please turn on popups on this site.");
     }
     stopText();
     msg = "";
@@ -519,9 +467,9 @@ function ask() {
     let calcWin = window.open("./calc/", "_blank");
     if (calcWin) {
       window.focus();
-      log("Launched Calculator");
+      log("Opened Calculator");
     } else {
-      alert("Please turn on popups on this site!");
+      alert("Please turn on popups on this site.");
     }
     stopText();
     msg = "";
@@ -530,9 +478,9 @@ function ask() {
     let ttsWin = window.open("./tts/", "_blank");
     if (ttsWin) {
       window.focus();
-      log("Launched TTS");
+      log("Opened TTS");
     } else {
-      alert("Please turn on popups on this site!");
+      alert("Please turn on popups on this site.");
     }
     stopText();
     msg = "";
@@ -541,9 +489,9 @@ function ask() {
     let notesWin = window.open("./notes-app-project-master/", "_blank");
     if (notesWin) {
       window.focus();
-      log("Launched Notes");
+      log("Opened Notes");
     } else {
-      alert("Please turn on popups on this site!");
+      alert("Please turn on popups on this site.");
     }
     stopText();
     msg = "";
@@ -552,9 +500,9 @@ function ask() {
     let todoWin = window.open("./todo-app-project-master/", "_blank");
     if (todoWin) {
       window.focus();
-      log("Launched TODO");
+      log("Opened TODO");
     } else {
-      alert("Please turn on popups on this site!");
+      alert("Please turn on popups on this site.");
     }
     stopText();
     msg = "";
@@ -563,9 +511,9 @@ function ask() {
     let musicWin = window.open("./music/", "_blank");
     if (musicWin) {
       window.focus();
-      log("Launched Music");
+      log("Opened Music");
     } else {
-      alert("Please turn on popups on this site!");
+      alert("Please turn on popups on this site.");
     }
     stopText();
     msg = "";
@@ -581,7 +529,7 @@ function ask() {
       "./audio-player-visualizer-master/",
       "../bmi-calculator/",
       "../TubeYou/",
-      "./canvas-drawing-app-master/",
+      "./canvas-drawing-app-master/"
     ];
     let randStuffWin = window.open(
       randStuff[Math.floor(Math.random() * randStuff.length)],
@@ -589,19 +537,14 @@ function ask() {
     );
     if (randStuffWin) {
       window.focus();
-      log("Launched a random app");
+      log("Opened a random app");
     } else {
-      alert("Please turn on popups on this site!");
+      alert("Please turn on popups on this site.");
     }
     stopText();
     msg = "";
     $output.html(msg);
   } else if (q24.test(q)) {
-    if (detectDeviceType() != "Desktop" || detectDeviceType() == "Mobile") {
-      alert(
-        "You should on be a desktop for better stability because some games are not optimized for mobile devices!"
-      );
-    }
     let games = [
       "./tic-tac-toe-master/",
       "./2D-Breakout-Game-JavaScript-master/",
@@ -612,7 +555,6 @@ function ask() {
       "./Monopoly-master",
       "https://alexs-maze-game.netlify.app/",
       "./canvas-drawing-app-master",
-      "./space-invaders/",
     ];
     let gamesWin = window.open(
       games[Math.floor(Math.random() * games.length)],
@@ -622,7 +564,7 @@ function ask() {
       window.focus();
       log("Launched a random game");
     } else {
-      alert("Please turn on popups on this site!");
+      alert("Please turn on popups on this site.");
     }
     stopText();
     msg = "";
@@ -635,9 +577,9 @@ function ask() {
     );
     if (breakOutWin) {
       window.focus();
-      log("Launched Breakout");
+      log("Opened Breakout");
     } else {
-      alert("Please turn on popups on this site!");
+      alert("Please turn on popups on this site.");
     }
     stopText();
     msg = "";
@@ -650,9 +592,9 @@ function ask() {
     );
     if (flappyBirdWin) {
       window.focus();
-      log("Launched FlappyBird");
+      log("Opened FlappyBird");
     } else {
-      alert("Please turn on popups on this site!");
+      alert("Please turn on popups on this site.");
     }
     stopText();
     msg = "";
@@ -661,9 +603,9 @@ function ask() {
     let hangManWin = window.open("./hangman-master/", "_blank");
     if (hangManWin) {
       window.focus();
-      log("Launched Hangman");
+      log("Opened Hangman");
     } else {
-      alert("Please turn on popups on this site!");
+      alert("Please turn on popups on this site.");
     }
     stopText();
     msg = "";
@@ -676,9 +618,9 @@ function ask() {
     );
     if (pacManWin) {
       window.focus();
-      log("Launched Pacman");
+      log("Opened Pacman");
     } else {
-      alert("Please turn on popups on this site!");
+      alert("Please turn on popups on this site.");
     }
     stopText();
     msg = "";
@@ -691,9 +633,9 @@ function ask() {
     );
     if (RockPSWin) {
       window.focus();
-      log("Launched Rock Paper Scissor");
+      log("Opened Rock Paper Scissor");
     } else {
-      alert("Please turn on popups on this site!");
+      alert("Please turn on popups on this site.");
     }
     stopText();
     msg = "";
@@ -702,9 +644,9 @@ function ask() {
     let lyricsAppWin = window.open("./lyrics-search-master/", "_blank");
     if (lyricsAppWin) {
       window.focus();
-      log("Launched Lyricopedia");
+      log("Opened Lyricopedia");
     } else {
-      alert("Please turn on popups on this site!");
+      alert("Please turn on popups on this site.");
     }
     stopText();
     msg = "";
@@ -717,9 +659,9 @@ function ask() {
     );
     if (curConvAppWin) {
       window.focus();
-      log("Launched curConv");
+      log("Opened curConv");
     } else {
-      alert("Please turn on popups on this site!");
+      alert("Please turn on popups on this site.");
     }
     stopText();
     msg = "";
@@ -805,9 +747,9 @@ function ask() {
     let monopolyWin = window.open("./Monopoly-master/", "_blank");
     if (monopolyWin) {
       window.focus();
-      log("Launched Monopoly");
+      log("Opened Monopoly");
     } else {
-      alert("Please turn on popups on this site!");
+      alert("Please turn on popups on this site.");
     }
     stopText();
     msg = "";
@@ -816,23 +758,20 @@ function ask() {
     let canvasWin = window.open("./canvas-drawing-app-master/", "_blank");
     if (canvasWin) {
       window.focus();
-      log("Launched Canvas");
+      log("Opened Canvas");
     } else {
-      alert("Please turn on popups on this site!");
+      alert("Please turn on popups on this site.");
     }
     stopText();
     msg = "";
     $output.html(msg);
   } else if (q42.test(q)) {
-    let audioPlayerWin = window.open(
-      "./audio-player-visualizer-master/",
-      "_blank"
-    );
+    let audioPlayerWin = window.open("./audio-player-visualizer-master/", "_blank");
     if (audioPlayerWin) {
       window.focus();
-      log("Launched AudioPlayer");
+      log("Opened AudioPlayer");
     } else {
-      alert("Please turn on popups on this site!");
+      alert("Please turn on popups on this site.");
     }
     stopText();
     msg = "";
@@ -840,95 +779,43 @@ function ask() {
   } else if (q43.test(q)) {
     let TubeYouWin = window.open("../TubeYou/", "_blank");
     if (TubeYouWin) {
-      window.focus();
-      log("Launched TubeYou");
+    window.focus();
+    log("Launched TubeYou");
     } else {
-      alert("Please turn on popups on this site!");
+    alert("Please turn on popups on this site!");
     }
     stopText();
     msg = "";
     $output.html(msg);
   } else if (q44.test(q)) {
-    let bmiCalcWin = window.open("../bmi-calculator/", "_blank");
-    if (bmiCalcWin) {
-      window.focus();
-      log("Launched BMI Calculator");
+    let BMICalcWin = window.open("../bmi-calculator/", "_blank");
+    if (BMICalcWin) {
+    window.focus();
+    log("Launched BMI Calculator");
     } else {
-      alert("Please turn on popups on this site!");
+    alert("Please turn on popups on this site!");
     }
     stopText();
     msg = "";
     $output.html(msg);
   } else if (q45.test(q)) {
-    let theMazeWin = window.open(
-      "https://alexs-maze-game.netlify.app/",
-      "_blank"
-    );
+    let theMazeWin = window.open("https://alexs-maze-game.netlify.app/", "_blank");
     if (theMazeWin) {
-      window.focus();
-      log("Launched The Maze");
+    window.focus();
+    log("Launched The Maze");
     } else {
-      alert("Please turn on popups on this site!");
+    alert("Please turn on popups on this site!");
     }
     stopText();
     msg = "";
     $output.html(msg);
-  } else if (q46.test(q)) {
-    if (detectDeviceType() == "Desktop" || detectDeviceType() != "Mobile") {
-      let calendarWin = window.open("../calendar/", "_blank");
-      if (calendarWin) {
-        window.focus();
-        log("Launched Calendar");
-      } else {
-        alert("Please turn on popups on this site!");
-      }
-      stopText();
-      msg = "";
-      $output.html(msg);
+  } else if (q45.test(q)) {
+    let calendarWin = window.open("https://alexs-maze-game.netlify.app/", "_blank");
+    if (calendarWin) {
+    window.focus();
+    log("Launched The Maze");
     } else {
-      alert(
-        "Launching simple calendar because the one that supports appointments is not optimized for mobile devices...\nClick OK to continue."
-      );
-      let calendarWin = window.open("./calendar/", "_blank");
-      if (calendarWin) {
-        window.focus();
-        log("Launched the mobile-friendly Calendar");
-      } else {
-        alert("Please turn on popups on this site!");
-      }
-      stopText();
-      msg = "";
-      $output.html(msg);
-    }
-  } else if (q46.test(q)) {
-    let mapsWin = window.open("./smartMaps/", "_blank");
-    if (mapsWin) {
-      window.focus();
-      log("Launched Maps");
-    } else {
-      alert("Please turn on popups on this site!");
-    }
-    stopText();
-    msg = "";
-    $output.html(msg);
-  } else if (q47.test(q)) {
-    let recipeAppWin = window.open("../recipe-app/", "_blank");
-    if (recipeAppWin) {
-      window.focus();
-      log("Launched Recipe App");
-    } else {
-      alert("Please turn on popups on this site!");
-    }
-    stopText();
-    msg = "";
-    $output.html(msg);
-  } else if (q48.test(q)) {
-    let hangManWin = window.open("./space-invaders/", "_blank");
-    if (hangManWin) {
-      window.focus();
-      log("Launched Space Invaders");
-    } else {
-      alert("Please turn on popups on this site!");
+    alert("Please turn on popups on this site!");
     }
     stopText();
     msg = "";

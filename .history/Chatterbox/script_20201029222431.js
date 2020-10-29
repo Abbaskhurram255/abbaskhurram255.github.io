@@ -222,7 +222,7 @@ const q1 = /what'?s?( is)? (up|popping)/i,
   q45 = /maze/i,
   q46 = /(calendar)|(appointments?)|((day|week) planner)|(event?)/i,
   q47 = /recipes?/i,
-  q48 = /space invaders/i;
+  q48 = /space invaders/;
 
 function ask() {
   const q = document.querySelector("#searchInput").value;
@@ -612,7 +612,7 @@ function ask() {
       "./Monopoly-master",
       "https://alexs-maze-game.netlify.app/",
       "./canvas-drawing-app-master",
-      "./space-invaders/",
+      "./space-invaders",
     ];
     let gamesWin = window.open(
       games[Math.floor(Math.random() * games.length)],

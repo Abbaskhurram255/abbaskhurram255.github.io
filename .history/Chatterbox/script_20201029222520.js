@@ -612,7 +612,7 @@ function ask() {
       "./Monopoly-master",
       "https://alexs-maze-game.netlify.app/",
       "./canvas-drawing-app-master",
-      "./space-invaders/",
+      "./space-invaders",
     ];
     let gamesWin = window.open(
       games[Math.floor(Math.random() * games.length)],
