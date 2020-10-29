@@ -194,7 +194,7 @@ const q1 = /what'?s?( is)? (up|popping)/i,
   q17 = /^$/,
   q18 = /((open|run|launch|execute) calc(ulator)?)|(calculate(?:bmi))/i,
   q19 = /(tts)|(speech enine)|(text to speech)|(ebook to audiobook)|(reader)/i,
-  q20 = /((my|take|open|launch) notes( app)?)|(journal)/i,
+  q20 = /notes/i,
   q21 = /(todo)|(reminder)|(remind me)/i,
   q22 = /(music)|(songs?)|(jukebox)/i,
   q23 = /(random (stuff|tools|apps?))|(tools)/i,
@@ -222,8 +222,7 @@ const q1 = /what'?s?( is)? (up|popping)/i,
   q45 = /maze/i,
   q46 = /(calendar)|(appointments?)|((day|week) planner)|(event?)/i,
   q47 = /recipes?/i,
-  q48 = /space invaders/i,
-  q49 = /voice ?notes/i;
+  q48 = /space invaders/i;
 
 function ask() {
   const q = document.querySelector("#searchInput").value;
@@ -934,11 +933,11 @@ function ask() {
     stopText();
     msg = "";
     $output.html(msg);
-  } else if (q49.test(q)) {
-    let voicenotesAppWin = window.open("./speech-to-text-js-master/", "_blank");
-    if (voicenotesAppWin) {
+  } else if (q48.test(q)) {
+    let noteAppWin = window.open("./space-invaders/", "_blank");
+    if (notesAppWin) {
       window.focus();
-      log("Launched Voicenotes App");
+      log("Launched Space Invaders");
     } else {
       alert("Please turn on popups on this site!");
     }

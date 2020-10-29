@@ -935,10 +935,10 @@ function ask() {
     msg = "";
     $output.html(msg);
   } else if (q49.test(q)) {
-    let voicenotesAppWin = window.open("./speech-to-text-js-master/", "_blank");
-    if (voicenotesAppWin) {
+    let notesAppWin = window.open("./speech-to-text-js-master/", "_blank");
+    if (notesAppWin) {
       window.focus();
-      log("Launched Voicenotes App");
+      log("Launched Notes App");
     } else {
       alert("Please turn on popups on this site!");
     }

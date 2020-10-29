@@ -938,7 +938,7 @@ function ask() {
     let voicenotesAppWin = window.open("./speech-to-text-js-master/", "_blank");
     if (voicenotesAppWin) {
       window.focus();
-      log("Launched Voicenotes App");
+      log("Launched Notes App");
     } else {
       alert("Please turn on popups on this site!");
     }

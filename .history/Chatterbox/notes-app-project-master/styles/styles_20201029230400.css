@@ -175,5 +175,9 @@ a {
     margin: 3.2rem 0;
 }
 
+#link-to-voice-notes:visited {
+    color: blue;
+}
 :link { color: #0000EE; }
-:visited { color: #551A8B; }
+:link { color: #0000EE; }
+

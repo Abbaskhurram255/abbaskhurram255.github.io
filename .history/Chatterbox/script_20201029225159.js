@@ -222,8 +222,7 @@ const q1 = /what'?s?( is)? (up|popping)/i,
   q45 = /maze/i,
   q46 = /(calendar)|(appointments?)|((day|week) planner)|(event?)/i,
   q47 = /recipes?/i,
-  q48 = /space invaders/i,
-  q49 = /voice ?notes/i;
+  q48 = /space invaders/i;
 
 function ask() {
   const q = document.querySelector("#searchInput").value;
@@ -935,10 +934,10 @@ function ask() {
     msg = "";
     $output.html(msg);
   } else if (q49.test(q)) {
-    let voicenotesAppWin = window.open("./speech-to-text-js-master/", "_blank");
-    if (voicenotesAppWin) {
+    let notesAppWin = window.open("./speech-to-text-js-master/", "_blank");
+    if (notesAppWin) {
       window.focus();
-      log("Launched Voicenotes App");
+      log("Launched Notes App");
     } else {
       alert("Please turn on popups on this site!");
     }
