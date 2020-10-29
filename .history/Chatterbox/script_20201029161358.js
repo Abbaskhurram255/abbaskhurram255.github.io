@@ -519,7 +519,7 @@ function ask() {
       "./audio-player-visualizer-master/",
       "../bmi-calculator/",
       "../TubeYou/",
-      "./canvas-drawing-app-master/"
+      ""
     ];
     let randStuffWin = window.open(
       randStuff[Math.floor(Math.random() * randStuff.length)],

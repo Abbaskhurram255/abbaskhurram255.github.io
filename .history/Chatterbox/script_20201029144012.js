@@ -515,11 +515,8 @@ function ask() {
       "./tts/",
       "./notes-app-project-master/",
       "./weather",
-      "./todo-app-project-master/",
-      "./audio-player-visualizer-master/",
-      "../bmi-calculator/",
-      "../TubeYou/",
-      "./canvas-drawing-app-master/"
+      "./todo-app-project-master/", 
+      "./audio-player-visualizer-master/"
     ];
     let randStuffWin = window.open(
       randStuff[Math.floor(Math.random() * randStuff.length)],
@@ -543,7 +540,6 @@ function ask() {
       "./hangman-master/",
       "./Rock-Paper-Scissor-master",
       "./Monopoly-master",
-      "https://alexs-maze-game.netlify.app/",
       "./canvas-drawing-app-master",
     ];
     let gamesWin = window.open(
