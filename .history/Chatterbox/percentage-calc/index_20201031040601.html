@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Percentage Calculator</title>
+    <style>
+    	body {
+     margin: 10vh;
+     padding: 3px;
+     color: white;
+     background: linear-gradient(to right, teal, mediumturquoise /*cadetblue would also look better here*/, lightseagreen);
+     }
+
+    </style>
+<script>
+function perc1() {
+ a = document.form1.a.value/100;
+ b = a*document.form1.b.value;
+ document.form1.total1.value = b
+ }
+function perc2() {
+ a = document.form1.c.value;
+ b = document.form1.d.value;
+ c = a/b;
+ d = c*100;
+ document.form1.total2.value = d
+ }
+</SCRIPT>
+</head>
+<body>
+<FORM name=form1 method="post">
+<TABLE cellSpacing=1 cellPadding=1 border=1>
+  <TBODY>
+  <TR>
+    <TD align=middle colSpan=3><B><FONT size=4>Percentage Calculator</FONT></B> 
+      </TD>
+  <TR>
+    <TD>What is <INPUT size=5 name=a> % of <INPUT size=5 name=b>?</TD>
+    <TD>Answer: <INPUT maxLength=40 size=5 name=total1></TD>
+    <TD><INPUT onclick=perc1() type=button value=Calculate></TD>
+  <TR>
+    <TD><INPUT size=5 name=c> is what percent of <INPUT size=5 
+name=d>?</TD>
+    <TD>Answer: <INPUT size=5 name=total2> %</TD>
+    <TD><INPUT onclick=perc2() type=button value=Calculate></TD>
+  <TR>
+    <TD align=middle 
+colSpan=3><INPUT type=reset value=Reset></TD></TR></TBODY></TABLE></FORM>
+</body>
+</html>

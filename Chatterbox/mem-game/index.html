@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-129370123-2"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-129370123-2');
+	</script>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"> -->
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet prefetch" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+	<link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Jura:400,500%7CLilita+One">
+	<link rel="stylesheet" href="css/style.css">
+	<title>Memory Game</title>
+</head>
+<body>
+	<header>
+		<h1>Memory Game</h1>
+	</header>
+	<section class="container">
+		<h3 class="select-deck">
+			<span>Select Deck:</span>
+			<i class="fas fa-building clickable selected"></i>
+			<i class="fas fa-language clickable"></i>
+			<i class="fas fa-bus clickable"></i>
+			<i class="fas fa-cat clickable"></i>
+		</h3>
+		<h3 class="moves-h panel-item">Moves: <span class="moves">0</span></h3>
+		<div class="star panel-item">
+			<i class="fas fa-star"></i>
+			<i class="fas fa-star"></i>
+			<i class="fas fa-star"></i>
+		</div>
+		<div class="time panel-item">
+			<i class="far fa-clock"></i>
+			<span class="time-display">0</span>
+		</div>
+		<div class="reset panel-item">
+			<i class="fas fa-redo-alt clickable"></i>
+		</div>
+
+	</section>
+	<div class="deck container">
+		<div class="card">
+		</div>
+		<div class="card">
+		</div>
+		<div class="card">
+		</div>
+		<div class="card">
+		</div>
+		<div class="card">
+		</div>
+		<div class="card">
+		</div>
+		<div class="card">
+		</div>
+		<div class="card">
+		</div>
+		<div class="card">
+		</div>
+		<div class="card">
+		</div>
+		<div class="card">
+		</div>
+		<div class="card">
+		</div>
+		<div class="card">
+		</div>
+		<div class="card">
+		</div>
+		<div class="card">
+		</div>
+		<div class="card">
+		</div>
+	</div>
+	<!--Game Over Modal-->
+	<div class="win-modal">
+		<!-- Modal content -->
+		<div class="modal-content">
+			<div class="modal-header">
+				<h3>Congratulations!!</h3>
+			</div>
+			<div class="modal-body">
+				<p class="modal-time"></p>
+				<p class="modal-stars"></p>
+				<p>Would you like to play again?</p>
+				<button class="modal-button modal-yes">Yes</button>
+				<button class="modal-button modal-no">No</button>
+			</div>
+		</div>
+
+	</div>
+	<h3 class="fastest">Fastest Game Completion Time: <span id="fastest-time"></span>seconds</h3>
+	<footer><i class="far fa-copyright"></i> Chatterbox</footer>
+	<script src="js/app.js"></script>
+</body>
+</html>

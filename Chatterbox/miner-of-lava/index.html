@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Miner Of Lava</title>
+    <style media="screen">
+
+      body {
+        background: #1a1a1a;
+      }
+
+      #screen {
+        position: relative;
+        background: #1a1a1a;
+      }
+
+      #player {
+        width: 15px;
+        height: 20px;
+        top: 400px;
+        left: 50px;
+        position: absolute;
+        z-index: 2;
+      }
+
+      #end {
+        font-size: 60px;
+        display: none;
+        color: white;
+        font-weight: bold;
+        text-shadow: 3px 3px red;
+      }
+
+      #title {
+        color: #737373;
+        text-align: center;
+        font-size: 20px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <center>
+      <div id="screen">
+        <div id="player"><img src="" id="playerImg"></div>
+        <p id="end">CONGRATULATIONS <br> you finished the game!</p>
+      </div>
+    </center>
+  </body>
+
+  <script src="./jquery.js"></script>
+  <script src="./sound.js"></script>
+  <script src="./levelBuilder.js"></script>
+  <script src="./map.js"></script>
+  <script src="./coins.js"></script>
+  <script src="./player.js"></script>
+  <script src="./movingLava.js"></script>
+  <script src="./manager.js"></script>
+
+</html>

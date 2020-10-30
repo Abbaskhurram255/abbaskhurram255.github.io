@@ -1,0 +1,42 @@
+<html>
+<head>
+ <title>Temperature Converter</title>
+ <style>
+  body {
+   margin: 20vh;
+   padding: 3px;
+   background: linear-gradient(to right, wheat, rgb(225,225,0,0.6));
+  }
+  h1 {
+   font-size: 30px;
+   width: 70%;
+   text-align: left;
+   position: relative;
+   right: 10px;
+  }
+  input {
+  margin: 4px;
+  }
+  form {
+    display: flex-table;
+    flex-direction: row;
+    color: indigo;
+  }
+ </style>
+</head>
+ <body>
+ <div>
+  <h1>Temperature converter</h1>
+  <FORM autocomplete="off">
+Fahrenheit:<INPUT TYPE="text" NAME="F" VALUE="" SIZE="6" MAXLENGTH="6" onChange="eval('C.value = ' + this.form.C_expr.value);eval('K.value = ' + this.form.K_expr.value)">
+              <INPUT TYPE="hidden" NAME="F_expr" VALUE="(Math.round(((212-32)/100 * C.value + 32)*100))/100;">
+<INPUT TYPE="hidden" NAME="F_expr2" VALUE="(Math.round(((212-32)/100 *(K.value - 273) + 32)*100))/100; "><br>
+ Celsius:<INPUT TYPE="text" NAME="C" VALUE="" SIZE="6" MAXLENGTH="6" onChange="eval('F.value = ' + this.form.F_expr.value);eval('K.value = ' + this.form.K_expr.value)">
+              <INPUT TYPE="hidden" NAME="C_expr" VALUE="(Math.round((100/(212-32) * (F.value - 32))*100))/100"> <INPUT TYPE="hidden" NAME="C_expr2" VALUE="(Math.round(K.value - 273))"><br> 
+Kelvin:<INPUT TYPE="text" NAME="K" VALUE="" SIZE="6" MAXLENGTH="6" onChange="eval('F.value = ' + this.form.F_expr2.value);eval('C.value = ' + this.form.C_expr2.value)">
+              <INPUT TYPE="hidden" NAME="K_expr" VALUE="(Math.round((100/(212-32) * (F.value - 32))*100))/100 + 273"> 
+  
+</FORM>
+</div>
+ </body>
+</html>

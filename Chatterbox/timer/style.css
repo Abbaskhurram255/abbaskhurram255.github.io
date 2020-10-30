@@ -1,0 +1,109 @@
+body{
+	font-family: sans-serif;
+}
+h1 {
+	text-align: center;
+}
+.example {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	width: 70%;
+	height: 26px;
+	line-height: 26px;
+	font-size: 15px;
+	font-weight: bold;
+	text-align: center;
+	color: #333;
+}
+.label {
+	float: left;
+	width: 25em;
+	text-align: right;
+	padding-right: 10px;
+}
+.active{
+	background-color: green;
+	color: #fff;
+}
+.stopwatch-visual {
+	margin-bottom: 50px;
+	width: 100%;
+	float: left;
+	padding: 0px 10px;
+	font-size: 100px;
+	text-align: center;
+	/*font-family: sans-serif;*/
+}
+.stopwatch-wrapper{
+	width: 40%;
+	margin: 50px auto;
+	height: 200px;
+}
+.controls-wrapper{
+	height: 100px;
+	width: 65%;
+	/*float: left;*/
+	margin-left: 25px;
+}
+/*.controls-sw{
+	width: 46%;
+}*/
+.controls-wrapper button{
+	height: 45px;
+	padding: 10px 20px;
+	border-radius: 5px;
+	font-size: 20px;
+	cursor: pointer;
+}
+.countdown-visual{
+	margin: auto auto 50px auto;
+	width: 100%;
+	/*float: left;*/
+	padding: 0px 10px;
+	font-size: 100px;
+	text-align: center;
+}
+.countdown-wrapper{
+	width: 40%;
+	margin: 50px auto;
+	height: 200px;
+}
+.countdown-inputs-wrapper{
+	width: 33%;
+	/*float: left;*/
+	margin-bottom: 30px;
+	margin-left: 25px;
+	height: 60px;
+}
+.cd-input{
+	width: 50px;
+	height: 50px;
+	float: left;
+	text-align: center;
+	font-size: 15px;
+}
+#countdown{
+	display: none;
+}
+#switches{
+	height: 50px;
+	margin: 50px auto auto;
+	width: 40%;
+}
+#switches-wrapper{
+	height: 100%;
+	width: 100%;
+}
+.switch{     
+	height: 25px;
+	width: 230px;
+	font-size: 20px;
+	border: 1px solid #000;
+	padding: 10px 10px;
+	float: left;
+	vertical-align: middle;
+	text-align: center;
+	cursor: pointer;
+	margin: auto;
+}

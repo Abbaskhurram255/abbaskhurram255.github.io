@@ -194,8 +194,8 @@ const q1 = /what'?s? (is)? (up|popping)/i,
   q17 = /^$/,
   q18 = /((open|run|launch|execute) calc(ulator)?)|(calculate(?:bmi))/i,
   q19 = /(tts)|(speech enine)|(text to speech)|(ebook to audiobook)|(reader)/i,
-  q20 = /((my|take|open|launch) notes)|(journal)|(notebook)/i,
-  q21 = /(todo)|(reminder)|(remind me to)|((bucket|shopping) list)/i,
+  q20 = /((my|take|open|launch) notes (app)?)|(journal)/i,
+  q21 = /(todo)|(reminder)|(remind me)/i,
   q22 = /(music)|(songs?)|(jukebox)/i,
   q23 = /weight conver(sion|ter)/i,
   q24 = /(random (fun|games?))|(bored)|(games)|(play a game)/i,
@@ -237,7 +237,7 @@ const q1 = /what'?s? (is)? (up|popping)/i,
   q60 = /((loan|mortgage) calculator)|(calculate (my)? (loan|mortgage))|(how much do (I|people) owe)/i,
   q61 = /(quote me)|(random quotes?)|(quotes)/i,
   q62 = /memory game/i,
-  q63 = /calo(ries )?tracker/i;
+  q63 = /calories tracker/i;
 
 function ask() {
   const q = document.querySelector("#searchInput").value;
@@ -1081,7 +1081,7 @@ function ask() {
     stopText();
     msg = "";
     $output.html(msg);
-  } else if (q63.test(q)) {
+  } else if (q62.test(q)) {
     let caloTrackerWin = window.open("./calotracker/", "_blank");
     if (caloTrackerWin) {
       window.focus();

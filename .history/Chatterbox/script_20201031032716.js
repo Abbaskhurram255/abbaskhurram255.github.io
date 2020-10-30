@@ -194,10 +194,10 @@ const q1 = /what'?s? (is)? (up|popping)/i,
   q17 = /^$/,
   q18 = /((open|run|launch|execute) calc(ulator)?)|(calculate(?:bmi))/i,
   q19 = /(tts)|(speech enine)|(text to speech)|(ebook to audiobook)|(reader)/i,
-  q20 = /((my|take|open|launch) notes)|(journal)|(notebook)/i,
-  q21 = /(todo)|(reminder)|(remind me to)|((bucket|shopping) list)/i,
+  q20 = /((my|take|open|launch) notes (app)?)|(journal)/i,
+  q21 = /(todo)|(reminder)|(remind me)/i,
   q22 = /(music)|(songs?)|(jukebox)/i,
-  q23 = /weight conver(sion|ter)/i,
+  q23 = /(random (stuff|tools|apps?))|(tools)/i,
   q24 = /(random (fun|games?))|(bored)|(games)|(play a game)/i,
   q25 = /breakout/i,
   q26 = /flappy ?bird/i,
@@ -234,10 +234,7 @@ const q1 = /what'?s? (is)? (up|popping)/i,
   q57 = /(expense tracker)|(pocket money)/i,
   q58 = /(stopwatch)|(countdown timer)|(counter ?clock)|(count down)/i,
   q59 = /miner of lava/i,
-  q60 = /((loan|mortgage) calculator)|(calculate (my)? (loan|mortgage))|(how much do (I|people) owe)/i,
-  q61 = /(quote me)|(random quotes?)|(quotes)/i,
-  q62 = /memory game/i,
-  q63 = /calo(ries )?tracker/i;
+  q60 = /((loan|mortgage) calculator)|(calculate (my)? (loan|mortgage))|(how much do (I owe|people owe))/i;
 
 function ask() {
   const q = document.querySelector("#searchInput").value;
@@ -508,7 +505,7 @@ function ask() {
     if (ticTacToeWin) {
       window.focus();
     } else {
-      alert("Please enable popups for this site!");
+      alert("Please turn on popups on this site!");
     }
     stopText();
     msg = "";
@@ -519,7 +516,7 @@ function ask() {
       window.focus();
       log("Launched Weather");
     } else {
-      alert("Please enable popups for this site!");
+      alert("Please turn on popups on this site!");
     }
     stopText();
     msg = "";
@@ -536,7 +533,7 @@ function ask() {
       window.focus();
       log("Launched Calculator");
     } else {
-      alert("Please enable popups for this site!");
+      alert("Please turn on popups on this site!");
     }
     stopText();
     msg = "";
@@ -547,7 +544,7 @@ function ask() {
       window.focus();
       log("Launched TTS");
     } else {
-      alert("Please enable popups for this site!");
+      alert("Please turn on popups on this site!");
     }
     stopText();
     msg = "";
@@ -558,7 +555,7 @@ function ask() {
       window.focus();
       log("Launched Notes");
     } else {
-      alert("Please enable popups for this site!");
+      alert("Please turn on popups on this site!");
     }
     stopText();
     msg = "";
@@ -569,7 +566,7 @@ function ask() {
       window.focus();
       log("Launched TODO");
     } else {
-      alert("Please enable popups for this site!");
+      alert("Please turn on popups on this site!");
     }
     stopText();
     msg = "";
@@ -580,22 +577,21 @@ function ask() {
       window.focus();
       log("Launched Music");
     } else {
-      alert("Please enable popups for this site!");
+      alert("Please turn on popups on this site!");
     }
     stopText();
     msg = "";
     $output.html(msg);
-  } else if (q23.test(q)) {
-    let weightConvAppWin = window.open("./weight-conv/", "_blank");
-    if (weightConvAppWin) {
+  /*} else if (q23.test(q)) {
+    if (xWin) {
       window.focus();
-      log("Launched Weight Converter");
+      log("x");
     } else {
-      alert("Please enable popups for this site!");
+      alert("Please turn on popups on this site!");
     }
     stopText();
     msg = "";
-    $output.html(msg);
+    $output.html(msg);*/
   } else if (q24.test(q)) {
     if (detectDeviceType() != "Desktop" || detectDeviceType() == "Mobile") {
       alert(
@@ -615,7 +611,6 @@ function ask() {
       "./space-invaders/",
       "./typing-game/",
       "./miner-of-lava/",
-      "./mem-game/",
     ];
     let gamesWin = window.open(
       games[Math.floor(Math.random() * games.length)],
@@ -625,7 +620,7 @@ function ask() {
       window.focus();
       log("Launched a random game");
     } else {
-      alert("Please enable popups for this site!");
+      alert("Please turn on popups on this site!");
     }
     stopText();
     msg = "";
@@ -640,7 +635,7 @@ function ask() {
       window.focus();
       log("Launched Breakout");
     } else {
-      alert("Please enable popups for this site!");
+      alert("Please turn on popups on this site!");
     }
     stopText();
     msg = "";
@@ -655,7 +650,7 @@ function ask() {
       window.focus();
       log("Launched FlappyBird");
     } else {
-      alert("Please enable popups for this site!");
+      alert("Please turn on popups on this site!");
     }
     stopText();
     msg = "";
@@ -666,7 +661,7 @@ function ask() {
       window.focus();
       log("Launched Hangman");
     } else {
-      alert("Please enable popups for this site!");
+      alert("Please turn on popups on this site!");
     }
     stopText();
     msg = "";
@@ -681,7 +676,7 @@ function ask() {
       window.focus();
       log("Launched Pacman");
     } else {
-      alert("Please enable popups for this site!");
+      alert("Please turn on popups on this site!");
     }
     stopText();
     msg = "";
@@ -696,7 +691,7 @@ function ask() {
       window.focus();
       log("Launched Rock Paper Scissor");
     } else {
-      alert("Please enable popups for this site!");
+      alert("Please turn on popups on this site!");
     }
     stopText();
     msg = "";
@@ -707,7 +702,7 @@ function ask() {
       window.focus();
       log("Launched Lyricopedia");
     } else {
-      alert("Please enable popups for this site!");
+      alert("Please turn on popups on this site!");
     }
     stopText();
     msg = "";
@@ -724,7 +719,7 @@ function ask() {
       window.focus();
       log("Launched Currency Converter");
     } else {
-      alert("Please enable popups for this site!");
+      alert("Please turn on popups on this site!");
     }
     stopText();
     msg = "";
@@ -812,7 +807,7 @@ function ask() {
       window.focus();
       log("Launched Monopoly");
     } else {
-      alert("Please enable popups for this site!");
+      alert("Please turn on popups on this site!");
     }
     stopText();
     msg = "";
@@ -823,7 +818,7 @@ function ask() {
       window.focus();
       log("Launched Canvas");
     } else {
-      alert("Please enable popups for this site!");
+      alert("Please turn on popups on this site!");
     }
     stopText();
     msg = "";
@@ -837,7 +832,7 @@ function ask() {
       window.focus();
       log("Launched AudioPlayer");
     } else {
-      alert("Please enable popups for this site!");
+      alert("Please turn on popups on this site!");
     }
     stopText();
     msg = "";
@@ -848,7 +843,7 @@ function ask() {
       window.focus();
       log("Launched Maps");
     } else {
-      alert("Please enable popups for this site!");
+      alert("Please turn on popups on this site!");
     }
     stopText();
     msg = "";
@@ -859,7 +854,7 @@ function ask() {
       window.focus();
       log("Launched BMI Calculator");
     } else {
-      alert("Please enable popups for this site!");
+      alert("Please turn on popups on this site!");
     }
     stopText();
     msg = "";
@@ -873,7 +868,7 @@ function ask() {
       window.focus();
       log("Launched The Maze");
     } else {
-      alert("Please enable popups for this site!");
+      alert("Please turn on popups on this site!");
     }
     stopText();
     msg = "";
@@ -885,7 +880,7 @@ function ask() {
         window.focus();
         log("Launched Calendar");
       } else {
-        alert("Please enable popups for this site!");
+        alert("Please turn on popups on this site!");
       }
       stopText();
       msg = "";
@@ -899,7 +894,7 @@ function ask() {
         window.focus();
         log("Launched the mobile-friendly Calendar");
       } else {
-        alert("Please enable popups for this site!");
+        alert("Please turn on popups on this site!");
       }
       stopText();
       msg = "";
@@ -911,7 +906,7 @@ function ask() {
       window.focus();
       log("Launched Recipe App");
     } else {
-      alert("Please enable popups for this site!");
+      alert("Please turn on popups on this site!");
     }
     stopText();
     msg = "";
@@ -922,7 +917,7 @@ function ask() {
       window.focus();
       log("Launched Space Invaders");
     } else {
-      alert("Please enable popups for this site!");
+      alert("Please turn on popups on this site!");
     }
     stopText();
     msg = "";
@@ -933,7 +928,7 @@ function ask() {
       window.focus();
       log("Launched Voicenotes App");
     } else {
-      alert("Please enable popups for this site!");
+      alert("Please turn on popups on this site!");
     }
     stopText();
     msg = "";
@@ -944,7 +939,7 @@ function ask() {
       window.focus();
       log("Launched Today In Google Doodles History");
     } else {
-      alert("Please enable popups for this site!");
+      alert("Please turn on popups on this site!");
     }
     stopText();
     msg = "";
@@ -955,7 +950,7 @@ function ask() {
       window.focus();
       log("Launched %age calculator");
     } else {
-      alert("Please enable popups for this site!");
+      alert("Please turn on popups on this site!");
     }
     stopText();
     msg = "";
@@ -966,7 +961,7 @@ function ask() {
       window.focus();
       log("Launched Temperature Converter");
     } else {
-      alert("Please enable popups for this site!");
+      alert("Please turn on popups on this site!");
     }
     stopText();
     msg = "";
@@ -977,7 +972,7 @@ function ask() {
       window.focus();
       log("Launched Meal Finder");
     } else {
-      alert("Please enable popups for this site!");
+      alert("Please turn on popups on this site!");
     }
     stopText();
     msg = "";
@@ -988,7 +983,7 @@ function ask() {
       window.focus();
       log("Launched Relaxer");
     } else {
-      alert("Please enable popups for this site!");
+      alert("Please turn on popups on this site!");
     }
     stopText();
     msg = "";
@@ -999,7 +994,7 @@ function ask() {
       window.focus();
       log("Launched New Year Countdown app");
     } else {
-      alert("Please enable popups for this site!");
+      alert("Please turn on popups on this site!");
     }
     stopText();
     msg = "";
@@ -1010,7 +1005,7 @@ function ask() {
       window.focus();
       log("Launched Speed Typer");
     } else {
-      alert("Please enable popups for this site!");
+      alert("Please turn on popups on this site!");
     }
     stopText();
     msg = "";
@@ -1021,7 +1016,7 @@ function ask() {
       window.focus();
       log("Launched Expense Tracker");
     } else {
-      alert("Please enable popups for this site!");
+      alert("Please turn on popups on this site!");
     }
     stopText();
     msg = "";
@@ -1032,7 +1027,7 @@ function ask() {
       window.focus();
       log("Launched Timer");
     } else {
-      alert("Please enable popups for this site!");
+      alert("Please turn on popups on this site!");
     }
     stopText();
     msg = "";
@@ -1043,7 +1038,7 @@ function ask() {
       window.focus();
       log("Launched Miner of Lava");
     } else {
-      alert("Please enable popups for this site!");
+      alert("Please turn on popups on this site!");
     }
     stopText();
     msg = "";
@@ -1054,40 +1049,7 @@ function ask() {
       window.focus();
       log("Launched Loan Calculator");
     } else {
-      alert("Please enable popups for this site!");
-    }
-    stopText();
-    msg = "";
-    $output.html(msg);
-  } else if (q61.test(q)) {
-    let randomQuoteWin = window.open("./random-quote-gen/", "_blank");
-    if (randomQuoteWin) {
-      window.focus();
-      log("Launched Quotes app");
-    } else {
-      alert("Please enable popups for this site!");
-    }
-    stopText();
-    msg = "";
-    $output.html(msg);
-  } else if (q62.test(q)) {
-    let memoryGameWin = window.open("./mem-game/", "_blank");
-    if (memoryGameWin) {
-      window.focus();
-      log("Launched Memory Game");
-    } else {
-      alert("Please enable popups for this site!");
-    }
-    stopText();
-    msg = "";
-    $output.html(msg);
-  } else if (q63.test(q)) {
-    let caloTrackerWin = window.open("./calotracker/", "_blank");
-    if (caloTrackerWin) {
-      window.focus();
-      log("Launched CaloTracker");
-    } else {
-      alert("Please enable popups for this site!");
+      alert("Please turn on popups on this site!");
     }
     stopText();
     msg = "";
@@ -1367,7 +1329,7 @@ function showLicense() {
     window.focus();
     log("Revealed the license");
   } else {
-    alert("Please enable popups for this site!");
+    alert("Please turn on popups on this site!");
   }
   stopText();
 }

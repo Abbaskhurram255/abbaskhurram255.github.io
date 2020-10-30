@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Stopwatch | Countdown Timer</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script type="text/javascript" src="jquery.min.js"></script>
+		<script type="text/javascript" src="script.js"></script>
+		<script type="text/javascript" src="jquery.stopwatch.js"></script>
+		<script type="text/javascript" src="jquery-backward-timer.min.js"></script>
+		<!-- <link rel="stylesheet" type="text/css" href="jquery.countdownTimer.css" /> -->
+	</head>
+	<body>
+		<div id="switches">
+			<div id="switches-wrapper">
+				<span class="switch active" id="stopwatchBtn">Stopwatch</span>
+				<span class="switch" id="countdownBtn">Countdown Timer</span>
+			</div>
+		</div>
+		<div id="stopwatch">
+			<div class="stopwatch-wrapper">
+				<div class="stopwatch-visual">
+					<div id="stopwatchTimer">00:00:00</div>
+				</div>
+				<div class="controls-wrapper controls-sw">
+					<button id="startSW">Start</button>
+					<button id="stopSW">Stop</button>
+					<button id="resetSW">Reset</button>
+				</div>
+			</div>
+		</div>
+		<div id="countdown">
+			<div class="countdown-wrapper">
+				<div class="countdown-visual">
+					<div id="countdownTimer">00:00:00</div>
+				</div>
+				<div class="countdown-inputs-wrapper">
+					<input class="cd-input" type="number" name="hours" min="0" max="0" value="0" disabled>
+					<input class="cd-input" type="number" name="minutes" min="0" max="10">
+					<input class="cd-input" type="number" name="seconds" min="0" max="59">
+				</div>
+				<div class="countdown-inputs-wrapper">
+					<span class="cd-input">Hr</span>
+					<span class="cd-input">Min</span>
+					<span class="cd-input">Sec</span>
+				</div>
+				<div class="controls-wrapper controls-cd">
+					<button id="startCD">Start</button>
+					<button id="pauseCD">Pause</button>
+					<button id="stopCD">Stop</button>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
