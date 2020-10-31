@@ -14,7 +14,7 @@ window.onload = () => {
   const tippy1 = document.querySelector("#searchInput");
   tippy(tippy1, {
     content:
-      "Try asking me to show <strong onclick=\"$('#searchInput').val($(this).html());\" onmouseover=\"$(this).css('cursor', 'pointer');\">weather</strong> or to open <strong onclick=\"$('#searchInput').val($(this).text());\" onmouseover=\"$(this).css('cursor', 'pointer')\">calendar</strong>, <strong onclick=\"$('#searchInput').val($(this).text())\" onmouseover=\"$(this).css('cursor', 'pointer')\">show exchange rates</strong>, or your <strong onclick=\"document.querySelector('#searchInput').value = 'whats my ' + this.innerHTML;\" onmouseover=\"$(this).css('cursor', 'pointer')\">age</strong>",
+      "Try asking me to show <strong onclick=\"$('#searchInput').val($(this).html());\" onmouseover=\"$(this).css('cursor', 'pointer');\">weather</strong> or to open <strong onclick=\"$('#searchInput').val($(this).text());\" onmouseover=\"$(this).css('cursor', 'pointer')\">calendar</strong>, <strong onclick=\"$('#searchInput').val($(this).text())\" onmouseover=\"$(this).css('cursor', 'pointer')\">show exchange rates</strong>, or <strong onclick=\"document.querySelector('#searchInput').value = 'whats my ' + this.innerHTML;\" onmouseover=\"$(this).css('cursor', 'pointer')\">your age</strong>",
     followCursor: "horizontal",
     interactive: true /* To add interactions to and make your tippy's text highlight-able and clickable*/,
     appendTo: document.body,
@@ -175,15 +175,15 @@ if ((
 }
 
 /* regular expressions/ questions to be answered: */
-const q1 = /what'?s?( is)? (up|popping)/i,
+const q1 = /what'?s? (is)? (up|popping)/i,
   q2 = /who are you/i,
   q3 = /(who am I)|(my (info|bio))|(what (do)? you know about me)/i,
   q4 = /(how are you)|(how('?ve?| have) you been)/i,
-  q5 = /(what'?s?( is)?|show) my name/i,
-  q6 = /(what'?s?( is)? your name)|(what (can I|do you want me to) call you)/i,
+  q5 = /(what'?s? (is)?|show) my name/i,
+  q6 = /(what'?s? (is)? your name)|(what (can I|do you want me to) call you)/i,
   q7 = /(is|was) (this|\d{4}) (a)? leap year/i,
   q8 = /((what'?s?|when'?s?) (is)?|show) my (dob|bday|(birth|b(-)?)day)/i,
-  q9 = /(how old am I)|((show|what'?s?( is)?) my age)/i,
+  q9 = /(how old am I)|((show|what'?s? (is)?) my age)/i,
   q10 = /(call me by another|(change|(re)?save) my) name/i,
   q11 = /(((change|resubmit) my|incorrect) (dob|bday|(birth|b(-)?)day))|((dob|bday|(birth|b(-)?)day) is incorrect)/i,
   q12 = /am I nice/i,
@@ -228,13 +228,13 @@ const q1 = /what'?s?( is)? (up|popping)/i,
   q51 = /(percentage calculator)|(calculate percentage)/i,
   q52 = /temperature conver(sion|ter)/i,
   q53 = /(meal finder)|(find meals?)|(recipes?)|(how to cook)/i,
-  q54 = /((I'?m|I am) (anxious|tired))|(help me (calm down|relax|with my anxiety))|(relaxer)/i,
+  q54 = /((I'?am|I am) (anxious|tired))|(help me (calm down|relax|with my anxiety))|(relaxer)/i,
   q55 = /(new year countdown)|((can'?t wait until|when is) new year)/i,
   q56 = /(typing game)|((open|run|launch|play) speed( |-)?typer)/i,
-  q57 = /((expense|budget) tracker)|(pocket money)/i,
+  q57 = /(expense tracker)|(pocket money)/i,
   q58 = /(stopwatch)|(countdown timer)|(counter ?clock)|(count down)/i,
   q59 = /miner of lava/i,
-  q60 = /((loan|mortgage) (calculator|payment))|(calculate (my)? (loan|mortgage))|(how much do (I|people) owe)/i,
+  q60 = /((loan|mortgage) calculator)|(calculate (my)? (loan|mortgage))|(how much do (I|people) owe)/i,
   q61 = /(quote (me|of the day))|(random quotes?)|(quotes)/i,
   q62 = /memory game/i,
   q63 = /(calo(ries? )?tracker)|(track calories)/i;
@@ -986,21 +986,13 @@ function ask() {
     let relaxerAppWin = window.open("./relaxer-app/", "_blank");
     if (relaxerAppWin) {
       window.focus();
-      msg = "Take a deep breath, ";
-      playText(msg);
-      setTimeout(() => {
-        msg = "breathe in, hold, ";
-        playText(msg);
-        setTimeout(() => {
-          msg = "breathe out";
-          playText(msg);
-        }, 2005);
-      }, 1650);
-      
       log("Launched Relaxer");
     } else {
       alert("Please enable popups for this site!");
     }
+    stopText();
+    msg = "";
+    $output.html(msg);
   } else if (q55.test(q)) {
     let newYearCountdownWin = window.open("./new-year-countdown/", "_blank");
     if (newYearCountdownWin) {
@@ -1016,22 +1008,24 @@ function ask() {
     let typingGameWin = window.open("./typing-game/", "_blank");
     if (typingGameWin) {
       window.focus();
-      msg = "How fast do you type? Let's test!";
-      playText(msg);
       log("Launched Speed Typer");
     } else {
       alert("Please enable popups for this site!");
     }
+    stopText();
+    msg = "";
+    $output.html(msg);
   } else if (q57.test(q)) {
     let expenseTrackerWin = window.open("./expense-tracker/", "_blank");
     if (expenseTrackerWin) {
       window.focus();
-      msg = "Worried about keeping track of your expenses? Don't be. I can help you track them";
-      playText(msg);
       log("Launched Expense Tracker");
     } else {
       alert("Please enable popups for this site!");
     }
+    stopText();
+    msg = "";
+    $output.html(msg);
   } else if (q58.test(q)) {
     let timerAppWin = window.open("./timer/", "_blank");
     if (timerAppWin) {
@@ -1058,12 +1052,12 @@ function ask() {
     let loanCalcWin = window.open("./loan-calc/", "_blank");
     if (loanCalcWin) {
       window.focus();
-      msg = "Calculate what your mortgage payment could be";
-      playText(msg);
       log("Launched Loan Calculator");
     } else {
       alert("Please enable popups for this site!");
     }
+    stopText();
+    msg = "";
   } else if (q61.test(q)) {
     let randomQuoteWin = window.open("./random-quote-gen/", "_blank");
     if (randomQuoteWin) {
@@ -1080,7 +1074,7 @@ function ask() {
       window.focus();
       msg = "Let's test if your memory is weak";
       playText(msg);
-      log("Launched Memory Game");
+      log(msg);
     } else {
       alert("Please enable popups for this site!");
     }
@@ -1088,12 +1082,12 @@ function ask() {
     let caloTrackerWin = window.open("./calotracker/", "_blank");
     if (caloTrackerWin) {
       window.focus();
-      msg = "Worried about your diet? Don't be. I can help you track calories";
-      playText(msg);
-      log("Launched CaloTracker");
+      msg = "Worried about your diet? No problem, I can help you track calories";
+      log(msg);
     } else {
       alert("Please enable popups for this site!");
     }
+    $("#message").delay(10000).slideFadeToggle(800);
   } else {
     $("#message").slideFadeToggle(800);
     msg = "Sorry, the program is still under development.";

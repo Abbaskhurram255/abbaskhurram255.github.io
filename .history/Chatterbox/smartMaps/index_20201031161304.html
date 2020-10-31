@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" type="text/css" href="static/lib/fontawesome/css/all.css">
+
+	<!-- Bootsrap Stylesheet -->
+	<link rel="stylesheet" href="static/lib/bootstrap-4.3.1-dist/css/bootstrap.css">
+
+    <!-- Personal files -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+
+	<title>Smart Maps</title>
+</head>
+<body>
+
+	<div class="container">
+		<div class="row titleRow">
+			<div class="col">
+				<div class="display-4">Smart Maps</div>
+			</div>
+		</div>
+		<div class="row searchRow">
+			<div class="col-lg-2 col-sm-12">
+				<div></div>
+			</div>
+			<div class="col-lg-8 col-sm-12 d-flex justify-content-center">
+				<input id="searchBox" class="form-control" type="text" name="locationSearch" placeholder="Search...">
+				<button class="searchButton"><i class="searchIcon fas fa-search"></i></button>
+			</div>
+			<div class="col-lg-2 col-sm-12 d-flex align-items-center justify-content-center">
+				<div>
+					<input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+					<label class="form-check-label" for="defaultCheck1">
+				    	Select Destination
+					</label>
+				</div>
+			</div>
+		</div>
+		<div class="row mapRow">
+			<div class="col-lg-2 col-sm-12 d-flex justify-lg-content-start align-items-lg-end flex-lg-column flex-sm-row">
+				<button id= "addBtn" data-toggle="tooltip" title="Add" type="button" class="addBtn btn btn-outline-dark"><i class="fas fa-plus"></i></button>
+				<button id="showAllBtn" data-toggle="tooltip" title="Show All" type="button" class="centerBtn btn btn-outline-dark"><i class="fab fa-centercode"></i></button>
+				<button id="saveBtn" data-toggle="tooltip" title="Save" type="button" class="favBtn btn btn-outline-dark"><i class="far fa-star"></i></button>
+				<button id="centerBtn" data-toggle="tooltip" title="Center" type="button" class="favBtn btn btn-outline-dark"><i class="fas fa-crosshairs"></i></button>
+			</div>
+			<div class="col-lg-8 col-sm-12 map">
+				<div id="map"></div>
+			</div>
+			<div class="col-lg-2 col-sm-12"></div>
+		</div>
+		<div class="row">
+			<div class="col-lg-2"></div>
+			<div class="col-lg-4 col-sm-6">
+				<button onclick="makeDistanceMatrixRequest('distance')" type="button" class="btn btn-light" style="width: 100%; padding: 0">Calculate Distance</button>
+			</div>
+			<div class="col-lg-4 col-sm-6">
+				<button onclick="makeDistanceMatrixRequest('duration')" type="button" class="btn btn-light" style="width: 100%; padding: 0">Calculate Time</button>
+			</div>
+			<div class="col-lg-2"></div>
+		</div>
+		<div class="row infoRow" style="margin-bottom: 1rem">
+			<div class="col-lg-2"></div>
+			<div class="col-lg-4 col-sm-12 d-flex align-items-center flex-column" style="margin-top: 1rem;">
+				<div class="display-4" style="font-size: 1.5rem; font-weight: bold;">Selected</div>
+				<div id="accordion" style="margin-top: 1rem; width: 100%; text-align: center;">
+					<div class="card border-light mb-3">
+  						<div class="card-header d-flex align-items-center justify-content-center" style="border-bottom: 0; height: 63px;"><i class="far fa-folder-open" style="font-size: 1.5rem">...</i>
+  						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-4 col-sm-12 d-flex align-items-center flex-column" style="margin-top: 1rem;">
+				<div class="display-4" style="font-size: 1.5rem; font-weight: bold;">Saved Places</div>
+				<div id="savedAccordion" style="margin-top: 1rem; width: 100%; text-align: center;">
+					<div class="card border-light mb-3">
+  						<div class="card-header d-flex align-items-center justify-content-center" style="border-bottom: 0; height: 63px;"><i class="far fa-folder-open" style="font-size: 1.5rem">...</i>
+  						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-2"></div>
+		</div>
+	</div>
+	
+	<!-- Modal -->
+	<div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="infoModalTitle">Modal title</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body">
+	        
+	      	<!-- Photos Carousel -->
+			<div id="placePhotos" class="carousel slide" data-ride="carousel">
+			  <div class="carousel-inner">
+			  
+			  </div>
+			  <a class="carousel-control-prev" href="#placePhotos" role="button" data-slide="prev">
+			    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			    <span class="sr-only">Previous</span>
+			  </a>
+			  <a class="carousel-control-next" href="#placePhotos" role="button" data-slide="next">
+			    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+			    <span class="sr-only">Next</span>
+			  </a>
+			</div>
+
+			<div class="infoBox" style="margin: 15px 0 15px 0;">
+				<div><img src="static/icons/addresIcon.png"><span id="addres"></span></div>
+				<div><img src="static/icons/phoneIcon.png"><span id="phoneNum"></span></div>
+				<div><a id="websiteLink" href="" target="_blank"><img src="static/icons/websiteIcon.png"></a><span id="website"></span></div>
+				<div><img src="static/icons/hoursIcon.png"><span id="hours"></span></div>
+				<div><img src="static/icons/ratingIcon.png"><span id="rating"></span></div>
+			</div>
+
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Close</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+
+	<script type="text/javascript" src="script.js"></script>
+
+	<!-- Jquery -->
+	<script type="text/javascript" src="static/lib/jquery-3.4.1.min.js"></script>
+
+	<!-- Bootstrap Jquery -->
+	<script type="text/javascript" src="static/lib/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+
+	<!-- Google maps and places API -->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAZXS1WqAbYdAeN9NsqNL-PX5Pr3fGPGg&callback=createMap&libraries=places" async defer></script>
+
+
+
+</body>
+</html>

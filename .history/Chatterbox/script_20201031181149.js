@@ -14,7 +14,7 @@ window.onload = () => {
   const tippy1 = document.querySelector("#searchInput");
   tippy(tippy1, {
     content:
-      "Try asking me to show <strong onclick=\"$('#searchInput').val($(this).html());\" onmouseover=\"$(this).css('cursor', 'pointer');\">weather</strong> or to open <strong onclick=\"$('#searchInput').val($(this).text());\" onmouseover=\"$(this).css('cursor', 'pointer')\">calendar</strong>, <strong onclick=\"$('#searchInput').val($(this).text())\" onmouseover=\"$(this).css('cursor', 'pointer')\">show exchange rates</strong>, or your <strong onclick=\"document.querySelector('#searchInput').value = 'whats my ' + this.innerHTML;\" onmouseover=\"$(this).css('cursor', 'pointer')\">age</strong>",
+      "Try asking me to show <strong onclick=\"$('#searchInput').val($(this).html());\" onmouseover=\"$(this).css('cursor', 'pointer');\">weather</strong> or to open <strong onclick=\"$('#searchInput').val($(this).text());\" onmouseover=\"$(this).css('cursor', 'pointer')\">calendar</strong>, <strong onclick=\"$('#searchInput').val($(this).text())\" onmouseover=\"$(this).css('cursor', 'pointer')\">show exchange rates</strong>, or <strong onclick=\"document.querySelector('#searchInput').value = 'whats my ' + this.innerHTML;\" onmouseover=\"$(this).css('cursor', 'pointer')\">your age</strong>",
     followCursor: "horizontal",
     interactive: true /* To add interactions to and make your tippy's text highlight-able and clickable*/,
     appendTo: document.body,
@@ -175,15 +175,15 @@ if ((
 }
 
 /* regular expressions/ questions to be answered: */
-const q1 = /what'?s?( is)? (up|popping)/i,
+const q1 = /what'?s? (is)? (up|popping)/i,
   q2 = /who are you/i,
   q3 = /(who am I)|(my (info|bio))|(what (do)? you know about me)/i,
   q4 = /(how are you)|(how('?ve?| have) you been)/i,
-  q5 = /(what'?s?( is)?|show) my name/i,
-  q6 = /(what'?s?( is)? your name)|(what (can I|do you want me to) call you)/i,
+  q5 = /(what'?s? (is)?|show) my name/i,
+  q6 = /(what'?s? (is)? your name)|(what (can I|do you want me to) call you)/i,
   q7 = /(is|was) (this|\d{4}) (a)? leap year/i,
   q8 = /((what'?s?|when'?s?) (is)?|show) my (dob|bday|(birth|b(-)?)day)/i,
-  q9 = /(how old am I)|((show|what'?s?( is)?) my age)/i,
+  q9 = /(how old am I)|((show|what'?s? (is)?) my age)/i,
   q10 = /(call me by another|(change|(re)?save) my) name/i,
   q11 = /(((change|resubmit) my|incorrect) (dob|bday|(birth|b(-)?)day))|((dob|bday|(birth|b(-)?)day) is incorrect)/i,
   q12 = /am I nice/i,
@@ -1026,7 +1026,7 @@ function ask() {
     let expenseTrackerWin = window.open("./expense-tracker/", "_blank");
     if (expenseTrackerWin) {
       window.focus();
-      msg = "Worried about keeping track of your expenses? Don't be. I can help you track them";
+      msg = "Worried about keeping track of your expenses? No problem. I can help you track them";
       playText(msg);
       log("Launched Expense Tracker");
     } else {
@@ -1088,7 +1088,7 @@ function ask() {
     let caloTrackerWin = window.open("./calotracker/", "_blank");
     if (caloTrackerWin) {
       window.focus();
-      msg = "Worried about your diet? Don't be. I can help you track calories";
+      msg = "Worried about your diet? No problem, I can help you track calories";
       playText(msg);
       log("Launched CaloTracker");
     } else {
