@@ -895,7 +895,7 @@ function ask() {
         "Launching simple calendar because the one that supports appointments is not optimized for mobile devices...\nClick OK to continue."
       );
       let mobfriendlycalendarWin = window.open("./calendar-mobile/", "_blank");
-      if (mobfriendlycalendarWin) {
+      if (calendarWin) {
         window.focus();
         log("Launched the mobile-friendly Calendar");
       } else {
