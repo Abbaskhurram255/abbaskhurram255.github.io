@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+
+	<title>Calendar</title>
+
+</head>
+
+
+
+<body>
+
+	<div class="calendar clearfix">
+
+		<div class="left-panel">
+			<div class="header"><span class="left-panel-day"></span></div>
+			<div class="body layer">
+				<span class="left-panel-date"></span>
+				<div class="layer"></div>
+				<div class="layer"></div>
+				<div class="layer"></div>
+			</div>
+
+		</div> 
+		<!--left panel -->
+
+		<div class="month">
+			<div class="calendar-top header">
+				<span class="nav prev"><</span>
+				<div class="calendar-title">
+					<span class="title-month"></span>
+					<span class="title-year"></span>
+				</div>
+				<span class="nav next">></span>
+			</div>
+			<!--calendar header-->
+			<table>
+				<thead>
+					<tr>
+						<th>S</th>
+						<th><span>M</span></th>
+						<th><span>T</span></th>
+						<th><span>W</span></th>
+						<th><span>T</span></th>
+						<th><span>F</span></th>
+						<th><span>S</span></th>
+					</tr>
+				</thead>
+				<tbody class="calendar-body">
+
+				</tbody>
+			</table>
+			<!--calendar body-->
+		</div> 
+		<!--calendar month-->
+
+	</div>
+	<!--calendar-->
+
+	<script src='scripts/constants.js'></script>
+	<script src='scripts/getInitialState.js'></script>
+	<script src='scripts/getDaysInMonth.js'></script>
+	<script src='scripts/moveOneMonth.js'></script>
+	<script src='scripts/navigateMonths.js'></script>
+	<script src='scripts/getFirstDayOfMonth.js'></script>
+	<script src='scripts/highlightToday.js'></script>
+	<script src='scripts/createSingleRow.js'></script>
+	<script src='scripts/populateRowsAfterFirst.js'></script>
+	<script src='scripts/createCalendar.js'></script>
+	<script src='scripts/leftPanel.js'></script>
+	<script src="scripts/app.js"></script>
+
+</body>
+
+
+
+</html>

@@ -1,0 +1,234 @@
+
+@import "compass/reset";
+
+/******  Variables  ******/
+
+$border-radius: 5px;
+
+$calendar-red: #e43737;
+$lighter-gray: #f7f7f7;
+$light-gray: #eee;
+$medium-gray: #999;
+$dark-gray: #323232;
+
+$page-box-shadow: 0 3px 4px -2px $medium-gray;
+
+/******  Mixins  ******/
+
+@mixin linear-gradient($start-color, $end-color) {
+	background: $start-color;
+	background: linear-gradient($start-color, $end-color);
+	background: -webkit-linear-gradient($start-color, $end-color);
+	background: -moz-linear-gradient($start-color, $end-color);
+}
+
+
+@mixin horz-center() {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+}
+
+@mixin vertical-center() {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+}
+
+@mixin absolute-center() {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+}
+
+/******  Global Styling  ******/
+
+* {box-sizing: border-box;}
+
+html, body, ul {
+	margin: 0;
+	padding: 0;	
+}
+
+html, body {
+	font-family: helvetica, sans-serif;
+}
+
+body {
+	background: $light-gray;
+}
+
+.clearfix {
+	&::before, &::after {
+		content: " ";
+		display:table;
+	}
+	&::after {
+		clear: both;
+	}
+}
+
+/******  Calendar General Styling  ******/
+
+.calendar {
+	text-align: center;
+	width: 635px;
+	margin: 10% auto 0 auto;
+	background: $dark-gray;
+	border: 5px solid $dark-gray;
+	border-radius: 8px;
+	.left-panel, .month {
+		float: left;
+		height:270px;
+		.header {
+			font-size: 20px;
+			height: 50px;
+			.left-panel-day, .calendar-title {
+				@include absolute-center;
+			}
+		}
+	}
+}
+
+/******  Left Panel  ******/
+
+.left-panel {
+	width: 270px;
+	position: relative;
+	.header, .layer {
+		position: absolute;
+		width: 100%;
+	}
+	.header {
+		@include linear-gradient($calendar-red, darken($calendar-red, 25%));
+		border-top-left-radius: $border-radius;
+		border-top-right-radius: $border-radius;
+		box-shadow: 0 5px 4px -2px darken($lighter-gray, 20%);
+		z-index:9;
+		&::after {
+			content: "";
+		    border: 1px dashed $calendar-red;
+		    width: 99%;
+		    display: block;
+		    position: absolute;
+		    z-index: 10;
+		    bottom: 3px;
+		}
+		.left-panel-day {
+			color: white;
+		}
+	}
+	.layer {
+		background: $lighter-gray;
+		border-bottom-left-radius: $border-radius;
+		border-bottom-right-radius: $border-radius;	
+		box-shadow: $page-box-shadow;
+	}
+	.body.layer {
+		height: 220px;
+		top: 50px;
+		background: $lighter-gray;
+		z-index:5;
+		box-shadow: none;
+		.left-panel-date {
+			@include absolute-center;
+			font-size: 140px;
+			font-weight: bold;
+			color: rgba($dark-gray, .87);
+			text-shadow: 1px 4px 6px $lighter-gray, 0 0 0 #000, 1px 4px 6px $lighter-gray;
+		}
+		.layer {
+			height:10px;
+			&:first-of-type {
+				bottom: 4px;
+				z-index:2;
+			}
+			&:nth-of-type(2) {
+				z-index:3;
+				bottom: 8px;
+			}
+			&:last-of-type {
+				z-index: 4;
+				bottom: 12px;
+			}
+		}
+	}
+}
+
+/******  Month Panel  ******/
+
+.month {
+	background: white;
+	border-radius: $border-radius;
+	width: 350px;
+	border-top-right-radius: $border-radius;
+	border-bottom-right-radius: $border-radius;
+	color: $medium-gray;
+	margin-left: $border-radius;
+	.header {
+		position: relative;
+	}
+	.calendar-title {
+		font-weight: lighter;
+		color: darken($medium-gray, 10%);
+		display: inline-block;
+	}
+	.nav, .selectable-day {
+		cursor: pointer;
+		&:hover {
+			color: $dark-gray;
+		}
+	}
+	.nav {
+		@include vertical-center;
+		font-size: 13px;
+		color: lighten($medium-gray, 15%);
+		font-weight: bold;
+		&.prev {
+			left:20px;
+		}
+		&.next {
+			right: 20px;
+		}
+	}
+	table {
+		width: 100%;
+		height: 139px;
+		border-collapse: collapse;
+		th, td {
+			font-size: 15px;
+			text-align: center;
+			border-right: 2px dotted $light-gray;
+			height: 31px;
+			&:last-of-type {
+				border-right: 0;
+			}
+		}
+		th, .current-date, .selected-day {
+			font-weight: bold;
+		}
+		th, .current-date {
+			color: $calendar-red;
+		}
+		.selected-day {
+			background: $calendar-red;
+			color: white;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+

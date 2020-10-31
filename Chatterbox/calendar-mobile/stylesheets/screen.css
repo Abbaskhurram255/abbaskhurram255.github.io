@@ -1,0 +1,288 @@
+/* line 5, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/******  Variables  ******/
+/******  Mixins  ******/
+/******  Global Styling  ******/
+/* line 50, ../sass/screen.scss */
+* {
+  box-sizing: border-box;
+}
+
+/* line 52, ../sass/screen.scss */
+html, body, ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 57, ../sass/screen.scss */
+html, body {
+  font-family: helvetica, sans-serif;
+}
+
+/* line 61, ../sass/screen.scss */
+body {
+  background: #eee;
+}
+
+/* line 66, ../sass/screen.scss */
+.clearfix::before, .clearfix::after {
+  content: " ";
+  display: table;
+}
+/* line 70, ../sass/screen.scss */
+.clearfix::after {
+  clear: both;
+}
+
+/******  Calendar General Styling  ******/
+/* line 77, ../sass/screen.scss */
+.calendar {
+  text-align: center;
+  width: 635px;
+  margin: 10% auto 0 auto;
+  background: #323232;
+  border: 5px solid #323232;
+  border-radius: 8px;
+}
+/* line 84, ../sass/screen.scss */
+.calendar .left-panel, .calendar .month {
+  float: left;
+  height: 270px;
+}
+/* line 87, ../sass/screen.scss */
+.calendar .left-panel .header, .calendar .month .header {
+  font-size: 20px;
+  height: 50px;
+}
+/* line 90, ../sass/screen.scss */
+.calendar .left-panel .header .left-panel-day, .calendar .left-panel .header .calendar-title, .calendar .month .header .left-panel-day, .calendar .month .header .calendar-title {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+}
+
+/******  Left Panel  ******/
+/* line 99, ../sass/screen.scss */
+.left-panel {
+  width: 270px;
+  position: relative;
+}
+/* line 102, ../sass/screen.scss */
+.left-panel .header, .left-panel .layer {
+  position: absolute;
+  width: 100%;
+}
+/* line 106, ../sass/screen.scss */
+.left-panel .header {
+  background: #e43737;
+  background: linear-gradient(#e43737, #891212);
+  background: -webkit-linear-gradient(#e43737, #891212);
+  background: -moz-linear-gradient(#e43737, #891212);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  box-shadow: 0 5px 4px -2px #c4c4c4;
+  z-index: 9;
+}
+/* line 112, ../sass/screen.scss */
+.left-panel .header::after {
+  content: "";
+  border: 1px dashed #e43737;
+  width: 99%;
+  display: block;
+  position: absolute;
+  z-index: 10;
+  bottom: 3px;
+}
+/* line 121, ../sass/screen.scss */
+.left-panel .header .left-panel-day {
+  color: white;
+}
+/* line 125, ../sass/screen.scss */
+.left-panel .layer {
+  background: #f7f7f7;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  box-shadow: 0 3px 4px -2px #999;
+}
+/* line 131, ../sass/screen.scss */
+.left-panel .body.layer {
+  height: 220px;
+  top: 50px;
+  background: #f7f7f7;
+  z-index: 5;
+  box-shadow: none;
+}
+/* line 137, ../sass/screen.scss */
+.left-panel .body.layer .left-panel-date {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  font-size: 140px;
+  font-weight: bold;
+  color: rgba(50, 50, 50, 0.87);
+  text-shadow: 1px 4px 6px #f7f7f7, 0 0 0 #000, 1px 4px 6px #f7f7f7;
+}
+/* line 144, ../sass/screen.scss */
+.left-panel .body.layer .layer {
+  height: 10px;
+}
+/* line 146, ../sass/screen.scss */
+.left-panel .body.layer .layer:first-of-type {
+  bottom: 4px;
+  z-index: 2;
+}
+/* line 150, ../sass/screen.scss */
+.left-panel .body.layer .layer:nth-of-type(2) {
+  z-index: 3;
+  bottom: 8px;
+}
+/* line 154, ../sass/screen.scss */
+.left-panel .body.layer .layer:last-of-type {
+  z-index: 4;
+  bottom: 12px;
+}
+
+/******  Month Panel  ******/
+/* line 164, ../sass/screen.scss */
+.month {
+  background: white;
+  border-radius: 5px;
+  width: 350px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  color: #999;
+  margin-left: 5px;
+}
+/* line 172, ../sass/screen.scss */
+.month .header {
+  position: relative;
+}
+/* line 175, ../sass/screen.scss */
+.month .calendar-title {
+  font-weight: lighter;
+  color: gray;
+  display: inline-block;
+}
+/* line 180, ../sass/screen.scss */
+.month .nav, .month .selectable-day {
+  cursor: pointer;
+}
+/* line 182, ../sass/screen.scss */
+.month .nav:hover, .month .selectable-day:hover {
+  color: #323232;
+}
+/* line 186, ../sass/screen.scss */
+.month .nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  font-size: 13px;
+  color: #bfbfbf;
+  font-weight: bold;
+}
+/* line 191, ../sass/screen.scss */
+.month .nav.prev {
+  left: 20px;
+}
+/* line 194, ../sass/screen.scss */
+.month .nav.next {
+  right: 20px;
+}
+/* line 198, ../sass/screen.scss */
+.month table {
+  width: 100%;
+  height: 139px;
+  border-collapse: collapse;
+}
+/* line 202, ../sass/screen.scss */
+.month table th, .month table td {
+  font-size: 15px;
+  text-align: center;
+  border-right: 2px dotted #eee;
+  height: 31px;
+}
+/* line 207, ../sass/screen.scss */
+.month table th:last-of-type, .month table td:last-of-type {
+  border-right: 0;
+}
+/* line 211, ../sass/screen.scss */
+.month table th, .month table .current-date, .month table .selected-day {
+  font-weight: bold;
+}
+/* line 214, ../sass/screen.scss */
+.month table th, .month table .current-date {
+  color: #e43737;
+}
+/* line 217, ../sass/screen.scss */
+.month table .selected-day {
+  background: #e43737;
+  color: white;
+}
