@@ -2,12 +2,14 @@
 const form = document.querySelector(".top-banner form");
 const input = document.querySelector(".top-banner input");
 const msg = document.querySelector(".top-banner .msg");
+let mesg;
 const list = document.querySelector(".ajax-section .cities");
+const submitBtn = document.querySelector("#submit-btn");
 const apiKey = "218c8b437c70fc5bc33279042c7b2746";
 
 //auto-detect the location on startup
 window.onload = function() {
-  $.get("https://api.ipdata.co/?api-key=test", function (response) {
+  $.get("https://api.ipdata.co/?api-key=63a8b1ef829b0a90909b1bb7e9c931fe1ffb70e27378da4c302e22c7", function (response) {
   $(".top-banner input").val(`${response.city}, ${response.country_code}`);
 }, "jsonp");
 }
@@ -44,6 +46,10 @@ form.addEventListener("submit", e => {
       msg.textContent = `You already know the weather for ${
         filteredArray[0].querySelector(".city-name span").textContent
       } ...otherwise be more specific by providing the country code as well 😉`;
+      mesg = `You already know the weather for ${
+        filteredArray[0].querySelector(".city-name span").textContent
+      } ...otherwise be more specific by providing the country code as well`;
+      playText(mesg);
       form.reset();
       input.focus();
       return;
@@ -78,12 +84,63 @@ form.addEventListener("submit", e => {
       `;
       li.innerHTML = markup;
       list.appendChild(li);
+      mesg = `Weather in ${name} right now: ${Math.round(main.temp)}°C, ${weather[0]["description"]}`;
+      playText(mesg);
     })
     .catch(() => {
       msg.innerHTML = "Please search for a valid city 😩. Ex: Kansas or Kansas,US";
+      mesg = "Please search for a valid city; Kansas City, for example. Otherwise be more specific by providing the country code as well, Kansas, US, for example";
+      playText(mesg);
     });
 
   msg.textContent = "";
   form.reset();
   input.focus();
 });
+
+// Speech Engine section
+//start block
+let currentCharacter;
+
+if ("speechSynthesis" in window) {
+  console.log("Speech Synthesis is supported!");
+  form.addEventListener("submit", () => {
+      if (speechSynthesis.speaking) {
+        stopText();
+      }
+  });
+} else {
+  console.log("Speech Synthesis isn't supported by your browser");
+}
+
+const utterance = new SpeechSynthesisUtterance();
+utterance.addEventListener("boundary", (e) => {
+  currentCharacter = e.charIndex;
+});
+
+function playText(text) {
+  if (speechSynthesis.paused && speechSynthesis.speaking) {
+    return speechSynthesis.resume();
+  }
+  if (speechSynthesis.speaking) return;
+  utterance.text = text;
+  var voices = window.speechSynthesis.getVoices();
+  window.speechSynthesis.onvoiceschanged = function () {
+    voices = window.speechSynthesis.getVoices();
+  };
+  utterance.voice = voices.filter(function (voice) {
+    return voice.name == "Microsoft Zira Desktop - English (United States)";
+  })[0];
+  utterance.pitch = 1.5;
+  utterance.voiceURI = "native";
+  utterance.lang = "en-US";
+  utterance.volume = 1;
+  utterance.rate = 1;
+  speechSynthesis.speak(utterance);
+}
+
+//Call this function to (immediately) stop the Speech synthesis:
+function stopText() {
+  speechSynthesis.resume();
+  speechSynthesis.cancel();
+}

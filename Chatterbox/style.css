@@ -271,3 +271,24 @@
   cursor: pointer;
 }
 
+#recIcon {
+      position: relative;
+  	  top: 2.5vh;
+}
+
+@media screen and (min-width: 768px) {
+  #recIcon {
+    height: 42px;
+    width: 42px;
+    top: 1.5vh;
+  }
+}
+
+/* @media screen and (min-width: 1024px) {
+  #recIcon {
+    height: 48px;
+    width: 48px;
+  }
+} */
+
+
