@@ -333,7 +333,7 @@ const q1 = /what'?s?( is)? (up|popping)/i,
   q65 = /(fotoflick)|(puzzle game)/i,
   q66 = /((motivate|inspire) me)|(I'?( ?a)?m demotivated)/i,
   q67 = /(space(X|station)?|nasa) (data|live)/i,
-  q68 = /Snap(s|S)hots/;
+  q68 = /snaphot;
 
 function ask() {
   const q = document.querySelector("#searchInput").value;

@@ -332,8 +332,7 @@ const q1 = /what'?s?( is)? (up|popping)/i,
   q64 = /(dungeon crawler)|(rogue-?life)/i,
   q65 = /(fotoflick)|(puzzle game)/i,
   q66 = /((motivate|inspire) me)|(I'?( ?a)?m demotivated)/i,
-  q67 = /(space(X|station)?|nasa) (data|live)/i,
-  q68 = /Snap(s|S)hots/;
+  q67 = /(space(X|station)?|nasa) (data|live)/i;
 
 function ask() {
   const q = document.querySelector("#searchInput").value;
@@ -1241,7 +1240,7 @@ function ask() {
     let randImgsGeneratingAppWin = window.open("../SnapShots/", "_blank");
     if (randImgsGeneratingAppWin) {
       window.focus();
-      log("Launched SnapShots");
+      log("Launched Space info app");
     } else {
       alert("Please enable popups for this site!");
     }

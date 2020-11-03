@@ -330,10 +330,7 @@ const q1 = /what'?s?( is)? (up|popping)/i,
   q62 = /memory (game|test)/i,
   q63 = /(calo(ries? )?tracker)|(track calories)/i,
   q64 = /(dungeon crawler)|(rogue-?life)/i,
-  q65 = /(fotoflick)|(puzzle game)/i,
-  q66 = /((motivate|inspire) me)|(I'?( ?a)?m demotivated)/i,
-  q67 = /(space(X|station)?|nasa) (data|live)/i,
-  q68 = /Snap(s|S)hots/;
+  q65 = /(fotoflick)|(puzzle game)/i;
 
 function ask() {
   const q = document.querySelector("#searchInput").value;
@@ -1216,32 +1213,10 @@ function ask() {
     msg = "";
     $output.html(msg);
   } else if (q66.test(q)) {
-    let motivQuotesAppWin = window.open("../motivational-quote-generator/", "_blank");
-    if (motivQuotesAppWin) {
+    let Win = window.open("../foto-flick/", "_blank");
+    if (Win) {
       window.focus();
-      log("Launched Motivational Quotes app");
-    } else {
-      alert("Please enable popups for this site!");
-    }
-    stopText();
-    msg = "";
-    $output.html(msg);
-  } else if (q67.test(q)) {
-    let spaceDataAppWin = window.open("../live-spacestation-data/", "_blank");
-    if (spaceDataAppWin) {
-      window.focus();
-      log("Launched Space info app");
-    } else {
-      alert("Please enable popups for this site!");
-    }
-    stopText();
-    msg = "";
-    $output.html(msg);
-  } else if (q68.test(q)) {
-    let randImgsGeneratingAppWin = window.open("../SnapShots/", "_blank");
-    if (randImgsGeneratingAppWin) {
-      window.focus();
-      log("Launched SnapShots");
+      log("Launched Fotoflick");
     } else {
       alert("Please enable popups for this site!");
     }
