@@ -14,7 +14,7 @@ window.onload = () => {
   const tippy1 = document.querySelector("#searchInput");
   tippy(tippy1, {
     content:
-      "Try asking me to show <strong onclick=\"$('#searchInput').val($(this).html());\" onmouseover=\"$(this).css('cursor', 'pointer');\">weather</strong> or to open <strong onclick=\"$('#searchInput').val($(this).text());\" onmouseover=\"$(this).css('cursor', 'pointer')\">calendar</strong>, <strong onclick=\"$('#searchInput').val($(this).text())\" onmouseover=\"$(this).css('cursor', 'pointer')\">show exchange rates</strong>, or your <strong onclick=\"document.querySelector('#searchInput').value = 'whats my ' + this.innerHTML;\" onmouseover=\"$(this).css('cursor', 'pointer')\">age</strong>",
+      "Try asking me to show <strong onclick=\"document.querySelector('#searchInput').value = 'What is the ' + this.innerText + ' like right now?';\" onmouseover=\"$(this).css('cursor', 'pointer');\">weather</strong> or to open <strong onclick=\"$('#searchInput').val($(this).text());\" onmouseover=\"$(this).css('cursor', 'pointer')\">calendar</strong>, or <strong onclick=\"$('#searchInput').val($(this).text())\" onmouseover=\"$(this).css('cursor', 'pointer')\">show exchange rates</strong>",
     followCursor: "horizontal",
     interactive: true /* To add interactions to and make your tippy's text highlight-able and clickable*/,
     appendTo: document.body,
@@ -42,7 +42,7 @@ window.onload = () => {
         snack.className = "show";
         setTimeout(function () {
           snack.className = snack.className.replace("show", "");
-        }, 4000);
+        }, 2300);
       }
     }
   });
@@ -333,7 +333,8 @@ const q1 = /what'?s?( is)? (up|popping)/i,
   q65 = /(fotoflick)|(puzzle game)/i,
   q66 = /((motivate|inspire) me)|(I'?( ?a)?m demotivated)/i,
   q67 = /(space(X|station)?|nasa) (data|live)/i,
-  q68 = /Snap(s|S)hots/;
+  q68 = /(Snapshots?)|(landscapes)|(wallpapers)/i,
+  q69 = /features/i;
 
 function ask() {
   const q = document.querySelector("#searchInput").value;
@@ -430,10 +431,10 @@ function ask() {
       userName != ""
     ) {
       msg += userName;
-      msg += `. Want it changed? <a onclick="$('#searchInput').val('Change my name');" onmouseover="$(this).css('cursor', 'pointer')" style="color:rgba(0,0,255,0.9);text-decoration:underline;">Click here</a>`;
+      msg += `. Want it changed? <a onclick="$('#searchInput').val('Change my name');stopText();ask();playText(mesg.innerText);" onmouseover="$(this).css('cursor', 'pointer')" style="color:rgba(0,0,255,0.9);text-decoration:underline;">Click here</a>`;
     } else {
       msg += "not saved yet";
-      msg += `. <a onclick="$('#searchInput').val('Save my name');" onmouseover="$(this).css('cursor', 'pointer')" style="color:rgba(0,0,255,0.9);text-decoration:underline;">Click here to (re)submit it, your name</a>`;
+      msg += `. <a onclick="$('#searchInput').val('Save my name');stopText();ask();playText(mesg.innerText);" onmouseover="$(this).css('cursor', 'pointer')" style="color:rgba(0,0,255,0.9);text-decoration:underline;">Click here to (re)submit it, your name</a>`;
     }
     $output.html(msg);
     console.log(msg);
@@ -535,12 +536,12 @@ function ask() {
         /^[a-z\s]+$/i.test(userName) &&
         userName != ""
       ) {
-        msg = `&#128076; Success. I'll call you ${userName} from now on &#128521;`;
+        msg = `&#128076; Alright, I'll call you ${userName} from now on &#128521;`;
         console.log(msg);
       } else {
         userName = prompt("Couldn't change your name. Try resubmitting it.");
         userName = toTitleCase(userName);
-        msg = `&#128076; Success. I'll call you ${userName} from now on &#128521;`;
+        msg = `&#128076; Alright, I'll call you ${userName} from now on &#128521;`;
         console.log(msg);
       }
       $output.html(msg);
@@ -562,17 +563,17 @@ function ask() {
           bday
         )
       ) {
-        msg = `&#128076; Success. Your newly set bday is ${bday}&#9786;`;
+        msg = `&#128076; Done. Your newly set bday is ${bday}&#9786;`;
         console.log(msg);
       } else {
         bday = prompt(
           "Couldn't change your bday. Try resubmitting it.\nNote: We ask for your birthday only for statistical purposes."
         );
-        msg = `&#128076; Success. Your newly set bday is ${bday}&#9786;`;
+        msg = `&#128076; Done. Your newly set bday is ${bday}&#9786;`;
         console.log(msg);
       }
       $output.html(msg);
-      debug(msg);
+      log(msg);
       $("#message").delay(10000).slideFadeToggle(800);
     }
   } else if (q12.test(q)) {
@@ -591,7 +592,7 @@ function ask() {
   } else if (q14.test(q)) {
     $("#message").slideFadeToggle(800);
     msg =
-      "Hey there &#128075;, want some assistance? Try asking me for <a onclick='$(\"#searchInput\").val($(this).html());' onmouseover='$(this).css(\"cursor\", \"pointer\")' style='font-weight:500;font-style:italic;color:rgba(0,0,255,0.9);text-decoration:underline;'>current date and time</a>";
+      "Hey there &#128075;, want some assistance? Try asking me for <a onclick='$(\"#searchInput\").val($(this).html());stopText();ask();playText(mesg.innerText);' onmouseover='$(this).css(\"cursor\", \"pointer\")' style='font-weight:500;font-style:italic;color:rgba(0,0,255,0.9);text-decoration:underline;'>current date and time</a>";
     $output.html(msg);
     console.log(msg);
     $("#message").delay(10000).slideFadeToggle(800);
@@ -1081,6 +1082,8 @@ function ask() {
     msg = "";
     $output.html(msg);
   } else if (q54.test(q)) {
+  	msg = "";
+    $output.text(msg);
     let relaxerAppWin = window.open("./relaxer-app/", "_blank");
     if (relaxerAppWin) {
       window.focus();
@@ -1112,6 +1115,8 @@ function ask() {
     msg = "";
     $output.html(msg);
   } else if (q56.test(q)) {
+  	msg = "";
+    $output.text(msg);
     let typingGameWin = window.open("./typing-game/", "_blank");
     if (typingGameWin) {
       window.focus();
@@ -1122,6 +1127,8 @@ function ask() {
       alert("Please enable popups for this site!");
     }
   } else if (q57.test(q)) {
+  	msg = "";
+    $output.text(msg);
     let expenseTrackerWin = window.open("./expense-tracker/", "_blank");
     if (expenseTrackerWin) {
       window.focus();
@@ -1154,6 +1161,8 @@ function ask() {
     msg = "";
     $output.html(msg);
   } else if (q60.test(q)) {
+  	msg = "";
+    $output.text(msg);
     let loanCalcWin = window.open("./loan-calc/", "_blank");
     if (loanCalcWin) {
       window.focus();
@@ -1164,6 +1173,8 @@ function ask() {
       alert("Please enable popups for this site!");
     }
   } else if (q61.test(q)) {
+  	msg = "";
+    $output.text(msg);
     let randomQuoteWin = window.open("./random-quote-gen/", "_blank");
     if (randomQuoteWin) {
       window.focus();
@@ -1174,6 +1185,8 @@ function ask() {
       alert("Please enable popups for this site!");
     }
   } else if (q62.test(q)) {
+  	msg = "";
+    $output.text(msg);
     let memoryGameWin = window.open("./mem-game/", "_blank");
     if (memoryGameWin) {
       window.focus();
@@ -1184,6 +1197,8 @@ function ask() {
       alert("Please enable popups for this site!");
     }
   } else if (q63.test(q)) {
+  	msg = "";
+    $output.text(msg);
     let caloTrackerWin = window.open("./calotracker/", "_blank");
     if (caloTrackerWin) {
       window.focus();
@@ -1248,6 +1263,10 @@ function ask() {
     stopText();
     msg = "";
     $output.html(msg);
+    } else if (q69.test(q)) {
+    	msg = "";
+	    $output.text(msg);
+    	showFeatures();
   } else {
     $("#message").slideFadeToggle(800);
     msg = "Sorry, the program is still under development.";
@@ -1380,7 +1399,7 @@ function switchTheme() {
     islTh = false;
     isdTh = !islTh;
     $("#recIcon").attr("src", "whitemike.png")
-    //Show a snackbar each time the theme switches to Lth
+    //Show a snackbar each time the theme switches
     snack.innerText = "Switched to Dark theme";
     snack.className = "show";
     setTimeout(function () {
@@ -1419,7 +1438,7 @@ function log(x) {
 }
 
 function debug(x) {
-  return console.log(x);
+  return console.debug(x);
 } //end
 
 // Get User's Timezone
@@ -1449,7 +1468,7 @@ if ("speechSynthesis" in window) {
       /*optional expression*/
       setTimeout(function () {
         snack.className = snack.className.replace("show", "");
-      }, 4000);
+      }, 2300);
     }
   });
 } else {
@@ -1529,3 +1548,4 @@ function showLicense() {
   }
   stopText();
 }
+
