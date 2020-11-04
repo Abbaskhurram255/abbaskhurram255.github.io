@@ -1,4 +1,4 @@
-/* load default (light) theme each time the window (aka body object (DOM document.body) loads) nd show a tooltip whenever searchInput is active. Run startTime function too */
+/* load default (light) theme every time the window (aka body object (DOM document.body) loads) nd show a tooltip whenever searchInput is active. Run startTime function too */
 window.onload = () => {
   $lTheme.attr("media", "");
   $dTheme.attr("media", "none");
@@ -36,7 +36,7 @@ window.onload = () => {
           stopText();
         }
         playText(mesg.innerText);
-        //Show a snackbar each time Speech Synthesis reads the text
+        //Show a snackbar every time Speech Synthesis reads the text
         snack.innerText =
           "Speech synthesis is ongoing. You can't enter text in the input field until it finishes reading.";
         snack.className = "show";
@@ -272,7 +272,7 @@ const q1 = /what'?s?( is)? (up|popping)/i,
   q4 = /(how('?re| are) you)|(how('?ve?| have) you been)/i,
   q5 = /(what'?s?( is)?|show) my name/i,
   q6 = /(what'?s?( is)? your name)|(what (can I|do you want me to) call you)/i,
-  q7 = /(is|was) (this|\d{4}) (a)? leap year/i,
+  q7 = /(is|was) (this|\d{4})( a)? leap year/i,
   q8 = /((what'?s?|when'?s?)( is)?|show) my (dob|bday|(birth|b(-)?)day)/i,
   q9 = /(how old am I)|((show|what'?s?( is)?) my age)/i,
   q10 = /(call me by another|(change|(re)?save) my) name/i,
@@ -284,7 +284,7 @@ const q1 = /what'?s?( is)? (up|popping)/i,
   q16 = /(weather)|(temperature today)|((hot|rainy|cloudy|sunny) day)/i,
   q17 = /^$/,
   q18 = /((open|run|launch|execute) calc(ulator)?)|(calculate(?:bmi))/i,
-  q19 = /(tts)|(speech enine)|(text to speech)|(ebook to audiobook)|(reader)/i,
+  q19 = /(tts)|(speech engine)|(text to speech)|(ebook to audiobook)|(reader)/i,
   q20 = /((my|take|open|launch) notes)|(journal)|(notebook)/i,
   q21 = /(todo)|(reminder)|(remind me to)|((bucket|shopping) list)/i,
   q22 = /(music)|(songs?)|(jukebox)/i,
@@ -298,8 +298,8 @@ const q1 = /what'?s?( is)? (up|popping)/i,
   q30 = /(lyrics)|(encycl|lyric)opedia/i,
   q31 = /(currency)|(exchange rates?)/i,
   q32 = /(what )?day of year( is it)?/i,
-  q33 = /is (this|it|today) a weekday (today)?/i,
-  q34 = /is (it|this) a weekend today/i,
+  q33 = /is (this|it|today) a weekday today/i,
+  q34 = /is (it|this) a weekend( day)? today/i,
   q35 = /numbers? to roman/i,
   q36 = /(mi|miles) (and|to) (km|kilometers)/i,
   q37 = /(km|kilometers) (and|to) (mi|miles)/i,
@@ -1399,7 +1399,7 @@ function switchTheme() {
     islTh = false;
     isdTh = !islTh;
     $("#recIcon").attr("src", "whitemike.png")
-    //Show a snackbar each time the theme switches
+    //Show a snackbar every time theme switches to dark Theme
     snack.innerText = "Switched to Dark theme";
     snack.className = "show";
     setTimeout(function () {
@@ -1412,7 +1412,7 @@ function switchTheme() {
     isdTh = false;
     islTh = !isdTh;
     $("#recIcon").attr("src", "blackmike.png")
-    //Show a snackbar each time the theme switches to dth
+    //Show a snackbar every time the theme switches to light theme
     snack.innerText = "Switched to Light Theme";
     snack.className = "show";
     setTimeout(function () {
@@ -1461,7 +1461,7 @@ if ("speechSynthesis" in window) {
         stopText();
       }
       playText(mesg.innerText);
-      //Show a snackbar each time Speech Synthesis reads the text
+      //Show a snackbar every time Speech Synthesis reads the text
       snack.innerText =
         "Speech synthesis is ongoing. You can't enter text in the input field until it finishes reading.";
       snack.className = "show";
