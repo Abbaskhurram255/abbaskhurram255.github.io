@@ -831,7 +831,7 @@ function ask() {
   } else if (q32.test(q)) {
     $("#message").slideFadeToggle(800);
     msg =
-      "This is day " +
+      "Today is day " +
       dayOfYear(new Date()) +
       " of year " +
       new Date().getFullYear();
