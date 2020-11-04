@@ -114,7 +114,7 @@ recognition.onerror = function(event) {
 
 
 $('#recIcon').on('click', function() {
-    
+	stopText();
     recognition.start();
 });
 
