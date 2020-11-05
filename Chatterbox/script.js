@@ -46,7 +46,9 @@ window.onload = () => {
       }
     }
   });
-
+  setTimeout(daystilXmas, 1000);
+  setTimeout(daystilNYE, 12000);
+  setTimeout(daystilNYD, 25000);
   $("#message").slideFadeToggle(5);
   $(".stagger-menu").slideFadeToggle(5);
   $(".menu-toggler-label").click(function () {
@@ -220,6 +222,108 @@ const detectDeviceType = () => {
   return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? "Mobile" : "Desktop";
 };
 
+const daystilXmas = () => {
+let tday=new Date();
+var cmas=new Date(tday.getFullYear(), 11, 25);
+if (tday.getMonth()==11 && tday.getDate()>=25) 
+{
+cmas.setFullYear(cmas.getFullYear()+1); 
+}  
+let oneDay=1000*60*60*24;
+let rslt = Math.ceil((cmas.getTime()-tday.getTime())/(oneDay));
+if (rslt==0 || rslt==365) {
+  /*show a snack here saying "Merry Christmas!"...*/
+  let snack = document.querySelector("#snackbar");
+      snack.innerText =
+          "Merry Christmas!";
+        snack.className = "show";
+        setTimeout(function () {
+          snack.className = snack.className.replace("show", "");
+        }, 3500);
+} else if (rslt==1) {
+  let snack = document.querySelector("#snackbar");
+      snack.innerText =
+          "Reminder: It's Christmas tomorrow!";
+        snack.className = "show";
+        setTimeout(function () {
+          snack.className = snack.className.replace("show", "");
+        }, 3500);
+} else if (rslt<7 && rslt!=0 && rslt!=1) {
+  let snack = document.querySelector("#snackbar");
+      snack.innerText =
+          `Reminder: Only ${rslt} days left until Christmas!`;
+        snack.className = "show";
+        setTimeout(function () {
+          snack.className = snack.className.replace("show", "");
+        }, 3500);
+  }
+}
+
+const daystilNYE = () => {
+var nextNewYear, msPerDay;
+let curYr = new Date().getFullYear();
+let today = new Date();
+nextNewYear = new Date("January 1, 2000 00:00:00")
+        nextNewYear.setYear(curYr + 1);
+        msPerDay = 24 * 60 * 60 * 1000;
+        const noofdayslefttilNYE = Math.floor((nextNewYear.getTime() - today.getTime()) / msPerDay);
+if (noofdayslefttilNYE==0 || noofdayslefttilNYE==365) {
+  /*show a snack here saying "Happy New Year's Eve!"...*/
+  let snack = document.querySelector("#snackbar");
+      snack.innerText =
+          "Happy New Year's Eve!";
+        snack.className = "show";
+        setTimeout(function () {
+          snack.className = snack.className.replace("show", "");
+        }, 3500);
+} else if (noofdayslefttilNYE==1) {
+  let snack = document.querySelector("#snackbar");
+      snack.innerText =
+          "Reminder: It's New Year's Eve tomorrow!";
+        snack.className = "show";
+        setTimeout(function () {
+          snack.className = snack.className.replace("show", "");
+        }, 3500);
+} else if (noofdayslefttilNYE<7 && noofdayslefttilNYE!=0 && noofdayslefttilNYE!=1) {
+  let snack = document.querySelector("#snackbar");
+      snack.innerText =
+          `Reminder: Only ${noofdayslefttilNYE} days left until New Year's Eve!`;
+        snack.className = "show";
+        setTimeout(function () {
+          snack.className = snack.className.replace("show", "");
+        }, 3500);
+  }
+}
+
+const daystilNYD = () => {
+let nextNewYearsDay, msPerDay;
+let currentYr = new Date().getFullYear();
+let today = new Date();
+nextNewYearsDay = new Date("January 1, 2000 00:00:00")
+        nextNewYearsDay.setYear(currentYr + 1);
+        msPerDay = 24 * 60 * 60 * 1000;
+        const noofdayslefttilNYD = Math.ceil((nextNewYearsDay.getTime() - today.getTime()) / msPerDay);
+if (noofdayslefttilNYD==0 || noofdayslefttilNYD==365) {
+  /*show a snack here saying "Happy New Year's Day!"...*/
+  let snack = document.querySelector("#snackbar");
+      snack.innerText =
+          "Happy New Year's Day!";
+        snack.className = "show";
+        setTimeout(function () {
+          snack.className = snack.className.replace("show", "");
+        }, 3500);
+} else if (noofdayslefttilNYD==1) {
+  let snack = document.querySelector("#snackbar");
+      snack.innerText =
+          "Reminder: It's New Year's Day tomorrow!";
+        snack.className = "show";
+        setTimeout(function () {
+          snack.className = snack.className.replace("show", "");
+        }, 3500);
+   }
+}
+
+
 
 
 var msg;
@@ -320,7 +424,7 @@ const q1 = /what'?s?( is)? (up|popping)/i,
   q52 = /temperature conver(sion|ter)/i,
   q53 = /(meal finder)|(find( me)? meals?)|(recipes?)|(how to cook)/i,
   q54 = /(I'?( ?a)?m (anxious|tired))|(help me (calm down|relax|with my anxiety))|(relaxer)/i,
-  q55 = /(new year countdown)|((can'?t wait (un)?till?|when is) new year)/i,
+  q55 = /(new year countdown)|(((can'?t wait)|(days( left)?) (un)?till?|when is) new year)/i,
   q56 = /(typing game)|((open|run|launch|play) speed( |-)?typer)/i,
   q57 = /((expenses?|budget) tracker)|(track my (budget|expenses?|pocket money))/i,
   q58 = /(stopwatch)|(countdown timer)|(counter ?clock)|(count down)/i,
@@ -330,7 +434,7 @@ const q1 = /what'?s?( is)? (up|popping)/i,
   q62 = /memory (game|test)/i,
   q63 = /(calo(ries? )?tracker)|(track calories)/i,
   q64 = /(dungeon crawler)|(rogue-?life)/i,
-  q65 = /(fotoflick)|(puzzle game)/i,
+  q65 = /(fotoflick)|(puzzle game)|((photo|picture) puzzle)/i,
   q66 = /((motivate|inspire) me)|(I'?( ?a)?m demotivated)/i,
   q67 = /(space(X|station)?|nasa) (data|live)/i,
   q68 = /(Snapshots?)|(landscapes)|(wallpapers)/i,
