@@ -23,7 +23,6 @@ Wanna try it? [Click here](https://abbaskhurram255.github.io/Chatterbox/)
     *   Currency Converter
     *   Expense Tracker
     *   Simple Canvas/Drawing App (beta)
-    *   Today In Google Doodles History/ Event of the day
     *   Jukebox
     *   Notes
     *   Text Reader (commonly used for book reading)
@@ -39,6 +38,7 @@ Wanna try it? [Click here](https://abbaskhurram255.github.io/Chatterbox/)
     *   Quotes app
     *   Relaxer
     *   Temperature Units Converter
+    *   Today In Google Doodles History/ Event of the day
     *   SnapShot
     *   Space data app
     *   Stopwatch/ Timer
