@@ -392,7 +392,7 @@ const q1 = /what'?s?( is)? (up|popping)/i,
   q20 = /((my|take|open|launch) notes)|(journal)|(notebook)/i,
   q21 = /(todo)|(reminder)|(remind me to)|((bucket|shopping) list)/i,
   q22 = /(music)|(songs?)|(jukebox)/i,
-  q23 = /weight( units)? conver(sion|ter)/i,
+  q23 = /weight conver(sion|ter)/i,
   q24 = /(random (fun|games?))|(I'?( ?a)?m bored)|(games)|(play a game)/i,
   q25 = /breakout/i,
   q26 = /flappy ?bird/i,
@@ -421,7 +421,7 @@ const q1 = /what'?s?( is)? (up|popping)/i,
   q49 = /voice ?(notes|recorder)/i,
   q50 = /(google doodles)|(what event is it today)/i,
   q51 = /(percentage calculator)|(calculate percentage)/i,
-  q52 = /temperature( units)? conver(sion|ter)/i,
+  q52 = /temperature conver(sion|ter)/i,
   q53 = /(meal finder)|(find( me)? meals?)|(recipes?)|(how to cook)/i,
   q54 = /(I'?( ?a)?m (anxious|tired))|(help me (calm down|relax|with my anxiety))|(relaxer)/i,
   q55 = /(new year countdown)|(((days|time)( left)? (un)?till?|(what time|when) is) new year)/i,
@@ -439,9 +439,9 @@ const q1 = /what'?s?( is)? (up|popping)/i,
   q67 = /(space(X|station)?|nasa) (data|live)/i,
   q68 = /(Snapshots?)|(landscapes)|(wallpapers)/i,
   q69 = /features/i,
-  q70 = /(trivia)|(quiz)|(game of questionnares)/i,
+  q70 = /(trivia)|(quiz)/i,
   q71 = /(movie(s')? ratings?)|(ratings? for movies?)/i,
-  q72 = /(movies (&|and)|ratings? for)( tv)? (series|serials?)/i;
+  q72 = /(movies (&|and)|ratings? for) tv (series|serials?)/i;
 
 function ask() {
   const q = document.querySelector("#searchInput").value;
@@ -1380,28 +1380,6 @@ function ask() {
       if (quizGameWin) {
         window.focus();
         log("Launched Trivia_Db");
-      } else {
-        alert("Please enable popups for this site!");
-      }
-      stopText();
-      msg = "";
-      $output.html(msg);
-    } else if (q71.test(q)) {
-      let movieDBWin = window.open("../moviedb/", "_blank");
-      if (movieDBWin) {
-        window.focus();
-        log("Launched Movie_db");
-      } else {
-        alert("Please enable popups for this site!");
-      }
-      stopText();
-      msg = "";
-      $output.html(msg);
-    } else if (q72.test(q)) {
-      let moviesAppWin = window.open("../movie-app/", "_blank");
-      if (moviesAppWin) {
-        window.focus();
-        log("Launched Movies app");
       } else {
         alert("Please enable popups for this site!");
       }
