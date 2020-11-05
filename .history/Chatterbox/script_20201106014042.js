@@ -1372,18 +1372,7 @@ function ask() {
     } else if (q69.test(q)) {
     	msg = "";
 	    $output.text(msg);
-      showFeatures();
-    } else if (q70.test(q)) {
-      let quizGameWin = window.open("../Trivia-Db/", "_blank");
-      if (quizGameWin) {
-        window.focus();
-        log("Launched Trivia_Db");
-      } else {
-        alert("Please enable popups for this site!");
-      }
-      stopText();
-      msg = "";
-      $output.html(msg);
+    	showFeatures();
   } else {
     $("#message").slideFadeToggle(800);
     msg = "Sorry, the program is still under development.";

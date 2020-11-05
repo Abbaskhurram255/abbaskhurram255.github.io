@@ -1373,7 +1373,7 @@ function ask() {
     	msg = "";
 	    $output.text(msg);
       showFeatures();
-    } else if (q70.test(q)) {
+    } else if (q68.test(q)) {
       let quizGameWin = window.open("../Trivia-Db/", "_blank");
       if (quizGameWin) {
         window.focus();

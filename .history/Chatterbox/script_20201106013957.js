@@ -438,8 +438,7 @@ const q1 = /what'?s?( is)? (up|popping)/i,
   q66 = /((motivate|inspire) me)|(I'?( ?a)?m demotivated)/i,
   q67 = /(space(X|station)?|nasa) (data|live)/i,
   q68 = /(Snapshots?)|(landscapes)|(wallpapers)/i,
-  q69 = /features/i,
-  q70 = /(trivia)|(quiz)/i;
+  q69 = /features/i;
 
 function ask() {
   const q = document.querySelector("#searchInput").value;
@@ -820,7 +819,7 @@ function ask() {
       "./mem-game/",
       "../dungeon-crawler/",
       "../foto-flick/",
-      "../Trivia-Db/",
+      "../Trivia-d",
     ];
     let gamesWin = window.open(
       games[Math.floor(Math.random() * games.length)],
@@ -1372,18 +1371,7 @@ function ask() {
     } else if (q69.test(q)) {
     	msg = "";
 	    $output.text(msg);
-      showFeatures();
-    } else if (q70.test(q)) {
-      let quizGameWin = window.open("../Trivia-Db/", "_blank");
-      if (quizGameWin) {
-        window.focus();
-        log("Launched Trivia_Db");
-      } else {
-        alert("Please enable popups for this site!");
-      }
-      stopText();
-      msg = "";
-      $output.html(msg);
+    	showFeatures();
   } else {
     $("#message").slideFadeToggle(800);
     msg = "Sorry, the program is still under development.";
