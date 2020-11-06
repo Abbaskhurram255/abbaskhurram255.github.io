@@ -440,8 +440,8 @@ const q1 = /what'?s?( is)? (up|popping)/i,
   q68 = /(Snapshots?)|(landscapes)|(wallpapers)/i,
   q69 = /features/i,
   q70 = /(trivia)|(quiz)|(game of questionnares)/i,
-  q71 = /(movie(s')? ratings?)|(ratings? for movies?)/i,
-  q72 = /(movies (&|and)|ratings? for)( tv)? (series|serials?)/i;
+  q71 = /(movies (&|and)|ratings? for)( tv)? (series|serials?)/i,
+  q72 = /(movie(s')? ratings?)|(ratings? for movies?)/i;
 
 function ask() {
   const q = document.querySelector("#searchInput").value;
