@@ -510,17 +510,19 @@ function ask() {
     msg += "</li></ul></em>";
     $output.html(msg);
     console.log(msg);
-    if (/your (name|age|birthday):/im.test(msg)) {
+    /*
+    if (/your (name|age|birthday):/im.test(msg) &&  mesg.innerText.toLowerCase().indexOf("data received via") === -1) {
       $.get(
         "https://api.ipdata.co/?api-key=63a8b1ef829b0a90909b1bb7e9c931fe1ffb70e27378da4c302e22c7",
         function (response) {
           $("#message").append(
-            `<br><b>Data recieved via your IP Address</b><br>Your country: ${response.country_name} <img src="${response.flag}" height="15vh" width="22vw"> <sup><small>[${response.country_code}]</small></sup><br>Your native language: ${response.languages[1].name}<br>Your timezone: UTC ${response.time_zone.offset} (${response.time_zone.abbr})<br>Note: We value your privacy! None of your data will be shared.`
+            `<br><b>Data received via your IP Address</b><br>Your country: ${response.country_name} <img src="${response.flag}" height="15vh" width="22vw"> <sup><small>[${response.country_code}]</small></sup><br>Your native language: ${response.languages[1].name}<br>Your timezone: UTC ${response.time_zone.offset} (${response.time_zone.abbr})<br>Note: We value your privacy! None of your data will be shared.`
           );
         },
         "jsonp"
       );
     }
+	*/
     $("#message").delay(10000).slideFadeToggle(800);
   } else if (q4.test(q)) {
     $("#message").slideFadeToggle(800);
