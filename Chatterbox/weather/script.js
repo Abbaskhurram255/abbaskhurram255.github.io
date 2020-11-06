@@ -46,10 +46,6 @@ form.addEventListener("submit", e => {
       msg.textContent = `You already know the weather for ${
         filteredArray[0].querySelector(".city-name span").textContent
       } ...otherwise be more specific by providing the country code as well 😉`;
-      mesg = `You already know the weather for ${
-        filteredArray[0].querySelector(".city-name span").textContent
-      } ...otherwise be more specific by providing the country code as well`;
-      playText(mesg);
       form.reset();
       input.focus();
       return;
