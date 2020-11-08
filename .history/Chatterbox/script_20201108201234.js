@@ -444,8 +444,7 @@ const q1 = /what'?s?( is)? (up|popping)/i,
   q72 = /(movie(s')? ratings?)|(ratings? for movies?)/i,
   q73 = /(day (planner|scheduler))|((plan|schedule)( my)? day)/i,
   q74 = /(chase( |-)the( |-)box)|(box chaser)/i,
-  q75 = /giphy/i,
-  q76 = /(pass(code|word|phrase) generator)|(generate( me)? a ?(random|difficult)? pass(code|word|phrase))/i;
+  q75 = /giphy/i;
 
 function ask() {
   const q = document.querySelector("#searchInput").value;
@@ -1449,10 +1448,10 @@ function ask() {
       msg = "";
       $output.html(msg);
     } else if (q76.test(q)) {
-      let pwGenAppWin = window.open("./Passwordgen/", "_blank");
-      if (pwGenAppWin) {
+      let giphyAppWin = window.open("./giphy/", "_blank");
+      if (giphyAppWin) {
         window.focus();
-        log("Launched Password Generator");
+        log("Launched Giphy");
       } else {
         alert("Please enable popups for this site!");
       }

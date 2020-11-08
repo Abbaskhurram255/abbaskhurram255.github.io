@@ -1,0 +1,92 @@
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+textarea {
+  background: transparent;
+  border: none;
+  resize: none;
+  color: #000000;
+  border-left: 1px solid black;
+  padding: 10px;
+}
+
+.jumbotron {
+  text-align: center;
+  background-color: transparent;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  font-size: 20px;
+  border-radius: 0;
+  border-bottom: 10px solid black;
+  background-image: url("https://cache.desktopnexus.com/thumbseg/2527/2527500-bigthumbnail.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  overflow: auto;
+}
+
+.description {
+  white-space: pre-wrap;
+  text-align: center;
+  font-size: 18px;
+  border-left: 2px solid white;
+}
+
+.time-block {
+  text-align: center;
+  border-radius: 15px;
+}
+
+.row {
+  white-space: pre-wrap;
+  height: 65px;
+  border-top: 1px solid white;
+}
+
+.hour {
+  color: #000000;
+  font-weight: bold;
+  padding-top: 20px;
+}
+
+.timeSlots {
+  margin-bottom: 20px;
+}
+
+.past {
+  background-color: rgb(191, 231, 250);
+  color: white;
+}
+
+.present {
+  background-color: rgb(82, 183, 250);
+  color: white;
+}
+
+.future {
+  background-color: rgb(2, 130, 228);
+  color: white;
+}
+
+.clear {
+  background-color: darkcyan;
+  color: white;
+  width: 53%;
+  margin-left: 24%;
+  margin-bottom: 2%;
+}
+
+.saveBtn {
+  border-left: 2px solid white;
+  font-weight: bold;
+}
+
+.saveBtn i:hover {
+  font-size: 20px;
+  transition: all 0.3s ease-in-out;
+}

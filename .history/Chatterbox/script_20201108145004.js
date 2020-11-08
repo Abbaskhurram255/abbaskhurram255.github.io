@@ -415,7 +415,7 @@ const q1 = /what'?s?( is)? (up|popping)/i,
   q43 = /breaking bad cast/i,
   q44 = /(b(ody )?m(ass )?i(ndex)?)|(do I overweigh)/i,
   q45 = /maze/i,
-  q46 = /(calendar)|(appointments?)|((week|event) (planner|scheduler))|(events)|((plan|schedule) an event)/i,
+  q46 = /(calendar)|(appointments?)|((day|week|event) planner)|(events)|(plan an event)/i,
   q47 = /my recipes/i,
   q48 = /(space invaders)|(invasion game)/i,
   q49 = /voice ?(notes|recorder)/i,
@@ -440,12 +440,8 @@ const q1 = /what'?s?( is)? (up|popping)/i,
   q68 = /(Snapshots?)|(landscapes)|(wallpapers)/i,
   q69 = /features/i,
   q70 = /(trivia)|(quiz)|(game of questionnares)/i,
-  q71 = /(movies (&|and)|ratings? for)( tv)? (series|serials?)/i,
-  q72 = /(movie(s')? ratings?)|(ratings? for movies?)/i,
-  q73 = /(day (planner|scheduler))|((plan|schedule)( my)? day)/i,
-  q74 = /(chase( |-)the( |-)box)|(box chaser)/i,
-  q75 = /giphy/i,
-  q76 = /(pass(code|word|phrase) generator)|(generate( me)? a ?(random|difficult)? pass(code|word|phrase))/i;
+  q71 = /(movies (&|and)|ratings? for( movies and))( tv)? (series|serials?)/i,
+  q72 = /(movie(s')? ratings?)|(ratings? for movies?)/i;
 
 function ask() {
   const q = document.querySelector("#searchInput").value;
@@ -829,7 +825,6 @@ function ask() {
       "../dungeon-crawler/",
       "../foto-flick/",
       "../Trivia-Db/",
-      "./box-chaser/",
     ];
     let gamesWin = window.open(
       games[Math.floor(Math.random() * games.length)],
@@ -1409,50 +1404,6 @@ function ask() {
       if (moviesAppWin) {
         window.focus();
         log("Launched Movies app");
-      } else {
-        alert("Please enable popups for this site!");
-      }
-      stopText();
-      msg = "";
-      $output.html(msg);
-    } else if (q73.test(q)) {
-      let daySchedulerAppWin = window.open("./day_scheduler/", "_blank");
-      if (daySchedulerAppWin) {
-        window.focus();
-        log("Launched Day Scheduler");
-      } else {
-        alert("Please enable popups for this site!");
-      }
-      stopText();
-      msg = "";
-      $output.html(msg);
-    } else if (q74.test(q)) {
-      let boxChaserGameWin = window.open("./box-chaser/", "_blank");
-      if (boxChaserGameWin) {
-        window.focus();
-        log("Launched Chase-The-Box");
-      } else {
-        alert("Please enable popups for this site!");
-      }
-      stopText();
-      msg = "";
-      $output.html(msg);
-    } else if (q75.test(q)) {
-      let giphyAppWin = window.open("./giphy/", "_blank");
-      if (giphyAppWin) {
-        window.focus();
-        log("Launched Giphy");
-      } else {
-        alert("Please enable popups for this site!");
-      }
-      stopText();
-      msg = "";
-      $output.html(msg);
-    } else if (q76.test(q)) {
-      let pwGenAppWin = window.open("./Passwordgen/", "_blank");
-      if (pwGenAppWin) {
-        window.focus();
-        log("Launched Password Generator");
       } else {
         alert("Please enable popups for this site!");
       }

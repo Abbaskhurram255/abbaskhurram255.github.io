@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <script src="https://kit.fontawesome.com/3008cf39bf.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Weather Dashboard</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div id="header">
+        <h1>Weather Dashboard</h1>
+      </div>
+    </header>
+    <div class="container">
+      <div class="row">
+    <!-- Search History Displayed -->
+        <div class="col-md-4" >
+          <div class="input-group" id="searchBox">
+            <input type="text" class="form-control" aria-label="Search" aria-describedby="basic-addon2" id="search" placeholder="Search for a City"/>
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button" id="searchBtn"><i class="fas fa-search"></i></button>
+            </div>
+          </div>
+          <button class="btn-lg btn-block city" id="clear">Clear</button>
+        <div id="searchCity">
+          <div id="listOfCities">
+          <!-- search history buttons will prepend here -->
+          </div>
+        </div>
+      </div>
+      <!-- Current Weather Displayed -->
+          <div class="col-md-8">
+            <div id="currentWeather">
+              <div class="show">
+                <h2>City Name</h2>
+                <p>Temperature: </p>
+                <p>Humidity: </p>
+                <p>Wind: </p>
+                <p>UV-Index: </p>
+              </div>
+          <!-- hidden div until user searches or selects a city -->
+              <div class="hide cityDiv">
+                <h4 id="date"></h4>
+                <h2 id="city">City Name:</h2>
+                <p id="temp">Temperature:</p>
+                <p id="humidity">Humidity:</p>
+                <p id="wind">Wind:</p>
+                <p id="uv">UV Index: </p>
+                <!-- 5 Day Forecast Displayed -->
+                <div className="hideForecast">
+                  <div class="row" id="forecastDiv">
+                    <div class="card noBorder">
+                      <div class="card-body forecast">
+                        <h6 class="card-title" id="Day1"></h6>
+                            <h6 class="card-text"><img id="forecastSymbol1"></h6>
+                            <h5 class="card-text" id="forecastTemp1"></h5>
+                            <h6 class="card-text" id="forecastHumidity1"></h6>
+                      </div>
+                    </div>
+                    <div class="card noBorder">
+                      <div class="card-body forecast">
+                        <h6 class="card-title" id="Day2"></h6>
+                        <h6 class="card-text"><img id="forecastSymbol2"></h6>
+                        <h5 class="card-text" id="forecastTemp2"></h5>
+                        <h6 class="card-text" id="forecastHumidity2"></h6>
+                      </div>
+                    </div>
+                    <div class="card noBorder">
+                      <div class="card-body forecast">
+                        <h6 class="card-title" id="Day3"></h6>
+                        <h6 class="card-text"><img id="forecastSymbol3"></h6>
+                        <h5 class="card-text" id="forecastTemp3"></h5>
+                        <h6 class="card-text" id="forecastHumidity3"></h6>
+                      </div>
+                    </div>
+                    <div class="card noBorder">
+                      <div class="card-body forecast">
+                        <h6 class="card-title" id="Day4"></h6>
+                        <h6 class="card-text"><img id="forecastSymbol4"></h6>
+                        <h5 class="card-text" id="forecastTemp4"></h5>
+                        <h6 class="card-text" id="forecastHumidity4"></h6>
+                      </div>
+                    </div>
+                    <div class="card noBorder">
+                      <div class="card-body forecast">
+                        <h6 class="card-title" id="Day5"></h6>
+                        <h6 class="card-text"><img id="forecastSymbol5"></h6>
+                        <h5 class="card-text" id="forecastTemp5"></h5>
+                        <h6 class="card-text" id="forecastHumidity5"></h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              </div>
+            <div>
+          </div>
+        </div>
+      </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
