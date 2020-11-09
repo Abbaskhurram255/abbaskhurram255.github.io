@@ -1,7 +1,4 @@
-﻿# Chatterbox, it assists you!
-
-Wanna try it? [Click here](https://abbaskhurram255.github.io/Chatterbox/)
-
+﻿
 ## Features
 
 * * *
