@@ -1,4 +1,6 @@
-﻿# Chatterbox... it assists you!
+﻿# Chatterbox, it assists you!
+
+Wanna try it? [Click here](https://abbaskhurram255.github.io/Chatterbox/)
 
 ## Features
 
@@ -7,37 +9,71 @@
 *   Has Dark theme
 *   Has speech synthesis
 *   Is interactive
-*   Can perform calculations like converting between kilometers and miles
-*   Reminds the user on his birthday
+*   Supports speech input (not supported by browsers other than Chrome, and Samsung Internet though)
+*   Can perform calculations like conversion between kilometers and miles
+*   Reminds users on events like New Year's Eve, New Year's Day, Christmas, and their birthday
 
 *   #### _Built-in apps_
 
+    *   Audio Player + visualizer
+    *   BMI Calculator
     *   Calculator
+    *   Calendar/ event scheduler
+    *   CaloTracker
+    *   Currency Converter
+    *   Day Planner
+    *   Expense Tracker
+    *   Simple Canvas/Drawing App (beta)
     *   Jukebox
     *   Notes
     *   Text Reader (commonly used for book reading)
     *   Live Weather
     *   Lyricopedia
+    *   Meal Finder / Recipes app
+    *   Mortgage Calculator
+    *   Motivator
+    *   MovieDB, Movies app
+    *   My Recipes
+    *   New Year Countdown
+    *   Password Generator
+    *   Percentage Calculator
+    *   Quotes app
+    *   Relaxer
+    *   Temperature Units Converter
+    *   Today In Google Doodles History/ Event of the day
+    *   SnapShot
+    *   Space data app
+    *   Stopwatch/ Timer
     *   Todo/Reminder
+    *   Voice Notes
+    *   Weight Units Converter
 *   #### _Built-in games_
 
-    *   2D Breakout (simple yet it has no more than 3 levels)
-    *   FlappyBird (simple yet experimental)
-    *   Hangman (quite simple)
-    *   Monopoly (simple yet experimental)
-    *   Pacman (too simple yet it has no more than one level :()
-    *   Rock Paper Scissors (simple yet quite old fashioned :()
-    *   Tic Tac Toe (simple; doesn't support multiplayer challenges :()
-You might be wondering why they are so simple. Well, see, the main purpose of this app is to assist you; not to play with you, right?
+    *   2D Breakout
+    *   Chase-The-Box
+    *   Dungeon Crawler
+    *   Fotoflick
+    *   FlappyBird
+    *   Hangman
+    *   Maze game
+    *   Miner of Lava
+    *   Monopoly (experimental)
+    *   Memory Game
+    *   Pacman
+    *   Rock Paper Scissors
+    *   Space Invaders
+    *   Tic Tac Toe
+    *   Trivia game
 
-Note: Some games might not work (properly) on mobile devices because they are not yet optimized for them.
+Note:
 
-<br>
+*   Some games might not work on mobile devices because they are not yet optimized for them.
+*   Since the main purpose of this app is to assist you, all aforelisted games are kept simple.
+
 ## Version
 
 * * *
 
 1.0  
 
-<br>
 <center>Changelogs will soon be listed here</center>
