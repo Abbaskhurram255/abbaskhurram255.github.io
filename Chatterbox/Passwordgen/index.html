@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Password Generator</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
     <div class="wrapper">
@@ -14,39 +14,62 @@
       </header>
       <div class="card">
         <div class="card-header">
-          <h2>Generate a Password</h2>
+          <h2>Click the button below to generate a unique password:</h2>
         </div>
         <div class="card-body">
           <textarea
-            readonly
-            id="password"
-            placeholder="Your Secure Password"
-            aria-label="Generated Password"
-          ></textarea>
+            id="password" placeholder="Your Secure Password" aria-label="Generated Password"> 
+          </textarea>
         </div>
         <div class="card-footer">
-          <div class="tooltip">
-            <button id="generate" class="btn" onmouseout="confirmpass()">
-              <span class="tooltiptext" id="genTooltip"
-                >Follow Prompts and Generate Password</span
-              >
-              Generate Password
-            </button>
+          <button id="generate" class="btn">Generate Password</button>
+          <div id= "checkbox-around">
+          <div class="checkbox-container">
+            <div id="slider-container">
+              <p>Password length: <span id="range-value">7</span></p>
+              <input id="slider" type="range" value="7" min="7" max="120" default="7">
           </div>
-          <div class="tooltip">
-            <button
-              id="copybtn"
-              class="btn"
-              onclick="copypass()"
-              onmouseout="confirmcopy()"
-            >
-              <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
-              Copy Password
-            </button>
-          </div>
+          
+          <div class="checkbox-container">
+            <label for="lowercase" class="checkbox-label">
+              <div class="input-title">Lowercase</div>
+                <input type="checkbox" id="lowercase">
+                <span class="checkbox-custom"></span>
+              </label>
+        </div>
+
+        <div class="checkbox-container">
+            <label for="uppercase" class="checkbox-label">
+              <div class="input-title">Uppercase</div>
+                <input type="checkbox" id="uppercase">
+                <span class="checkbox-custom"></span>
+            </label>
+        </div>
+
+        <div class="checkbox-container">
+            <label for="numbers" class="checkbox-label">
+              <div class="input-title">Numbers</div>
+                <input id="numbers" type="checkbox">
+                <span class="checkbox-custom"></span>
+            </label>            
+        </div>
+
+        <div class="checkbox-container">
+            <label for="special" class="checkbox-label">
+              <div class="input-title">Special Characters</div>
+                <input id="special" type="checkbox">
+                <span class="checkbox-custom"></span>
+            </label>
+           
         </div>
       </div>
     </div>
-    <script src="script.js"></script>
+        </div>
+      </div>
+    </div>
+    
+    <script src="./assets/script.js">
+
+    </script>
   </body>
 </html>
