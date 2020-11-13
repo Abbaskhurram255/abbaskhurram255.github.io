@@ -13,14 +13,17 @@
 *   #### _Built-in apps_
 
     *   Audio Player + visualizer
+    *   Bad Habit Tracker; track your bad habits, today!
     *   BMI Calculator
     *   Calculator
     *   Calendar/ event scheduler
     *   CaloTracker
+    *   Simple Canvas/Drawing App (beta)
     *   Currency Converter
     *   Day Planner
     *   Expense Tracker
-    *   Simple Canvas/Drawing App (beta)
+    *   Fisave, net worth tracking app
+    *   Habit Building Helper; build a new habit, today, a good one!
     *   Jukebox
     *   Notes
     *   Text Reader (commonly used for book reading)
@@ -30,6 +33,7 @@
     *   Mortgage Calculator
     *   Motivator
     *   MovieDB, Movies app
+    *   MyBookList
     *   My Recipes
     *   New Year Countdown
     *   Password Generator
@@ -42,8 +46,10 @@
     *   Space data app
     *   Stopwatch/ Timer
     *   Todo/Reminder
+    *   Unit Converter
     *   Voice Notes
     *   Weight Units Converter
+
 *   #### _Built-in games_
 
     *   2D Breakout
@@ -51,6 +57,7 @@
     *   Dungeon Crawler
     *   Fotoflick
     *   FlappyBird
+    *   Game Of Games, an adventurous RPG
     *   Hangman
     *   Maze game
     *   Miner of Lava
@@ -60,6 +67,7 @@
     *   Rock Paper Scissors
     *   Space Invaders
     *   Tic Tac Toe
+    *   The Construstor, a game of logic
     *   Trivia game
 
 Note:

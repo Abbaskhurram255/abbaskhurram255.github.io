@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Game of Games</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet"> 
+	<link rel="shortcut icon" href="favicon.ico" />
+</head>
+<body>
+	<h1 id="title">Game of Games</h1>
+	<div class="wrapper grid-container-mainNormal grid-container-shared">
+		<div class="battleLogArea innerArea"></div>
+		<div class="placesArea innerArea">
+			<h3 class="tc">Pick a place to cleanse of all evil</h3>
+			<br>
+			<div class="battlePicker">
+				<div class="battlePlace tc"><img class="placePhoto" src="assets/forest.jpg"><br><div class="center"><button class="actionButton" id="Place1">Forest</button></div>Monster levels:<br>Just do it!</div>
+				<div class="battlePlace tc"><img class="placePhoto" src="assets/cave.jpg"><br><div class="center"><button class="actionButton" id="Place2">Caves</button></div>Monster levels:<br>4-6</div>
+				<div class="battlePlace tc"><img class="placePhoto" src="assets/dungeon.jpg"><br><div class="center"><button class="actionButton" id="Place3">Dungeon</button></div>Monster levels:<br>7-9</div>
+				<div class="battlePlace tc"><img class="placePhoto" src="assets/castle.jpg"><br><div class="center"><button class="actionButton" id="Place4">Castle</button></div>Monster levels:<br>DRAGON(!)</div>
+			</div>
+		</div>
+		<div class="heroSheet innerArea">
+			<h1 class="name">Hero</h1>
+			Level: <span id="heroLevel"></span><br>
+			Experience: <span id="heroExperience"></span><br>
+			<div class="progressBar">
+				<div id="expProgressBar" class="w3-container" style="width:0%">0/3</div>
+			</div>
+			Health: <span id="heroHp"></span><br>
+			<div class="progressBar">
+				<div id="hpProgressBar" class="w3-container" style="width:100%">15/15</div>
+			</div>			
+			Damage: <span id="heroDamage"></span><br>
+			Defense: <span id="heroDefense"></span><br>
+			<div id="equipmentList">
+				<strong>Equipment</strong>
+				<br>
+				Weapon: <span id="heroWeapon"></span><br>
+				Armor: <span id="heroArmor"></span><!-- <br> -->
+				<!-- Ring:  --><span id="heroRing"></span><!-- <br> -->
+				<!-- Amulet:  --><span id="heroAmulet"></span><!-- <br> -->	
+			</div>
+			<br>
+			<button class="actionButton" id="inventory">Inventory</button>
+		</div>
+		<div class="enemySheet innerArea">
+			<h1 class="name" id="enemyName"></h1>
+			Level: <span id="enemyLevel"></span><br>
+			Hp: <span id="enemyHp"></span><br>
+			<div class="progressBar">
+				<div id="hpEnProgressBar" class="w3-container" style="width:100%"></div>
+			</div>	
+			Damage: <span id="enemyDamage"></span><br><br>
+			<div id="enemyDead" class="tc">-killed-<br></div>
+			<div class="center">
+				<button class="actionButton" id="attackEnemy">Attack</button>
+				<button class="actionButton" id="nextFight">Next fight</button>
+				<button class="actionButton" id="backToCity">Back to city</button>
+			</div>
+		</div>
+		<div class="daysLeftArea innerArea"><div class="center2"><span id="daysLeft">DRAGON(!) will burn our city in:</span><br><span id="dayNumber"></span></div></div>
+		<div class="bigInventoryArea innerArea">
+			<button class="actionButton" id="quitInventory">Back</button><br>
+			[Mouse over an item to see its stats]
+			<table class="inventoryTable"></table>
+			<div class="bigInventoryAreaUnder">
+				<div class="invSmallAreas"><span class="invTitle">Weapons</span><div class="invWeaponArea"></div></div>
+				<div class="invSmallAreas"><span class="invTitle">Armor</span><div class="invArmorArea"></div></div>
+				<div class="invSmallAreas underConstruction"><span class="invTitle">Under Construction</span><div class="invRingArea"></div></div>
+				<div class="invSmallAreas underConstruction"><span class="invTitle">Under Construction</span><div class="invMiscellanousArea"></div></div>
+			</div>
+			<div class="inventoryListArea"></div>
+		</div>
+		<div class="hintArea">
+			<p id="hintTitle"></p>
+			<p id="hintText"></p>
+			<button id="hintButton" class="actionButton">OK</button>
+		</div>
+	</div>
+	<div id="overlay"></div>
+	<script type="text/javascript" src="script.js"></script>
+</body>
+</html>

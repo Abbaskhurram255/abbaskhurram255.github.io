@@ -1,0 +1,52 @@
+body {
+    margin-top: 70px;
+    background-color: rgb(117, 116, 168);
+    color: #fff;
+    font-size: 16px;
+    font-family: chalkboard;
+}
+
+button.btn {
+    color: black;
+}
+
+.popover-header{
+    background-color: rgb(56, 155, 151);
+}
+
+.popover{
+    height: 200px;
+    width: 400px;
+    overflow: scroll;
+}
+
+.change {
+    color: rgb(0, 0, 0);
+    visibility: hidden;
+}
+
+.hide {
+    visibility: visible;
+}
+
+.disp {
+    background-color: #DFA801;
+    border-radius: 9px;
+    margin: 10px
+}
+
+.prev {
+    background-color: rgba(78, 56, 9, 0.438);
+    color: white;
+    font-size: 20px;
+    border-radius: 5px;
+    border: none;
+}
+
+#calculate {
+    border: 1px solid #DFA801;
+}
+
+#calculate:hover {
+    background-color: #DFA801;
+}
