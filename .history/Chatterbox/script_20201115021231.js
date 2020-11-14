@@ -388,7 +388,7 @@ const q1 = /what'?s?( is)? (up|popping)/i,
   q16 = /(weather)|(temperature today)|((hot|rainy|cloudy|sunny) day)/i,
   q17 = /^$/,
   q18 = /((open|run|launch|execute) calc(ulator)?)|(calculate(?:bmi))/i,
-  q19 = /(tts)|(speech engine)|(text to speech)|(ebook to audiobook)|((document|text) reader)/i,
+  q19 = /(tts)|(speech engine)|(text to speech)|(ebook to audiobook)|(reader)/i,
   q20 = /((my|take|open|launch) notes)|(journal)|(notebook)/i,
   q21 = /(todo)|(reminder)|(remind me to)|((bucket|shopping) list)/i,
   q22 = /(music)|(songs?)|(jukebox)/i,
@@ -414,7 +414,7 @@ const q1 = /what'?s?( is)? (up|popping)/i,
   q42 = /(audio (visuali(z|s)er|player))|(play( local)? audio)/i,
   q43 = /breaking bad cast/i,
   q44 = /(b(ody )?m(ass )?i(ndex)?)|(do I overweigh)/i,
-  q45 = /(execute|launch|play|run) maze/i,
+  q45 = /(elaunch|play|run) maze/i,
   q46 = /(calendar)|(appointments?)|((week|event) (planner|scheduler))|(events)|((plan|schedule) an event)/i,
   q47 = /my recipes/i,
   q48 = /(space invaders)|(invasion game)/i,
@@ -422,7 +422,7 @@ const q1 = /what'?s?( is)? (up|popping)/i,
   q50 = /(google doodles)|(what event is it today)/i,
   q51 = /(percentage calculator)|(calculate percentage)/i,
   q52 = /temperature( units)? conver(sion|ter)/i,
-  q53 = /(meal finder)|(find( me)? meals?)|(recipes?)|(how to cook)|(help me (cook|with cooking))/i,
+  q53 = /(meal finder)|(find( me)? meals?)|(recipes?)|(how to cook)/i,
   q54 = /(I'?( ?a)?m (anxious|tired))|(help me (calm down|relax|with my anxiety))|(relaxer)/i,
   q55 = /(new year countdown)|(((days|time)( left)? (un)?till?|(what time|when) is) new year)/i,
   q56 = /(typing game)|((open|run|launch|play) speed( |-)?typer)/i,
@@ -455,8 +455,7 @@ const q1 = /what'?s?( is)? (up|popping)/i,
   q83 = /my( fave?(orite)?)? ?book(s')? ?list/i,
   q84 = /(math flash ?cards)|((arithmetic|math) game)/i,
   q85 = /simon/i,
-  q86 = /light maze/i,
-  q87 = /((book|pdf) ((pre)?viewer|reader))|((read|(pre)?view)( me)? (a (document|pdf)|pdf('?s)?))/i;
+  q86 = /light maze/i;
 
 function ask() {
   const q = document.querySelector("#searchInput").value;
@@ -1587,17 +1586,6 @@ function ask() {
       stopText();
       msg = "";
       $output.html(msg);
-    } else if (q87.test(q)) {
-      let pdfReaderWin = window.open("./voice-pdf-viewer/", "_blank");
-      if (pdfReaderWin) {
-        window.focus();
-        log("Launched PDF Books Reader");
-      } else {
-        alert("Please enable popups for this site!");
-      }
-      stopText();
-      msg = "";
-      $output.html(msg);
   } else {
     $("#message").slideFadeToggle(800);
     msg = "Sorry, the program is still under development.";
@@ -1868,7 +1856,7 @@ window.onclick = function (event) {
 const showFeatures = () => {
   modal.style.display = "block";
   stopText();
-  msg = "Don't underestimate me, because I can perform logical operations too. For example, if you asked me to inform you whether 2020 or 2021 is a leap year, I'd let you know. And if you asked me to inform you of the date it'll be tomorrow or the date it was yesterday, I'd let you know. Further, if you asked me to inform you whether it is a weekday today or weekend yet, I'd let you know.";
+  msg = "Don't underestimate me, because I can perform logical operations too. For example, if you asked me to inform you whether 2020 or 2021 is a leap year, I'd let you know. And if you asked me to inform you of the date it'll be tomorrow or of the date it was yesterday, I'd let you know. Further, if you asked me to inform you whether it is a weekday today or weekend yet, I'd let you know.";
   playText(msg);
 }
 //end block of modal fn

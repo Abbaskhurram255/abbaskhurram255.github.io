@@ -456,7 +456,7 @@ const q1 = /what'?s?( is)? (up|popping)/i,
   q84 = /(math flash ?cards)|((arithmetic|math) game)/i,
   q85 = /simon/i,
   q86 = /light maze/i,
-  q87 = /((book|pdf) ((pre)?viewer|reader))|((read|(pre)?view)( me)? (a (document|pdf)|pdf('?s)?))/i;
+  q87 = /(book|pdf) (viewer|reader)/i;
 
 function ask() {
   const q = document.querySelector("#searchInput").value;
@@ -1588,10 +1588,10 @@ function ask() {
       msg = "";
       $output.html(msg);
     } else if (q87.test(q)) {
-      let pdfReaderWin = window.open("./voice-pdf-viewer/", "_blank");
-      if (pdfReaderWin) {
+      let lightMazeWin = window.open("./light-maze/", "_blank");
+      if (Win) {
         window.focus();
-        log("Launched PDF Books Reader");
+        log("Launched Light Maze");
       } else {
         alert("Please enable popups for this site!");
       }
@@ -1868,7 +1868,7 @@ window.onclick = function (event) {
 const showFeatures = () => {
   modal.style.display = "block";
   stopText();
-  msg = "Don't underestimate me, because I can perform logical operations too. For example, if you asked me to inform you whether 2020 or 2021 is a leap year, I'd let you know. And if you asked me to inform you of the date it'll be tomorrow or the date it was yesterday, I'd let you know. Further, if you asked me to inform you whether it is a weekday today or weekend yet, I'd let you know.";
+  msg = "Don't underestimate me, because I can perform logical operations too. For example, if you asked me to inform you whether 2020 or 2021 is a leap year, I'd let you know. And if you asked me to inform you of the date it'll be tomorrow or of the date it was yesterday, I'd let you know. Further, if you asked me to inform you whether it is a weekday today or weekend yet, I'd let you know.";
   playText(msg);
 }
 //end block of modal fn
