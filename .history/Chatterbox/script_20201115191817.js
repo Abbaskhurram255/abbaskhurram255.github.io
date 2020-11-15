@@ -703,7 +703,7 @@ function ask() {
   } else if (q12.test(q)) {
     $("#message").slideFadeToggle(800);
     msg =
-      "You are! Actually I think you are even nicer than I am &#128521;";
+      "You are! Actually I think you are even nicer than me &#128524;";
     $output.html(msg);
     console.log(msg);
     $("#message").delay(10000).slideFadeToggle(800);
@@ -1440,7 +1440,7 @@ function ask() {
       let daySchedulerAppWin = window.open("./day_scheduler/", "_blank");
       if (daySchedulerAppWin) {
         window.focus();
-        msg = "Time is a precious resource—you can’t stop using it and you can’t find more of it, but you need it to do absolutely everything. From scheduling meetings to fulfilling orders, time is behind every aspect of running a business and you can’t afford to manage it poorly. So, I think you might want to develop a better routine. If you do, use our built-in application as your scheduler and never miss any of your scheduled work";
+        msg = "Time is a precious resource—you can’t stop using it and you can’t find more of it, but you need it to do absolutely everything. From scheduling meetings to fulfilling orders, time is behind every aspect of running a business and you can’t afford to manage it poorly. So, Want to develop a better work routine? Use our built-in application as your scheduler and never miss any of your scheduled work";
         playText(msg);
         log("Launched Day Scheduler");
       } else {

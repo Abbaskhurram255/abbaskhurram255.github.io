@@ -20,7 +20,6 @@
     *   CaloTracker
     *   Simple Canvas/Drawing App (beta)
     *   Currency Converter
-    *   Day Planner
     *   Expense Tracker
     *   Fisave, net worth tracking app
     *   Habit Building Helper; build a new habit, today, a good one!
@@ -50,6 +49,7 @@
     *   Voice-controlled PDF Viewer/ Book Reader (again, Speech Recognition isn't supported by browsers other than Chrome & Samsung Internet)
     *   Voice Notes
     *   Weight Units Converter
+    *   Work Day Scheduler
 
 *   #### _Built-in games_
 

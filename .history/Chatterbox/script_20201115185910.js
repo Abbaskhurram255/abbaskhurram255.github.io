@@ -440,8 +440,8 @@ const q1 = /what'?s?( is)? (up|popping)/i,
   q68 = /(snapshots?)|(landscapes)|(wallpapers)/i,
   q69 = /features/i,
   q70 = /(trivia)|(quiz)|(game of questionnares)/i,
-  q71 = /(ratings? for( tv)? (series|serials?))|((tv )?series app)/i,
-  q72 = /((movie(s')? (cast|ratings?))|(ratings? (for|of) movies?))|(movies? app)/i,
+  q71 = /ratings? for( tv)? (series|serials?)/i,
+  q72 = /(movie(s')? (cast|ratings?))|(ratings? (for|of) movies?)/i,
   q73 = /(day (planner|scheduler))|((plan|schedule)( my)? day)/i,
   q74 = /(chase( |-)the( |-)box)|(box chaser)/i,
   q75 = /giphy/i,
@@ -703,7 +703,7 @@ function ask() {
   } else if (q12.test(q)) {
     $("#message").slideFadeToggle(800);
     msg =
-      "You are! Actually I think you are even nicer than I am &#128521;";
+      "You are! Actually I think you are even way too nicer than me &#128524;";
     $output.html(msg);
     console.log(msg);
     $("#message").delay(10000).slideFadeToggle(800);
@@ -1412,17 +1412,22 @@ function ask() {
       msg = "";
       $output.html(msg);
     } else if (q71.test(q)) {
-      msg = "";
-      $output.html(msg);
-      let tvSeriesAppWin = window.open("../tv-series-app/", "_blank");
-      if (tvSeriesAppWin) {
+      let movieCastApps = ["../tv-series-app/", "../moviedb/"]
+      let movieCastAppsWin = window.open(
+        movieCastApps[Math.floor(Math.random() * movieCastApps.length)],
+        "_blank"
+      );
+      if (seriesAppsWin) {
+      let movieDBWin = window.open("../moviedb/", "_blank");
+      if (movieDBWin) {
         window.focus();
-        msg = "Here you can find all of your most loved series";
-        playText(msg);
-        log("Launched Launched an app for TV Series data");
+        log("Launched Movie_db");
       } else {
         alert("Please enable popups for this site!");
       }
+      stopText();
+      msg = "";
+      $output.html(msg);
     } else if (q72.test(q)) {
       let moviesAppWin = window.open("../movie-app/", "_blank");
       if (moviesAppWin) {
@@ -1435,17 +1440,16 @@ function ask() {
       msg = "";
       $output.html(msg);
     } else if (q73.test(q)) {
-      msg = "";
-      $output.html(msg);
       let daySchedulerAppWin = window.open("./day_scheduler/", "_blank");
       if (daySchedulerAppWin) {
         window.focus();
-        msg = "Time is a precious resource—you can’t stop using it and you can’t find more of it, but you need it to do absolutely everything. From scheduling meetings to fulfilling orders, time is behind every aspect of running a business and you can’t afford to manage it poorly. So, I think you might want to develop a better routine. If you do, use our built-in application as your scheduler and never miss any of your scheduled work";
-        playText(msg);
         log("Launched Day Scheduler");
       } else {
         alert("Please enable popups for this site!");
       }
+      stopText();
+      msg = "";
+      $output.html(msg);
     } else if (q74.test(q)) {
       let boxChaserGameWin = window.open("./box-chaser/", "_blank");
       if (boxChaserGameWin) {
