@@ -394,11 +394,11 @@ const q1 = /what'?s?( is)? (up|popping)/i,
   q22 = /(music)|(songs?)|(jukebox)/i,
   q23 = /weight( units)? conver(sion|ter)/i,
   q24 = /(random (fun|games?))|(I'?( ?a)?m bored)|(games)|(play( me)? a game)/i,
-  q25 = /^(play( me)?|run|launch|execute) breakout/i,
-  q26 = /^(play( me)?|run|launch|execute) flappy ?bird/i,
-  q27 = /^(play( me)?|run|launch|execute) hangman/i,
-  q28 = /^(play( me)?|run|launch|execute) pacman(ia)?/i,
-  q29 = /^(play( me)?|run|launch|execute) (rock|stone) paper scissors?/i,
+  q25 = /^(play|run|launch|execute) breakout/i,
+  q26 = /^(play|run|launch|execute) flappy ?bird/i,
+  q27 = /^(play|run|launch|execute) hangman/i,
+  q28 = /^(play|run|launch|execute) pacman(ia)?/i,
+  q29 = /^(play|run|launch|execute) (rock|stone) paper scissors?/i,
   q30 = /(lyrics)|((encycl|lyric)opedia)/i,
   q31 = /(currency)|(exchange rates?)/i,
   q32 = /(what )?day of year( is it)?/i,
@@ -457,7 +457,7 @@ const q1 = /what'?s?( is)? (up|popping)/i,
   q85 = /simon/i,
   q86 = /light maze/i,
   q87 = /^((book|pdf) ((pre)?viewer|reader))|((read|(pre)?view)( me)? (a (document|pdf)|pdf('?s)?))$/i,
-  q88 = /(^(open|launch|run)?( me)? ?travels? ?(app|plan(ning|s|ner))$)|(help me ?(to|with|in)? plan(ning)? travels)/i;
+  q88 = /(^(open|launch )?travels? ?(app|plan(ning|s|ner))$)|(help me ?(to|with|in)? plan(ning)? travels)/i;
 
 function ask() {
   const q = document.querySelector("#searchInput").value;
