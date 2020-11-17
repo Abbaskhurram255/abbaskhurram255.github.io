@@ -16,7 +16,7 @@
     *   Bad Habit Tracker; track your bad habits, today!
     *   BMI Calculator
     *   Calculator
-    *   Calendar/ event scheduler
+    *   Calendar
     *   CaloTracker
     *   Simple Canvas/Drawing App (beta)
     *   Currency Converter
