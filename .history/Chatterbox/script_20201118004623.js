@@ -1894,7 +1894,7 @@ const showPortfolio = () => {
 }
 
 $(document).bind("mouseleave", function(e) {
-  if (e.pageY - $(window).scrollTop() <= 1) {    
+  if (e.pageY - $(window).scrollTop() <= 0) {    
       stopText();
   }
 });

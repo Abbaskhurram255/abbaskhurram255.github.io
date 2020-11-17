@@ -1,0 +1,299 @@
+#time {
+  position: absolute;
+  text-align: center;
+  right: 20px;
+  font-family: 'Josefin Sans', sans-serif;
+  top: 13px;
+  border: 1px solid rgba(0,0,0,0.8);
+  padding: 4px;
+  box-shadow: 0 2px 5px 0 rgba(2, 2, 2, 0.5);
+  border-radius: 16px 0 16px 0;
+  /*background:linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,0,1));*/
+  background: linear-gradient(180deg, skyblue, aqua);
+  color: #000;
+  height: 3.9vh;
+  width: 11.2vh;
+  /*default prop for its color:   color: black;    */
+ }
+ 
+ input{
+  margin: 0 5px ;
+  letter-spacing: 0.7px;
+  outline: none;
+  border: 3px solid rgba(0,0,225,0.4);
+  height: 48px;
+  border-radius: 5px;
+  width: 75%;
+  background: rgba(45,100,100,0.3);
+  color: rgba(0,0,0,0.7);
+  font-family: 'Grandstander', helvetica;
+ }
+ 
+ input::placeholder{
+     color: rgba(0,0,0,0.7);
+ }
+ h2 {
+  font-size: 42px;
+  font-family: 'Roboto', sans-serif;
+  color: rgba(5,5,5,0.7);
+  text-align: center;
+  text-shadow: 3px 2px 2px lightgray;
+  padding: 25px;
+  margin: 45px 25px 25px 25px;
+ }
+ 
+ #message {
+  padding: 25px;
+  border-radius: 4px;
+  background: linear-gradient(to right, rgba(0,255,0,0.4), rgba(0,255,204,0.6));
+  /* color:rgba(255,0,0,0.9); */ /*use it if you want black font-color for #message */
+  box-shadow: 0 2px 5px 0 rgba(2, 2, 2, 0.5);
+  text-align: left;
+  height: 50%;
+  width: 73%;
+  color: rgba(5,5,10,0.9);
+  font-size: 20px;
+  font-family: 'Josefin Sans', sans-serif;
+  margin-top: 25px;
+  letter-spacing: 2px;
+  /*line-spacing;
+  word-spacing;
+  overflow;*/
+  
+ }
+ .container{
+     display: block;
+     align-content: left;
+ }
+ 
+  button {
+ /* box-shadow: 1px 4px 5px 1px rgba(30,30,30,0.3);*/
+  width: 20%;
+  height: 40px;
+  border-radius: 5px;
+  background: rgba(46,46,116,0.5);
+  border: 0 solid;
+   box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+   outline: 1px solid;
+   outline-color: rgba(255, 255, 255, .5);
+   outline-offset: 0px;
+   text-shadow: none;
+   transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+ }
+ 
+ button:hover {
+   cursor: pointer;
+   border: 1px solid;
+   box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
+   outline-color: rgba(255, 255, 255, 0);
+   outline-offset: 15px;
+   text-shadow: 1px 1px 2px #427388; 
+ }
+ 
+ #message:hover {
+   cursor: default;
+ }
+ 
+ a {
+     cursor: pointer;
+ }
+ 
+ body {
+   background: linear-gradient(to right, rgba(0,255,255,0.4), rgba(40,180,1650,0.6));
+   
+ }
+ 
+ #searchInput:active {
+   background-color: rgba(130,130,132,0.6);
+ }
+ 
+ button:active {
+   color: lightgray;
+ }
+ 
+ /*
+ #time:active {
+   color: lightgray;
+ }
+ */
+ 
+ /* if the device's maximum width is 500px, set padding for the body to 8px */
+ @media screen and (max-width: 500px) {
+   body {
+     padding: 8px;
+   }
+ }
+ /* Snackbar section */
+ /* start */
+ #snackbar {
+   visibility: hidden;
+   min-width: 250px;
+   margin-left: -125px;
+   background-color: #333;
+   color: #fff;
+   text-align: center;
+   border-radius: 2px;
+   padding: 16px;
+   position: fixed;
+   z-index: 1;
+   left: 50%;
+   bottom: 30px;
+   font-size: 17px;
+ }
+ 
+ #snackbar.show {
+   visibility: visible;
+   -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+   animation: fadein 0.5s, fadeout 0.5s 2.5s;
+ }
+ 
+ @-webkit-keyframes fadein {
+   from {bottom: 0; opacity: 0;} 
+   to {bottom: 30px; opacity: 1;}
+ }
+ 
+ @keyframes fadein {
+   from {bottom: 0; opacity: 0;}
+   to {bottom: 30px; opacity: 1;}
+ }
+ 
+ @-webkit-keyframes fadeout {
+   from {bottom: 30px; opacity: 1;} 
+   to {bottom: 0; opacity: 0;}
+ }
+ 
+ @keyframes fadeout {
+   from {bottom: 30px; opacity: 1;}
+   to {bottom: 0; opacity: 0;}
+ }
+ /* end */
+ 
+ .navbar-container {
+   width: 55%;
+   position: absolute;
+   display: inline;
+   overflow-x: hidden;
+   margin-left: 8px;
+ }
+
+ /* if screen width is greater than 768px (which is equal to 8 in), set navbar's width to 25% */
+ @media screen and (min-width: 768px) {
+  .navbar-container {
+    width: 30%;
+  }
+}
+ 
+ .menu-toggler {
+   display: none;
+ }
+ 
+ .menu-toggler-label {
+   cursor: pointer;
+   font-size: 32px;
+   width: 80%;
+   font-weight: bold;
+ }
+ 
+ .stagger-menu {
+   background: linear-gradient(to right, rgba(79, 84, 88, 0.7), transparent);
+   border-radius: 3px;
+   list-style-type: none;
+   margin: 6px 0;
+   padding: 0;
+ }
+ 
+ .stagger-menu li {
+   cursor: pointer;
+   color: white;
+   margin-bottom: 8px;
+   font-size: 18px;
+   opacity: 0;
+   transform: translateX(100%);
+   transition-property: opacity, transform;
+   transition-duration: 0.3s;
+   transition-timing-function: cubic-bezier(0.75, -0.015, 0.565, 1.055);
+ }
+ .stagger-menu li:hover {
+   color: gold;
+   background: linear-gradient(to right, teal, transparent);
+   
+ }
+ 
+ .menu-toggler:checked ~ .stagger-menu li {
+   opacity: 1;
+   transform: translateX(0);
+   transition-delay: calc(0.055s * var(--i));
+ }
+ 
+ .hover-shadow-box-animation {
+   display: inline-block;
+   vertical-align: middle;
+   transform: perspective(1px) translateZ(0);
+   box-shadow: 0 0 1px transparent;
+   margin: 10px;
+   transition-duration: 0.3s;
+   transition-property: box-shadow, transform;
+ }
+ 
+ .hover-shadow-box-animation:hover,
+ .hover-shadow-box-animation:focus,
+ .hover-shadow-box-animation:active {
+   box-shadow: 1px 10px 10px -10px rgba(0, 0, 24, 0.5);
+   transform: scale(1.2);
+ }
+ 
+ .modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#recIcon {
+  position: relative;
+  top: 2.5vh;
+}
+
+@media screen and (min-width: 768px) {
+#recIcon {
+height: 42px;
+width: 42px;
+top: 1.5vh;
+}
+}
+
+/* @media screen and (min-width: 1024px) {
+#recIcon {
+height: 48px;
+width: 48px;
+}
+} */
