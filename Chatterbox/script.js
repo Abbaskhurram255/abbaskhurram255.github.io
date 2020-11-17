@@ -415,7 +415,7 @@ const q1 = /what'?s?( is)? (up|popping)/i,
   q43 = /breaking bad cast/i,
   q44 = /(b(ody )?m(ass )?i(ndex)?)|(do I overweigh)/i,
   q45 = /^(execute|launch|play( me)?|run) maze/i,
-  q46 = /(calendar)|(appointments?)|((week|event) (planner|scheduler))|(events)|((plan|schedule) an event)/i,
+  q46 = /calendar/i,
   q47 = /my recipes/i,
   q48 = /(space invaders)|(invasion game)/i,
   q49 = /voice ?(notes|recorder)/i,
@@ -1110,21 +1110,6 @@ function ask() {
     msg = "";
     $output.html(msg);
   } else if (q46.test(q)) {
-    if (detectDeviceType() == "Desktop" || detectDeviceType() != "Mobile") {
-      let calendarWin = window.open("../calendar/", "_blank");
-      if (calendarWin) {
-        window.focus();
-        log("Launched Calendar");
-      } else {
-        alert("Please enable popups for this site!");
-      }
-      stopText();
-      msg = "";
-      $output.html(msg);
-    } else {
-      alert(
-        "Launching simple calendar because the one that supports appointments is not optimized for mobile devices...\nClick OK to continue."
-      );
       let calendarWin = window.open("./calendar-mobile/", "_blank");
       if (calendarWin) {
         window.focus();
@@ -1135,7 +1120,6 @@ function ask() {
       stopText();
       msg = "";
       $output.html(msg);
-    }
   } else if (q47.test(q)) {
     let recipeAppWin = window.open("../recipe-app/", "_blank");
     if (recipeAppWin) {
