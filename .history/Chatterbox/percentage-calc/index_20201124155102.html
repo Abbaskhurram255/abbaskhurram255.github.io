@@ -18,22 +18,17 @@
     </style>
     <script>
       function perc1() {
-        var a = document.form1.a.value / 100;
-        var b = a * document.form1.b.value;
+        a = document.form1.a.value / 100;
+        b = a * document.form1.b.value;
         document.form1.total1.value = b;
-        if (/^[0-9(.)]*$/g.test(document.form1.total1.value) != true) {
-          document.form1.total1.value = "";
-        }
+        while (/^[0-9(.)]*$/g.test(b) && b != null && b != "" && b != 0 && isNaN(b) != true) b = "";
       }
       function perc2() {
         a = document.form1.c.value;
         b = document.form1.d.value;
         c = a / b;
-        var d = c * 100;
+        d = c * 100;
         document.form1.total2.value = d;
-        if (/^[0-9(.)]*$/g.test(document.form1.total2.value) != true) {
-          document.form1.total2.value = "";
-        }
       }
     </script>
   </head>

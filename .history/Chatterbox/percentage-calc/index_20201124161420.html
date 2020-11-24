@@ -23,6 +23,7 @@
         document.form1.total1.value = b;
         if (/^[0-9(.)]*$/g.test(document.form1.total1.value) != true) {
           document.form1.total1.value = "";
+          b = "";
         }
       }
       function perc2() {
@@ -31,9 +32,6 @@
         c = a / b;
         var d = c * 100;
         document.form1.total2.value = d;
-        if (/^[0-9(.)]*$/g.test(document.form1.total2.value) != true) {
-          document.form1.total2.value = "";
-        }
       }
     </script>
   </head>

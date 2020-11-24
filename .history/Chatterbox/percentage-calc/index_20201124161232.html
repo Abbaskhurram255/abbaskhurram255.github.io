@@ -21,8 +21,9 @@
         var a = document.form1.a.value / 100;
         var b = a * document.form1.b.value;
         document.form1.total1.value = b;
-        if (/^[0-9(.)]*$/g.test(document.form1.total1.value) != true) {
-          document.form1.total1.value = "";
+        if (/^[0-9(.)]*$/g.test(p) && b != "" && p != 0) {
+          a = "";
+          b = "";
         }
       }
       function perc2() {
@@ -31,9 +32,6 @@
         c = a / b;
         var d = c * 100;
         document.form1.total2.value = d;
-        if (/^[0-9(.)]*$/g.test(document.form1.total2.value) != true) {
-          document.form1.total2.value = "";
-        }
       }
     </script>
   </head>

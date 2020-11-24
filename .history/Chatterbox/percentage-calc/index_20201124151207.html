@@ -18,22 +18,20 @@
     </style>
     <script>
       function perc1() {
-        var a = document.form1.a.value / 100;
-        var b = a * document.form1.b.value;
+        a = document.form1.a.value / 100;
+        b = a * document.form1.b.value;
         document.form1.total1.value = b;
-        if (/^[0-9(.)]*$/g.test(document.form1.total1.value) != true) {
-          document.form1.total1.value = "";
-        }
       }
       function perc2() {
         a = document.form1.c.value;
         b = document.form1.d.value;
         c = a / b;
-        var d = c * 100;
+        d = c * 100;
         document.form1.total2.value = d;
-        if (/^[0-9(.)]*$/g.test(document.form1.total2.value) != true) {
-          document.form1.total2.value = "";
-        }
+      }
+      if (document.form1.total1.value == "NaN" || document.form1.total2.value == "NaN") {
+        document.form1.total1.value = "Invalid input!";
+        document.form1.total2.value = "Invalid input!";
       }
     </script>
   </head>
@@ -52,7 +50,7 @@
               What is <input size="5" name="a" /> % of
               <input size="5" name="b" />?
             </td>
-            <td>Answer: <input id="total1" maxlength="40" size="5" name="total1" /></td>
+            <td>Answer: <input maxlength="40" size="5" name="total1" /></td>
             <td><input onclick="perc1()" type="button" value="Calculate" /></td>
           </tr>
 
@@ -61,7 +59,7 @@
               <input size="5" name="c" /> is what percent of
               <input size="5" name="d" />?
             </td>
-            <td>Answer: <input size="5" id="total2" name="total2" /> %</td>
+            <td>Answer: <input size="5" name="total2" /> %</td>
             <td><input onclick="perc2()" type="button" value="Calculate" /></td>
           </tr>
 
