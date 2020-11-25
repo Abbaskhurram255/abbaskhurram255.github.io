@@ -1599,10 +1599,10 @@ function ask() {
       msg = "";
       $output.html(msg);
     } else if (q89.test(q)) {
-      let truthOrDareWin = window.open("https://truth-or-dare-by-alex.netlify.app", "_blank");
-      if (truthOrDareWin) {
+      let travelPlansWin = window.open("https://truth-or-dare-by-alex.netlify.app", "_blank");
+      if (travelPlansWin) {
         window.focus();
-        log("Launched Truth_or_Dare");
+        log("Launched Truth-or-Dare");
       } else {
         alert("Please enable popups for this site!");
       }

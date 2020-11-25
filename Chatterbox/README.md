@@ -73,6 +73,7 @@
     *   Tic Tac Toe
     *   The Construstor, a game of logic
     *   Trivia game
+    *   Truth or Dare
 
 Note:
 

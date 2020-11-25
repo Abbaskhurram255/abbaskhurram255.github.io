@@ -1591,18 +1591,7 @@ function ask() {
       let travelPlansWin = window.open("../travel-planner/", "_blank");
       if (travelPlansWin) {
         window.focus();
-        log("Launched Travels app");
-      } else {
-        alert("Please enable popups for this site!");
-      }
-      stopText();
-      msg = "";
-      $output.html(msg);
-    } else if (q89.test(q)) {
-      let truthOrDareWin = window.open("https://truth-or-dare-by-alex.netlify.app", "_blank");
-      if (truthOrDareWin) {
-        window.focus();
-        log("Launched Truth_or_Dare");
+        log("Launched Travel app");
       } else {
         alert("Please enable popups for this site!");
       }
