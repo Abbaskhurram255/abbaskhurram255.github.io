@@ -1611,10 +1611,10 @@ function ask() {
       msg = "";
       $output.html(msg);
     } else if (q90.test(q)) {
-      let metronomeWin = window.open("https://abbaskhurram255.github.io/metronome/", "_blank");
-      if (metronomeWin) {
+      let truthOrDareWin = window.open("https://truth-or-dare-by-alex.netlify.app", "_blank");
+      if (truthOrDareWin) {
         window.focus();
-        log("Launched Metronome");
+        log("Launched Truth_or_Dare");
       } else {
         alert("Please enable popups for this site!");
       }

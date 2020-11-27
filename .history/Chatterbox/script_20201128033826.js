@@ -1610,17 +1610,6 @@ function ask() {
       stopText();
       msg = "";
       $output.html(msg);
-    } else if (q90.test(q)) {
-      let metronomeWin = window.open("https://abbaskhurram255.github.io/metronome/", "_blank");
-      if (metronomeWin) {
-        window.focus();
-        log("Launched Metronome");
-      } else {
-        alert("Please enable popups for this site!");
-      }
-      stopText();
-      msg = "";
-      $output.html(msg);
   } else {
     $("#message").slideFadeToggle(800);
     msg = "Sorry, the program is still under development.";

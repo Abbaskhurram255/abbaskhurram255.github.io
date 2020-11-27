@@ -400,7 +400,7 @@ const q1 = /what'?s?( is)? (up|popping)/i,
   q28 = /^(play( me)?|run|launch|execute) pacman(ia)?/i,
   q29 = /^(play( me)?|run|launch|execute) (rock|stone) paper scissors?/i,
   q30 = /(lyrics)|((encycl|lyric)opedia)/i,
-  q31 = /((crypto)?currency)|(exchange rates?)|(\w\w\w to \w\w\w)/i,
+  q31 = /((crypto)?currency)|(exchange rates?)|(BTC to )/i,
   q32 = /(what )?day of year( is it)?/i,
   q33 = /(is (this|it)( a)? weekday (today|yet))|((is today|today is) a weekday)/i,
   q34 = /is (it|this)( a)? weekend( day)? (today|yet)/i,
@@ -458,8 +458,7 @@ const q1 = /what'?s?( is)? (up|popping)/i,
   q86 = /light maze/i,
   q87 = /^((book|pdf) ((pre)?viewer|reader))|((read|(pre)?view)( me)? (a (document|pdf)|pdf('?s)?))$/i,
   q88 = /(^(open|launch|run)?( me)? ?travels? ?(app|plan(ning|s|ner))$)|(help me ?(to|with|in)? plan(ning)? travels)/i,
-  q89 = /truth or dare/i,
-  q90 = /metronome/i;
+  q89 = /truth or dare/i;
 
 function ask() {
   const q = document.querySelector("#searchInput").value;
@@ -947,7 +946,7 @@ function ask() {
     msg = "";
     $output.html(msg);
   } else if (q31.test(q)) {
-    let curConvApps = ["./Currency-Converter-JS-master/", "./exchange-rate/", "https://cryptocurrency-converter.netlify.app/"];
+    let curConvApps = ["./Currency-Converter-JS-master/", "./exchange-rate/"];
     let curConvAppsWin = window.open(
       curConvApps[Math.floor(Math.random() * curConvApps.length)],
       "_blank",
@@ -1604,17 +1603,6 @@ function ask() {
       if (truthOrDareWin) {
         window.focus();
         log("Launched Truth_or_Dare");
-      } else {
-        alert("Please enable popups for this site!");
-      }
-      stopText();
-      msg = "";
-      $output.html(msg);
-    } else if (q90.test(q)) {
-      let metronomeWin = window.open("https://abbaskhurram255.github.io/metronome/", "_blank");
-      if (metronomeWin) {
-        window.focus();
-        log("Launched Metronome");
       } else {
         alert("Please enable popups for this site!");
       }

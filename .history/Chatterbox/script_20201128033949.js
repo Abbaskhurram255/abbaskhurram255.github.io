@@ -1614,7 +1614,7 @@ function ask() {
       let metronomeWin = window.open("https://abbaskhurram255.github.io/metronome/", "_blank");
       if (metronomeWin) {
         window.focus();
-        log("Launched Metronome");
+        log("Launched Truth_or_Dare");
       } else {
         alert("Please enable popups for this site!");
       }
