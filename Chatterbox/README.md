@@ -29,6 +29,7 @@
     *   Live Weather
     *   Lyricopedia
     *   Meal Finder / Recipes app
+    *   Metronome
     *   Mortgage Calculator
     *   Motivator
     *   MovieDB, Movies app
