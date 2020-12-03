@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Chase-The-Box</title>
+    <title>Chase The Box</title>
     <style>
-      .gameArea {
-        width: 800px;
+body{         background:#296f88;         }      .gameArea {
+        width: 800px;background:seagreen;
         height: 600px;
       }
 
       .score {
-        font-size: 3em;
+        color:whitesmoke;	font-size: 3em;
       }
 
       .box {
@@ -33,7 +33,7 @@
       }
 
       .active {
-        background-color: green;
+        background-color: #0c6;
         color: white;
       }
       body {
@@ -44,7 +44,7 @@
 
   <body>
     <div class="gameArea"></div>
-    <div>Score :<span class="score">0</span></div>
+    <div><span style="font-size:1.1rem;color:whitesmoke;">Score: </span><span class="score">0</span></div>
     <script>
       let box = {};
       const score = document.querySelector(".score");
@@ -124,7 +124,7 @@
         for (let y = 0; y < gamebox.y; y++) {
           for (let x = 0; x < gamebox.x; x++) {
             squares[counter] = document.createElement("div");
-            squares[counter].innerHTML = counter;
+            
             squares[counter].classList.add("square");
             gameAreaEle.appendChild(squares[counter]);
             counter++;

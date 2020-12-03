@@ -184,8 +184,7 @@ function init(){
 
 		if(gameOver){
 			context.font = "40px Sans";
-			context.fillText("Game over", width / 2 - context.measureText("Game over").width / 2, height / 2);
-		}
+			context.fillText("Game over. Reloading...", width / 2 - context.measureText("Game over. Reloading...").width / 2, height / 2);	setTimeout(() => {location.href = "?"}, 900)		}
 	});
 
 	window.addEventListener("mousemove", function(evt){
