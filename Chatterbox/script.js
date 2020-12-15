@@ -327,7 +327,7 @@ if (noofdayslefttilNYD==0 || noofdayslefttilNYD==365) {
 
 
 var msg;
-var userName = prompt("Hey, user! What's your name?") || "";
+var userName = prompt("Hey, user! What's your name?");
 userName = toTitleCase(userName);
 var age;
 var bday = prompt(
