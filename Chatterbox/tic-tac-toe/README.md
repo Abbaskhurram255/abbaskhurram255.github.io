@@ -3,7 +3,7 @@
 A Tic-Tac-Toe browser game running on JavaScript.
 
 ## Links
-[Play Game](./tic-tac-toe)
+[Play Game](https://abbaskhurram255.github.io/tic-tac-toe-modern)
 
 ## Features
 - Play against another player
