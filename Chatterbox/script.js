@@ -1,4 +1,4 @@
-/* load default (light) theme every time the window (aka body object (DOM document.body) loads) nd show a tooltip whenever searchInput is active. Run startTime function too */
+﻿/* load default (light) theme every time the window (aka body object (DOM document.body) loads) nd show a tooltip whenever searchInput is active. Run startTime function too */
 window.onload = () => {
   startTime();
   $lTheme.attr("media", "");
@@ -725,7 +725,7 @@ function ask() {
     $("#message").delay(10000).slideFadeToggle(800);
   } else if (q15.test(q)) {
     let ticTacToeWin = window.open(
-      "./tic-tac-toe-master/",
+      "./tic-tac-toe/",
       "_blank",
       "width=500,height=500,resizable=yes,toolbar=no,menubar=no"
     );
@@ -827,7 +827,7 @@ function ask() {
       );
     }
     let games = [
-      "./tic-tac-toe-master/",
+      "./tic-tac-toe/",
       "./2D-Breakout-Game-JavaScript-master/",
       "./FlappyBird-JavaScript-master/",
       "./Javascript-Pacman-master/",
