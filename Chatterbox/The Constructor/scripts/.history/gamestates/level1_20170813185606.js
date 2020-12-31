@@ -11,7 +11,7 @@ let level1State = {
         mechanics.createInterface();
 
         //Adding texts
-        mechanics.createText('Level 1', 30, 5, 0, 100);
+        mechanics.createText('Level 1 - Rocket science ', 30, 5, 0, 100);
 
         //creating items
         const levelOne = game.add.sprite(320, 240, 'levelOne');

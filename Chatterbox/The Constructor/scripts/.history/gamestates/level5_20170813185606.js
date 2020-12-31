@@ -10,7 +10,7 @@ let level5State = {
         mechanics.createInterface();
 
         //Adding texts
-        mechanics.createText('Level 5', 30, 5, 0, 100);
+        mechanics.createText('Level 5 - CoffeeScript', 30, 5, 0, 100);
 
         const levelFive = game.add.sprite(280, 200, 'levelFive');
 

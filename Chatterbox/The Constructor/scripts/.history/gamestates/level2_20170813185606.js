@@ -10,7 +10,7 @@ let level2State = {
         mechanics.createInterface();
 
         //Adding texts
-        mechanics.createText('Level 2', 30, 5, 0, 100);
+        mechanics.createText('Level 2 - HTML Root', 30, 5, 0, 100);
 
         const levelTwo = game.add.sprite(280, 200, 'levelTwo');
 

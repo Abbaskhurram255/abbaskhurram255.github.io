@@ -10,7 +10,7 @@ let level3State = {
         mechanics.createInterface();
 
         //Adding texts
-        mechanics.createText('Level 3', 30, 5, 0, 100);
+        mechanics.createText(' Level 3', 30, 5, 0, 100);
 
 
         const levelThree = game.add.sprite(280, 240, 'levelThree');

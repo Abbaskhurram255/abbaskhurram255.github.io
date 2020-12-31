@@ -27,13 +27,13 @@ let levelState = {
 
     levelStart: function() {
         mechanics.resetTimer();
-        mechanics.counter = this.param1;
+        mechanics.counter = this.param1 ;
         game.state.start(`level-${ this.param1 }`);
     },
 
     tutorialStart: function() {
         mechanics.resetTimer();
-        mechanics.counter = 0;
+        mechanics.counter = 0 ;
         game.state.start('level-0');
     }
 

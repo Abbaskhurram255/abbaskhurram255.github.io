@@ -10,7 +10,7 @@ let level6State = {
         mechanics.createInterface();
 
         //Adding texts
-        mechanics.createText('Oops, nothing here :( Level 6 will be available soon', 30, 5, 0, 100);
+        mechanics.createText('Oops, nothing here :(. Level 6 will be available soon', 30, 5, 0, 100);
 
     },
 

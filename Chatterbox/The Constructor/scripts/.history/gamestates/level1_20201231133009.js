@@ -14,7 +14,7 @@ let level1State = {
         mechanics.createText('Level 1', 30, 5, 0, 100);
 
         //creating items
-        const levelOne = game.add.sprite(320, 240, 'levelOne');
+        game.add.sprite(320, 240, 'levelOne');
 
         const block1 = game.add.sprite(mechanics.randomizeInitial(500,600), mechanics.randomizeInitial(150,250), 'block4');
         mechanics.snapToGrid(block1);

@@ -17,7 +17,7 @@ let menuState = {
         mechanics.createText('The Constructor', 60, 5, 0, 130);
         mechanics.createText('Play game', 20, 3, 0, 270);
         mechanics.createText('Scoreboard', 20, 3, 0, 350);
-        mechanics.createText('(C) 2020 by Alex', 12, 3, -300, 500);
+        mechanics.createText('(C) Alex', 20, 3, 0, 430);
 
     },
 

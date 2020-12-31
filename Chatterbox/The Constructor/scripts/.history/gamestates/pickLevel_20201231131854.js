@@ -18,7 +18,7 @@ let levelState = {
     },
 
     generateLvlButtons: function (amount, positionY, rowFactor) {
-        for(let i = 0; i < amount; i++) {
+        for(let i = 0; i < amount ; i++) {
             const but = game.add.button( 150 + i * 180, positionY, 'mainMenuButton', 0, this, 1, 2, 0);
             mechanics.createText(`Level ${i+rowFactor}`, 20, 3, -185 + i * 180, positionY + 10);
             but.events.onInputUp.add(levelState.levelStart, { param1:i+rowFactor });
@@ -27,13 +27,13 @@ let levelState = {
 
     levelStart: function() {
         mechanics.resetTimer();
-        mechanics.counter = this.param1;
+        mechanics.counter = this.param1 ;
         game.state.start(`level-${ this.param1 }`);
     },
 
     tutorialStart: function() {
         mechanics.resetTimer();
-        mechanics.counter = 0;
+        mechanics.counter = 0 ;
         game.state.start('level-0');
     }
 
