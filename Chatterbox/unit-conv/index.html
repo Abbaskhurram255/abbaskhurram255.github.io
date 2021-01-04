@@ -19,9 +19,14 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6 offset-md-3">
-          <h1 class="display-3 text-center mb-3">Converter</h1>
+          <h1
+            class="display-3 text-center mb-3"
+            style="text-align: center; margin-bottom: 110px; font-size: 40px"
+          >
+            Unit Converter
+          </h1>
           <form name="form" id="myForm">
-            <div class="form-group">
+            <div class="form-group" style="margin-left: 20px">
               <label for="choice"> Choose a scale: </label>
               <select name="weights" id="scale" class="form-control mb-2">
                 <option value=""></option>
@@ -31,14 +36,6 @@
                 <option value="area">Area</option>
               </select>
 
-              <input
-                id="lbsInput"
-                type="number"
-                class="form-control form-control-lg"
-                placeholder="Enter Number..."
-                name="for"
-                step="1"
-              />
               <label for="choice">
                 Unit:
                 <select name="weights" id="choice" class="form-control mb-3">
@@ -48,11 +45,16 @@
                   <option value="kilograms"></option>
                   <option value="ounces"></option>
                 </select>
+                <input
+                  id="lbsInput"
+                  type="number"
+                  class="form-control form-control-lg"
+                  placeholder="Enter number..."
+                  name="for"
+                  step="1"
+                />
               </label>
-              <button
-                type="button"
-                class="float-right btn mt-4"
-                id="calculate">
+              <button type="button" class="float-right btn mt-4" id="calculate">
                 Calculate
               </button>
             </div>
@@ -60,27 +62,25 @@
 
           <div id="output">
             <div class="card bg-secondary mb-2 card-block">
-                <h4 class="ch"></h4>
-                <div id="output1"></div>
+              <h4 class="ch"></h4>
+              <div id="output1"></div>
             </div>
             <div class="card bg-primary mb-2 card-block">
-                <h4 class="ch"></h4>
-                <div id="output2"></div>
+              <h4 class="ch"></h4>
+              <div id="output2"></div>
             </div>
             <div class="card bg-success mb-2 card-block">
-                <h4 class="ch"></h4>
-                <div id="output3"></div>
+              <h4 class="ch"></h4>
+              <div id="output3"></div>
             </div>
             <div class="cl card bg-danger mb-2 card-block">
-                <h4 class="ch"></h4>
-                <div id="output4"></div>
+              <h4 class="ch"></h4>
+              <div id="output4"></div>
             </div>
-        </div>
+          </div>
           <div id="formula"></div>
           <div id="history">
-            <button id="calc" class="prev">
-              Previous Calculations
-            </button>
+            <button id="calc" class="prev">Previous Calculations</button>
             <div id="pCalculations" class="change"></div>
           </div>
         </div>
