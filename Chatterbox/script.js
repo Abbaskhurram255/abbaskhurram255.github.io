@@ -1412,7 +1412,7 @@ function ask() {
         alert("Please enable popups for this site!");
       }
     } else if (q72.test(q)) {
-      let moviesAppWin = window.open("../movie-app/", "_blank");
+      let moviesAppWin = window.open("../yoMovies/", "_blank");
       if (moviesAppWin) {
         window.focus();
         log("Launched Movies app");
