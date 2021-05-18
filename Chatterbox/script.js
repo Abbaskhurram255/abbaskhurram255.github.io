@@ -1891,7 +1891,7 @@ window.onclick = function (event) {
 const showFeatures = () => {
   modal.style.display = "block";
   stopText();
-  msg = "Don't underestimate me, because I can perform logical operations too. For example, if you asked me to inform you whether 2020 or 2021 is a leap year, I'd let you know. And if you asked me to inform you of the date it'll be tomorrow or the date it was yesterday, I'd let you know. Further, if you asked me to inform you whether it is a weekday today or weekend yet, I'd let you know.";
+  msg = "Don't underestimate me, because I can perform logical operations too. For example, if you asked me to inform you whether 2020 or 2021 is a leap year, I'd let you know. And if you asked me to inform you of the date it'll be tomorrow or the date it was yesterday, I'd let you know. What's more, if you asked me to inform you whether it is a weekday today or weekend yet, I'd let you know.";
   playText(msg);
 }
 //end block of modal fn
